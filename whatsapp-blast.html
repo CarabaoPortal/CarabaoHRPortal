@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<!-- ================================================ -->
+<!-- HEAD SECTION -->
+<!-- ================================================ -->
+<head>
+    <!-- ============================================ -->
+    <!-- META TAGS -->
+    <!-- ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carabao Billiards HR Portal — WhatsApp Blast. Send personalized WhatsApp messages to employees with custom templates and variables.">
+    <meta name="keywords" content="WhatsApp Blast, Mass Messaging, Employee Communication, Message Templates, HR System, Carabao Billiards">
+    <meta name="author" content="Carabao Billiards Indonesia - HRD Internship Project">
+    <meta name="theme-color" content="#2563eb">
+    
+    <title>Carabao Billiards HR Portal — WhatsApp Blast</title>
+    
+    <!-- ============================================ -->
+    <!-- EXTERNAL STYLESHEETS & SCRIPTS -->
+    <!-- ============================================ -->
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ✅ ADD THIS LINE -->
+    <link rel="stylesheet" href="css/tailwind.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- ✅ PAGE ANIMATION STYLES -->
+<style>
+    /* Page Fade-in Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Staggered Animation */
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+    }
+    
+    /* Initial Hidden State */
+    .page-content {
+        opacity: 0;
+    }
+    
+    /* Delay for staggered effect */
+    .animate-delay-100 { animation-delay: 0.1s; }
+    .animate-delay-200 { animation-delay: 0.2s; }
+    .animate-delay-300 { animation-delay: 0.3s; }
+    
+    /* Smooth transitions */
+    * {
+        transition-duration: 0.15s;
+        transition-timing-function: ease-out;
+    }
+</style>
+</head>
+
+<!-- ================================================ -->
+<!-- BODY SECTION -->
+<!-- ================================================ -->
+<body class="bg-gray-50 font-['Inter'] antialiased">
+
+    <!-- ============================================ -->
+    <!-- SIDEBAR NAVIGATION -->
+    <!-- ============================================ -->
+    <aside id="sidebar" 
+           class="fixed top-0 left-0 z-40 w-64 h-screen bg-white shadow-lg transform transition-transform duration-300 lg:translate-x-0 -translate-x-full"
+           role="navigation"
+           aria-label="Main navigation">
+        
+        <!-- Logo Section -->
+        <div class="flex items-center justify-center h-16 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
+                    <i class="fas fa-building text-white text-lg" aria-hidden="true"></i>
+                </div>
+                <span class="text-xl font-bold text-white">Carabao HR Portal</span>
+            </div>
+        </div>
+        
+        <!-- Navigation Links -->
+        <nav class="mt-6 px-4 pb-20 overflow-y-auto h-[calc(100vh-140px)]" aria-label="Primary">
+            <div class="space-y-1">
+                <!-- Dashboard Link -->
+                <a href="dashboard.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to Dashboard">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-home text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                
+                <!-- Employees Link -->
+                <a href="employees.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to Employees">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-users text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Employees</span>
+                </a>
+                
+                <!-- Attendance Link -->
+                <a href="attendance.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to Attendance">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-clock text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Attendance</span>
+                </a>
+                
+                <!-- Leave Link -->
+                <a href="leave.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to Leave Management">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-calendar-alt text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Leave</span>
+                </a>
+
+                <!-- Recruitment Link -->
+                <a href="recruitment.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to Recruitment">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-user-plus text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Recruitment</span>
+                </a>
+                
+                <!-- WhatsApp Blast Link (Active) -->
+                <a href="whatsapp-blast.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-white bg-primary-600 rounded-lg shadow-md"
+                   aria-current="page"
+                   aria-label="WhatsApp Blast (current page)">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-white/20 mr-3">
+                        <i class="fab fa-whatsapp text-white" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">WhatsApp Blast</span>
+                </a>
+
+                <!-- Settings Link -->
+                <a href="settings.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to Settings">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-cog text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Settings</span>
+                </a>
+            </div>
+        </nav>
+        
+        <!-- Sidebar Footer - Support -->
+        <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 bg-white">
+            <div class="flex items-center space-x-3 px-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold text-sm shadow-sm">
+                    <i class="fas fa-headset" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-gray-700">Need Help?</p>
+                    <p class="text-xs text-gray-500">Contact Support</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div id="sidebarOverlay" 
+         class="fixed inset-0 bg-black/50 z-30 lg:hidden hidden" 
+         onclick="toggleSidebar()"
+         aria-hidden="true"></div>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT WRAPPER -->
+    <!-- ============================================ -->
+    <div class="lg:ml-64 flex flex-col min-h-screen">
+        
+        <!-- ============================================ -->
+        <!-- TOP HEADER -->
+        <!-- ============================================ -->
+        <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-20">
+            <div class="flex items-center justify-between px-4 sm:px-6 py-4">
+                
+                <!-- Left: Mobile Menu Button & Page Title -->
+                <div class="flex items-center space-x-4">
+                    <button id="sidebarToggle" 
+                            onclick="toggleSidebar()" 
+                            class="lg:hidden text-gray-600 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg transition-colors"
+                            aria-label="Toggle sidebar"
+                            aria-expanded="false"
+                            aria-controls="sidebar">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                    </button>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-bold text-gray-800">WhatsApp Blast</h1>
+                        <p class="text-sm text-gray-500 hidden sm:block">Send personalized WhatsApp messages to employees</p>
+                    </div>
+                </div>
+                
+                <!-- Right: Selection Counter & Action Buttons -->
+                <div class="flex items-center space-x-3 sm:space-x-4">
+                    <!-- Selection Counter -->
+                    <span id="selectedCount" 
+                          class="text-sm text-gray-500 hidden sm:inline"
+                          aria-live="polite">
+                        0 selected
+                    </span>
+                    
+                    <!-- Send Button -->
+                    <button onclick="sendToSelected()" 
+                            class="bg-green-600 hover:bg-green-700 text-white px-3 sm:px-4 py-2 rounded-lg flex items-center gap-2 transition-colors shadow-sm text-sm font-medium"
+                            aria-label="Send WhatsApp to selected employees">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <span class="hidden sm:inline">Send Selected</span>
+                    </button>
+                    
+                    <!-- User Info & Dropdown -->
+                    <div class="relative hidden lg:block">
+                        <button id="userMenuBtn" 
+                                onclick="toggleUserDropdown()" 
+                                class="flex items-center space-x-3 focus:outline-none hover:bg-gray-50 rounded-lg p-2 transition-colors"
+                                aria-label="User menu"
+                                aria-expanded="false"
+                                aria-haspopup="true">
+                            <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold shadow-md">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-400 text-xs" aria-hidden="true"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div id="userDropdown" 
+                             class="hidden absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50"
+                             role="menu"
+                             aria-label="User menu">
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <p class="text-sm font-medium text-gray-900" id="dropdownUserName">User Name</p>
+                                <p class="text-xs text-gray-500" id="dropdownUserEmail">user@example.com</p>
+                            </div>
+                            <a href="settings.html" 
+                               class="flex items-center px-4 py-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
+                               role="menuitem">
+                                <i class="fas fa-cog w-5 mr-3 text-gray-400" aria-hidden="true"></i>
+                                System Settings
+                            </a>
+                            <hr class="my-2 border-gray-100" aria-hidden="true">
+                            <button onclick="logout()" 
+                                    class="flex items-center w-full px-4 py-2.5 text-red-600 hover:bg-red-50 transition-colors"
+                                    role="menuitem">
+                                <i class="fas fa-sign-out-alt w-5 mr-3" aria-hidden="true"></i>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================ -->
+        <!-- MAIN CONTENT AREA -->
+        <!-- ============================================ -->
+        <main class="flex-1 p-4 sm:p-6 page-content" role="main">
+
+            <div class="flex flex-col xl:flex-row gap-6">
+                
+                <!-- ========================================== -->
+                <!-- LEFT COLUMN: TEMPLATE & VARIABLES -->
+                <!-- ========================================== -->
+                <div class="xl:w-2/5 flex flex-col gap-6">
+                    
+                    <!-- ====================================== -->
+                    <!-- SECTION 1: VARIABLES -->
+                    <!-- ====================================== -->
+                    <section class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 animate-fade-in animate-delay-100"
+                            aria-labelledby="variables-heading">
+                        <h3 id="variables-heading" 
+                            class="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                            <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-50">
+                                <i class="fas fa-code text-primary-600" aria-hidden="true"></i>
+                            </div>
+                            Variables
+                        </h3>
+                        
+                        <!-- Auto Variables (Employee Data) -->
+                        <div class="mb-5">
+                            <p class="text-xs text-gray-500 uppercase tracking-wider mb-3 font-medium">
+                                Employee Data (Auto)
+                            </p>
+                            <div class="flex flex-wrap gap-2" role="group" aria-label="Auto variables">
+                                <button type="button" 
+                                        onclick="insertVariable('{nama}')" 
+                                        class="bg-primary-50 text-primary-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-primary-100 transition-colors"
+                                        aria-label="Insert nama variable">
+                                    {nama}
+                                </button>
+                                <button type="button" 
+                                        onclick="insertVariable('{telepon}')" 
+                                        class="bg-primary-50 text-primary-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-primary-100 transition-colors"
+                                        aria-label="Insert telepon variable">
+                                    {telepon}
+                                </button>
+                                <button type="button" 
+                                        onclick="insertVariable('{email}')" 
+                                        class="bg-primary-50 text-primary-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-primary-100 transition-colors"
+                                        aria-label="Insert email variable">
+                                    {email}
+                                </button>
+                                <button type="button" 
+                                        onclick="insertVariable('{employee_code}')" 
+                                        class="bg-primary-50 text-primary-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-primary-100 transition-colors"
+                                        aria-label="Insert employee code variable">
+                                    {employee_code}
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Custom Variables -->
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider mb-3 font-medium">
+                                Custom Variables
+                            </p>
+                            <div class="space-y-3">
+                                <!-- Variable A -->
+                                <div class="flex gap-2 items-center">
+                                    <button type="button" 
+                                            onclick="insertVariable('{A}')" 
+                                            class="bg-amber-50 text-amber-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-amber-100 transition-colors whitespace-nowrap"
+                                            aria-label="Insert variable A">
+                                        {A}
+                                    </button>
+                                    <input type="text" 
+                                           id="labelA" 
+                                           placeholder="Label A" 
+                                           value="Tanggal"
+                                           aria-label="Label for variable A"
+                                           class="flex-1 text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                    <input type="text" 
+                                           id="varA" 
+                                           placeholder="Value A" 
+                                           value="10 Februari 2026"
+                                           aria-label="Value for variable A"
+                                           oninput="updateAllPreviews()" 
+                                           class="flex-1 text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                </div>
+                                
+                                <!-- Variable B -->
+                                <div class="flex gap-2 items-center">
+                                    <button type="button" 
+                                            onclick="insertVariable('{B}')" 
+                                            class="bg-amber-50 text-amber-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-amber-100 transition-colors whitespace-nowrap"
+                                            aria-label="Insert variable B">
+                                        {B}
+                                    </button>
+                                    <input type="text" 
+                                           id="labelB" 
+                                           placeholder="Label B" 
+                                           value="Waktu"
+                                           aria-label="Label for variable B"
+                                           class="flex-1 text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                    <input type="text" 
+                                           id="varB" 
+                                           placeholder="Value B" 
+                                           value="09:00 WIB"
+                                           aria-label="Value for variable B"
+                                           oninput="updateAllPreviews()" 
+                                           class="flex-1 text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                </div>
+                                
+                                <!-- Variable C -->
+                                <div class="flex gap-2 items-center">
+                                    <button type="button" 
+                                            onclick="insertVariable('{C}')" 
+                                            class="bg-amber-50 text-amber-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-amber-100 transition-colors whitespace-nowrap"
+                                            aria-label="Insert variable C">
+                                        {C}
+                                    </button>
+                                    <input type="text" 
+                                           id="labelC" 
+                                           placeholder="Label C" 
+                                           value="Lokasi"
+                                           aria-label="Label for variable C"
+                                           class="flex-1 text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                    <input type="text" 
+                                           id="varC" 
+                                           placeholder="Value C" 
+                                           value="Ruang Meeting Lt. 3"
+                                           aria-label="Value for variable C"
+                                           oninput="updateAllPreviews()" 
+                                           class="flex-1 text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                </div>
+                                
+                                <!-- Variable D -->
+                                <div class="flex gap-2 items-center">
+                                    <button type="button" 
+                                            onclick="insertVariable('{D}')" 
+                                            class="bg-amber-50 text-amber-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-amber-100 transition-colors whitespace-nowrap"
+                                            aria-label="Insert variable D">
+                                        {D}
+                                    </button>
+                                    <input type="text" 
+                                           id="labelD" 
+                                           placeholder="Label D" 
+                                           value="Agenda"
+                                           aria-label="Label for variable D"
+                                           class="flex-1 text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                    <input type="text" 
+                                           id="varD" 
+                                           placeholder="Value D" 
+                                           value="Review Kinerja Q1"
+                                           aria-label="Value for variable D"
+                                           oninput="updateAllPreviews()" 
+                                           class="flex-1 text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ====================================== -->
+                    <!-- SECTION 2: MESSAGE TEMPLATE -->
+                    <!-- ====================================== -->
+                    <section class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex-1 flex flex-col animate-fade-in animate-delay-200"
+                            aria-labelledby="template-heading">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 id="template-heading" 
+                                class="text-lg font-semibold text-gray-800 flex items-center gap-2">
+                                <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-50">
+                                    <i class="fas fa-file-alt text-primary-600" aria-hidden="true"></i>
+                                </div>
+                                Message Template
+                            </h3>
+                            <div class="flex items-center gap-2">
+                                <!-- Template Selector -->
+                                <select id="templateSelect" 
+                                        onchange="loadSelectedTemplate()" 
+                                        aria-label="Select template"
+                                        class="text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 bg-white transition-all">
+                                    <option value="">-- Load Template --</option>
+                                </select>
+                                <!-- Save Template Button -->
+                                <button type="button" 
+                                        onclick="openSaveModal()" 
+                                        class="bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2 rounded-lg text-sm flex items-center gap-1.5 transition-colors border border-gray-200"
+                                        aria-label="Save template">
+                                    <i class="fas fa-save" aria-hidden="true"></i>
+                                    <span class="hidden sm:inline">Save</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Template Textarea -->
+                        <textarea 
+                            id="templateText" 
+                            placeholder="Type your message template here...&#10;&#10;Use variables like {nama}, {telepon}, {A}, {B}, etc."
+                            oninput="updateAllPreviews()"
+                            aria-label="Message template"
+                            class="flex-1 w-full border border-gray-200 rounded-lg p-4 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all min-h-[200px]"
+                        >Halo {nama},
+
+Dengan ini kami informasikan bahwa akan diadakan meeting pada:
+
+📅 Tanggal: {A}
+⏰ Waktu: {B}
+📍 Lokasi: {C}
+📋 Agenda: {D}
+
+Mohon kehadirannya tepat waktu.
+
+Terima kasih.
+HR Department</textarea>
+
+                        <!-- Live Preview -->
+                        <div class="mt-4">
+                            <p class="text-xs text-gray-500 uppercase tracking-wider mb-2 font-medium">
+                                Live Preview
+                            </p>
+                            <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4">
+                                <div class="bg-green-50 rounded-lg p-3 max-w-sm shadow-sm border border-green-100">
+                                    <p id="previewText" 
+                                       class="text-sm text-gray-800 whitespace-pre-wrap"
+                                       aria-live="polite">
+                                        Preview will appear here...
+                                    </p>
+                                    <p class="text-xs text-gray-500 text-right mt-2 flex items-center justify-end gap-1">
+                                        <i class="fas fa-check-double text-blue-500" aria-hidden="true"></i> 
+                                        <span>09:41</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- RIGHT COLUMN: EMPLOYEE LIST -->
+                <!-- ========================================== -->
+                <div class="xl:w-3/5 bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col animate-fade-in animate-delay-300">
+                    
+                    <!-- ====================================== -->
+                    <!-- TABLE HEADER -->
+                    <!-- ====================================== -->
+                    <div class="p-5 border-b border-gray-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <h3 class="text-lg font-semibold text-gray-800 flex items-center gap-2">
+                                <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-50">
+                                    <i class="fas fa-users text-primary-600" aria-hidden="true"></i>
+                                </div>
+                                Employee List
+                                <span id="employeeCount" 
+                                      class="text-sm font-normal text-gray-500"
+                                      aria-live="polite">
+                                    (0 employees)
+                                </span>
+                            </h3>
+                            <div class="flex items-center gap-3">
+                                <!-- Search Input -->
+                                <div class="relative flex-1 sm:flex-none">
+                                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" aria-hidden="true"></i>
+                                    <input 
+                                        type="text" 
+                                        id="searchInput" 
+                                        placeholder="Search employees..."
+                                        oninput="filterEmployees()"
+                                        aria-label="Search employees"
+                                        class="w-full sm:w-64 pl-9 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all"
+                                    >
+                                </div>
+                                <!-- Select All Button -->
+                                <button type="button" 
+                                        onclick="toggleSelectAll()" 
+                                        class="text-sm text-primary-600 hover:text-primary-700 transition-colors whitespace-nowrap font-medium"
+                                        aria-label="Select all employees">
+                                    <i class="fas fa-check-double mr-1" aria-hidden="true"></i> 
+                                    <span class="hidden sm:inline">Select All</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====================================== -->
+                    <!-- EMPLOYEE TABLE -->
+                    <!-- ====================================== -->
+                    <div class="flex-1 overflow-auto">
+                        <table class="w-full" role="table" aria-label="Employee list">
+                            <thead class="bg-gray-50 sticky top-0 z-10">
+                                <tr>
+                                    <th scope="col" class="px-4 py-3 text-left w-12">
+                                        <input type="checkbox" 
+                                               id="selectAllCheckbox" 
+                                               onchange="handleSelectAll()" 
+                                               aria-label="Select all visible employees"
+                                               class="rounded border-gray-300 text-primary-600 focus:ring-primary-500 cursor-pointer">
+                                    </th>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        Code
+                                    </th>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        Name
+                                    </th>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        Phone
+                                    </th>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                        Message Preview
+                                    </th>
+                                    <th scope="col" class="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider w-20">
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="employeeTableBody" class="divide-y divide-gray-100">
+                                <!-- ✅ Skeleton Loading Rows -->
+                                <tr class="animate-pulse">
+                                    <td class="px-4 py-3"><div class="h-4 w-4 bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3"><div class="h-4 w-20 bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3">
+                                        <div class="space-y-2">
+                                            <div class="h-4 w-32 bg-gray-200 rounded"></div>
+                                            <div class="h-3 w-24 bg-gray-200 rounded"></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3"><div class="h-4 w-28 bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3"><div class="h-4 w-full bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3 text-center"><div class="h-9 w-9 bg-gray-200 rounded-full mx-auto"></div></td>
+                                </tr>
+                                <tr class="animate-pulse">
+                                    <td class="px-4 py-3"><div class="h-4 w-4 bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3"><div class="h-4 w-20 bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3">
+                                        <div class="space-y-2">
+                                            <div class="h-4 w-36 bg-gray-200 rounded"></div>
+                                            <div class="h-3 w-28 bg-gray-200 rounded"></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3"><div class="h-4 w-28 bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3"><div class="h-4 w-full bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3 text-center"><div class="h-9 w-9 bg-gray-200 rounded-full mx-auto"></div></td>
+                                </tr>
+                                <tr class="animate-pulse">
+                                    <td class="px-4 py-3"><div class="h-4 w-4 bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3"><div class="h-4 w-20 bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3">
+                                        <div class="space-y-2">
+                                            <div class="h-4 w-40 bg-gray-200 rounded"></div>
+                                            <div class="h-3 w-32 bg-gray-200 rounded"></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3"><div class="h-4 w-28 bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3"><div class="h-4 w-full bg-gray-200 rounded"></div></td>
+                                    <td class="px-4 py-3 text-center"><div class="h-9 w-9 bg-gray-200 rounded-full mx-auto"></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- ====================================== -->
+                    <!-- TABLE FOOTER -->
+                    <!-- ====================================== -->
+                    <div class="p-4 border-t border-gray-200 bg-gray-50 rounded-b-xl">
+                        <div class="flex items-center justify-between text-sm text-gray-600">
+                            <span aria-live="polite">
+                                Showing <span id="showingCount" class="font-semibold text-gray-800">0</span> of <span id="totalCount" class="font-semibold text-gray-800">0</span> employees
+                            </span>
+                            <button type="button" 
+                                    onclick="copyAllMessages()" 
+                                    class="text-primary-600 hover:text-primary-700 transition-colors font-medium flex items-center gap-1.5"
+                                    aria-label="Copy all messages to clipboard">
+                                <i class="fas fa-copy" aria-hidden="true"></i>
+                                <span class="hidden sm:inline">Copy All Messages</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ========================================== -->
+        <!-- FOOTER -->
+        <!-- ========================================== -->
+        <footer class="bg-white border-t border-gray-200 px-6 py-3 mt-auto flex-shrink-0">
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+                <p>© 2026 Carabao Billiards Indonesia. All rights reserved.
+                    Developed internally by HRD Internship Project.</p>
+                <p class="mt-2 sm:mt-0">Version 1.0.0 | Powered by Supabase</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <!-- ============================================ -->
+    <div id="toastContainer" 
+         class="fixed bottom-4 right-4 z-[100] space-y-2"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true">
+        <!-- Toast notifications will be dynamically injected here by JavaScript -->
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SAVE TEMPLATE MODAL -->
+    <!-- ============================================ -->
+    <div id="saveModal" 
+         class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="save-modal-title">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md transform transition-all">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+                <div class="flex items-center justify-between">
+                    <h3 id="save-modal-title" 
+                        class="text-xl font-semibold text-white flex items-center gap-2">
+                        <i class="fas fa-save" aria-hidden="true"></i>
+                        Save Template
+                    </h3>
+                    <button type="button" 
+                            onclick="closeSaveModal()" 
+                            class="text-white/80 hover:text-white transition-colors"
+                            aria-label="Close modal">
+                        <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-6 space-y-4">
+                <!-- Template Name Input -->
+                <div>
+                    <label for="templateName" 
+                           class="block text-sm font-medium text-gray-700 mb-1">
+                        Template Name <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="templateName" 
+                        placeholder="e.g., Meeting Invitation"
+                        required
+                        aria-required="true"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all"
+                    >
+                </div>
+                
+                <!-- Category Select -->
+                <div>
+                    <label for="templateCategory" 
+                           class="block text-sm font-medium text-gray-700 mb-1">
+                        Category
+                    </label>
+                    <select id="templateCategory" 
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 bg-white transition-all">
+                        <option value="General">General</option>
+                        <option value="Meeting">Meeting</option>
+                        <option value="Announcement">Announcement</option>
+                        <option value="Reminder">Reminder</option>
+                        <option value="HR Notice">HR Notice</option>
+                        <option value="Event">Event</option>
+                    </select>
+                </div>
+                
+                <!-- Template Preview -->
+                <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <p class="text-xs text-gray-500 mb-2 font-medium uppercase tracking-wider">Template Preview:</p>
+                    <p id="modalPreview" class="text-sm text-gray-700 line-clamp-4">...</p>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end gap-3 rounded-b-2xl">
+                <button type="button" 
+                        onclick="closeSaveModal()" 
+                        class="px-5 py-2.5 text-sm text-gray-600 hover:text-gray-800 font-medium transition-colors">
+                    Cancel
+                </button>
+                <button type="button" 
+                        onclick="saveTemplate()" 
+                        class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-lg text-sm flex items-center gap-2 transition-colors shadow-sm font-medium">
+                    <i class="fas fa-save" aria-hidden="true"></i>
+                    Save Template
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- LOADING OVERLAY -->
+    <!-- ============================================ -->
+    <div id="loadingOverlay" 
+         class="fixed inset-0 bg-black/50 z-[60] hidden items-center justify-center"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Loading">
+        <div class="bg-white rounded-xl shadow-2xl p-6 flex flex-col items-center min-w-[200px]">
+            <div class="animate-spin rounded-full h-12 w-12 border-4 border-primary-200 border-t-primary-600 mb-4" 
+                 role="status"
+                 aria-label="Loading indicator"></div>
+            <p class="text-gray-700 font-medium">Processing...</p>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT SECTION -->
+    <!-- ============================================ -->
+    
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Core Application Logic -->
+    <script src="js/app.js"></script>
+    
+    <!-- API Functions -->
+    <script src="js/api.js"></script>
+    
+    <!-- Database Functions -->
+    <script src="js/database-functions.js"></script>
+    
+    <!-- Utility Functions -->
+    <script src="js/utils.js"></script>
+    
+    <!-- Authentication Logic -->
+    <script src="js/auth.js"></script>
+    
+    <!-- ============================================ -->
+    <!-- INLINE JAVASCRIPT (UI INTERACTIONS) -->
+    <!-- ============================================ -->
+    <script>
+        /**
+         * ============================================
+         * STATE MANAGEMENT
+         * ============================================
+         */
+        
+        let employees = [];
+        let filteredEmployees = [];
+        let templates = [];
+        let selectedEmployees = new Set();
+
+        /**
+         * ============================================
+         * INITIALIZATION
+         * ============================================
+         */
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 Initializing WhatsApp Blast page...');
+            
+            // ✅ Trigger smooth page animation
+            requestAnimationFrame(() => {
+                const mainContent = document.querySelector('.page-content');
+                if (mainContent) {
+                    mainContent.style.opacity = '1';
+                    mainContent.classList.add('animate-fade-in');
+                }
+            });
+            
+            initializeWhatsAppBlast();
+        });
+
+        async function initializeWhatsAppBlast() {
+            try {
+                await loadEmployees();
+                await loadTemplates();
+                updateAllPreviews();
+                console.log('✅ WhatsApp Blast page initialized successfully');
+            } catch (error) {
+                console.error('❌ Error initializing WhatsApp Blast:', error);
+                showToast('Failed to initialize page', 'error');
+            }
+        }
+
+        /**
+         * ============================================
+         * DATA LOADING FUNCTIONS
+         * ============================================
+         */
+        
+        async function loadEmployees() {
+            try {
+                console.log('📥 Loading employees from database...');
+                
+                // ✅ NO showLoading() here - use skeleton instead
+                
+                const result = await fetchActiveEmployees();
+                
+                if (result && result.data) {
+                    employees = Array.isArray(result.data) ? result.data : [];
+                    filteredEmployees = [...employees];
+                    console.log(`✅ Loaded ${employees.length} employees`);
+                } else {
+                    employees = [];
+                    filteredEmployees = [];
+                    console.log('⚠️ No employees data returned');
+                }
+                
+                renderEmployeeTable();
+                updateCounts();
+                
+            } catch (error) {
+                console.error('❌ Error loading employees:', error);
+                employees = [];
+                filteredEmployees = [];
+                showToast('Failed to load employees', 'error');
+            }
+        }
+
+        async function loadTemplates() {
+            try {
+                console.log('📥 Loading templates from database...');
+                
+                // ✅ NO showLoading() here
+                
+                const result = await fetchWhatsAppTemplates();
+                
+                if (result && result.data) {
+                    templates = Array.isArray(result.data) ? result.data : [];
+                    console.log(`✅ Loaded ${templates.length} templates`);
+                } else {
+                    templates = [];
+                    console.log('⚠️ No templates data returned');
+                }
+                
+                renderTemplateDropdown();
+                
+            } catch (error) {
+                console.error('❌ Error loading templates:', error);
+                templates = [];
+                showToast('Failed to load templates', 'error');
+            }
+        }
+
+        /**
+         * ============================================
+         * TEMPLATE FUNCTIONS
+         * ============================================
+         */
+        
+        function renderTemplateDropdown() {
+            console.log('🔄 Rendering template dropdown...');
+            const select = document.getElementById('templateSelect');
+            select.innerHTML = '<option value="">-- Load Template --</option>';
+            
+            templates.forEach(template => {
+                const option = document.createElement('option');
+                option.value = template.id;
+                option.textContent = `${template.template_name} (${template.template_category || 'General'})`;
+                select.appendChild(option);
+            });
+            
+            console.log(`✅ Rendered ${templates.length} template options`);
+        }
+
+        function loadSelectedTemplate() {
+            console.log('📂 Loading selected template...');
+            const select = document.getElementById('templateSelect');
+            const templateId = select.value;
+            
+            if (!templateId) {
+                console.log('⚠️ No template selected');
+                return;
+            }
+            
+            const template = templates.find(t => t.id === templateId);
+            if (template) {
+                document.getElementById('templateText').value = template.message_body || '';
+                updateAllPreviews();
+                showToast(`Loaded: ${template.template_name}`, 'success');
+                console.log('✅ Template loaded:', template.template_name);
+            }
+        }
+
+        function insertVariable(variable) {
+            console.log(`📝 Inserting variable: ${variable}`);
+            const textarea = document.getElementById('templateText');
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const text = textarea.value;
+            
+            textarea.value = text.substring(0, start) + variable + text.substring(end);
+            textarea.selectionStart = textarea.selectionEnd = start + variable.length;
+            textarea.focus();
+            
+            updateAllPreviews();
+            console.log('✅ Variable inserted');
+        }
+
+        /**
+         * ============================================
+         * VARIABLE SUBSTITUTION
+         * ============================================
+         */
+        
+        function getCustomVariables() {
+            return {
+                A: document.getElementById('varA')?.value || '',
+                B: document.getElementById('varB')?.value || '',
+                C: document.getElementById('varC')?.value || '',
+                D: document.getElementById('varD')?.value || ''
+            };
+        }
+
+        function substituteVariables(template, employee, customVars) {
+            let message = template;
+            
+            // Replace employee data variables
+            message = message.replace(/\{nama\}/gi, employee.full_name || '');
+            message = message.replace(/\{telepon\}/gi, employee.phone || '');
+            message = message.replace(/\{email\}/gi, employee.email || '');
+            message = message.replace(/\{employee_code\}/gi, employee.employee_code || '');
+            
+            // Replace custom variables
+            message = message.replace(/\{A\}/gi, customVars.A || '');
+            message = message.replace(/\{B\}/gi, customVars.B || '');
+            message = message.replace(/\{C\}/gi, customVars.C || '');
+            message = message.replace(/\{D\}/gi, customVars.D || '');
+            
+            return message;
+        }
+
+        /**
+         * ============================================
+         * PHONE FORMATTING & WHATSAPP LINK
+         * ============================================
+         */
+        
+        function formatPhone(phone) {
+            if (!phone) return '';
+            
+            let cleaned = phone.replace(/\D/g, '');
+            
+            if (cleaned.startsWith('0')) {
+                cleaned = '62' + cleaned.substring(1);
+            }
+            
+            if (!cleaned.startsWith('62')) {
+                cleaned = '62' + cleaned;
+            }
+            
+            return cleaned;
+        }
+
+        function generateWALink(phone, message) {
+            const formattedPhone = formatPhone(phone);
+            const encodedMessage = encodeURIComponent(message);
+            return `https://web.whatsapp.com/send?phone=${formattedPhone}&text=${encodedMessage}`;
+        }
+
+        /**
+         * ============================================
+         * PREVIEW UPDATES
+         * ============================================
+         */
+        
+        function updatePreview() {
+            const template = document.getElementById('templateText')?.value || '';
+            const customVars = getCustomVariables();
+            
+            const sampleEmployee = employees[0] || {
+                full_name: 'John Doe',
+                phone: '081234567890',
+                email: 'john@company.com',
+                employee_code: 'EMP001'
+            };
+            
+            const preview = substituteVariables(template, sampleEmployee, customVars);
+            const previewEl = document.getElementById('previewText');
+            if (previewEl) {
+                previewEl.textContent = preview || 'Preview will appear here...';
+            }
+        }
+
+        function updateAllPreviews() {
+            console.log('🔄 Updating all previews...');
+            updatePreview();
+            renderEmployeeTable();
+        }
+
+        /**
+         * ============================================
+         * EMPLOYEE TABLE RENDERING
+         * ============================================
+         */
+        
+        function renderEmployeeTable() {
+            console.log('🔄 Rendering employee table...');
+            const tbody = document.getElementById('employeeTableBody');
+            if (!tbody) return;
+            
+            const template = document.getElementById('templateText')?.value || '';
+            const customVars = getCustomVariables();
+            
+            tbody.innerHTML = '';
+            
+            if (filteredEmployees.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="px-4 py-12 text-center text-gray-500">
+                            <i class="fas fa-inbox text-4xl mb-3 text-gray-300" aria-hidden="true"></i>
+                            <p class="text-sm font-medium">No employees found</p>
+                            <p class="text-xs text-gray-400 mt-1">Try adjusting your search</p>
+                        </td>
+                    </tr>
+                `;
+                console.log('⚠️ No employees to display');
+                return;
+            }
+            
+            filteredEmployees.forEach(employee => {
+                const message = substituteVariables(template, employee, customVars);
+                const waLink = generateWALink(employee.phone, message);
+                const isSelected = selectedEmployees.has(employee.id);
+                const truncatedMessage = message.length > 60 ? message.substring(0, 60) + '...' : message;
+                
+                const row = document.createElement('tr');
+                row.className = 'table-row transition-colors hover:bg-gray-50';
+                row.innerHTML = `
+                    <td class="px-4 py-3">
+                        <input 
+                            type="checkbox" 
+                            ${isSelected ? 'checked' : ''} 
+                            onchange="toggleEmployee('${employee.id}')"
+                            aria-label="Select ${escapeHtml(employee.full_name)}"
+                            class="rounded border-gray-300 text-primary-600 focus:ring-primary-500 cursor-pointer"
+                        >
+                    </td>
+                    <td class="px-4 py-3">
+                        <span class="text-sm font-mono text-gray-600 bg-gray-50 px-2 py-1 rounded">${escapeHtml(employee.employee_code)}</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <div>
+                            <p class="text-sm font-medium text-gray-800">${escapeHtml(employee.full_name)}</p>
+                            <p class="text-xs text-gray-500">${escapeHtml(employee.email)}</p>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3">
+                        <span class="text-sm text-gray-600">${escapeHtml(employee.phone)}</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <p class="text-xs text-gray-600 max-w-xs truncate" title="${escapeHtml(message)}">${escapeHtml(truncatedMessage)}</p>
+                    </td>
+                    <td class="px-4 py-3 text-center">
+                        <a 
+                            href="${waLink}" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center w-9 h-9 bg-green-500 hover:bg-green-600 rounded-full transition-all shadow-sm hover:shadow-md"
+                            title="Send WhatsApp to ${escapeHtml(employee.full_name)}"
+                            aria-label="Send WhatsApp to ${escapeHtml(employee.full_name)}"
+                        >
+                            <i class="fab fa-whatsapp text-lg text-white" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+            
+            updateCounts();
+            console.log(`✅ Rendered ${filteredEmployees.length} employee rows`);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        /**
+         * Update employee count display (alias for updateCounts)
+         */
+        function updateEmployeeCount() {
+            updateCounts();
+        }
+
+        /**
+         * ============================================
+         * SEARCH & FILTER
+         * ============================================
+         */
+        
+        function filterEmployees() {
+            const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
+            console.log(`🔍 Filtering employees with term: "${searchTerm}"`);
+            
+            filteredEmployees = employees.filter(employee => {
+                return employee.full_name.toLowerCase().includes(searchTerm) ||
+                    employee.employee_code.toLowerCase().includes(searchTerm) ||
+                    employee.email.toLowerCase().includes(searchTerm) ||
+                    employee.phone.includes(searchTerm);
+            });
+            
+            console.log(`✅ Filtered to ${filteredEmployees.length} employees`);
+            renderEmployeeTable();
+        }
+
+        /**
+         * ============================================
+         * SELECTION HANDLING
+         * ============================================
+         */
+        
+        function toggleEmployee(employeeId) {
+            if (selectedEmployees.has(employeeId)) {
+                selectedEmployees.delete(employeeId);
+                console.log(`➖ Deselected employee: ${employeeId}`);
+            } else {
+                selectedEmployees.add(employeeId);
+                console.log(`➕ Selected employee: ${employeeId}`);
+            }
+            updateSelectionUI();
+        }
+
+        function handleSelectAll() {
+            const checkbox = document.getElementById('selectAllCheckbox');
+            if (!checkbox) return;
+            
+            console.log(`🔄 Select all: ${checkbox.checked}`);
+            
+            if (checkbox.checked) {
+                filteredEmployees.forEach(emp => selectedEmployees.add(emp.id));
+            } else {
+                filteredEmployees.forEach(emp => selectedEmployees.delete(emp.id));
+            }
+            
+            renderEmployeeTable();
+            updateSelectionUI();
+        }
+
+        function toggleSelectAll() {
+            const checkbox = document.getElementById('selectAllCheckbox');
+            if (checkbox) {
+                checkbox.checked = !checkbox.checked;
+                handleSelectAll();
+            }
+        }
+
+        function updateSelectionUI() {
+            const selectedCountEl = document.getElementById('selectedCount');
+            if (selectedCountEl) {
+                selectedCountEl.textContent = `${selectedEmployees.size} selected`;
+            }
+            
+            const allSelected = filteredEmployees.length > 0 && 
+                                filteredEmployees.every(emp => selectedEmployees.has(emp.id));
+            const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+            if (selectAllCheckbox) {
+                selectAllCheckbox.checked = allSelected;
+            }
+        }
+
+        function updateCounts() {
+            const employeeCountEl = document.getElementById('employeeCount');
+            const showingCountEl = document.getElementById('showingCount');
+            const totalCountEl = document.getElementById('totalCount');
+            
+            if (employeeCountEl) {
+                employeeCountEl.textContent = `(${employees.length} employees)`;
+            }
+            if (showingCountEl) {
+                showingCountEl.textContent = filteredEmployees.length;
+            }
+            if (totalCountEl) {
+                totalCountEl.textContent = employees.length;
+            }
+            
+            updateSelectionUI();
+        }
+
+        /**
+         * ============================================
+         * BATCH ACTIONS
+         * ============================================
+         */
+        
+        function sendToSelected() {
+            console.log('📤 Sending to selected employees...');
+            if (selectedEmployees.size === 0) {
+                console.warn('⚠️ No employees selected');
+                showToast('Please select at least one employee', 'error');
+                return;
+            }
+            
+            const template = document.getElementById('templateText')?.value || '';
+            const customVars = getCustomVariables();
+            
+            let delay = 0;
+            let successCount = 0;
+            
+            selectedEmployees.forEach(employeeId => {
+                const employee = employees.find(e => e.id === employeeId);
+                if (employee) {
+                    const message = substituteVariables(template, employee, customVars);
+                    const waLink = generateWALink(employee.phone, message);
+                    
+                    setTimeout(() => {
+                        window.open(waLink, '_blank');
+                        console.log(`✅ Opened WhatsApp for: ${employee.full_name}`);
+                    }, delay);
+                    delay += 1000; // 1 second delay between each
+                    successCount++;
+                }
+            });
+            
+            showToast(`Opening ${successCount} WhatsApp chats...`, 'success');
+            console.log(`✅ Opened ${successCount} WhatsApp chats`);
+        }
+
+        function copyAllMessages() {
+            console.log('📋 Copying all messages to clipboard...');
+            const template = document.getElementById('templateText')?.value || '';
+            const customVars = getCustomVariables();
+            
+            if (filteredEmployees.length === 0) {
+                showToast('No employees to copy messages for', 'error');
+                return;
+            }
+            
+            const messages = filteredEmployees.map(employee => {
+                const message = substituteVariables(template, employee, customVars);
+                return `[${employee.full_name} - ${employee.phone}]\n${message}`;
+            }).join('\n\n' + '='.repeat(50) + '\n\n');
+            
+            navigator.clipboard.writeText(messages).then(() => {
+                showToast(`Copied ${filteredEmployees.length} messages to clipboard!`, 'success');
+                console.log('✅ All messages copied to clipboard');
+            }).catch((error) => {
+                console.error('❌ Failed to copy messages:', error);
+                showToast('Failed to copy messages', 'error');
+            });
+        }
+
+        /**
+         * ============================================
+         * MODAL FUNCTIONS
+         * ============================================
+         */
+        
+        function openSaveModal() {
+            console.log('📂 Opening save template modal...');
+            const template = document.getElementById('templateText')?.value || '';
+            const modalPreview = document.getElementById('modalPreview');
+            const templateNameInput = document.getElementById('templateName');
+            const modal = document.getElementById('saveModal');
+            
+            if (modalPreview) {
+                modalPreview.textContent = template.substring(0, 150) + (template.length > 150 ? '...' : '');
+            }
+            if (templateNameInput) {
+                templateNameInput.value = '';
+            }
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeSaveModal() {
+            console.log('🔒 Closing save template modal...');
+            const modal = document.getElementById('saveModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // Close modal on backdrop click
+        document.getElementById('saveModal')?.addEventListener('click', (e) => {
+            if (e.target === document.getElementById('saveModal')) {
+                closeSaveModal();
+            }
+        });
+
+        async function saveTemplate() {
+            console.log('💾 Saving template...');
+            const name = document.getElementById('templateName')?.value.trim();
+            const category = document.getElementById('templateCategory')?.value || 'General';
+            const messageBody = document.getElementById('templateText')?.value.trim();
+            
+            if (!name) {
+                console.warn('⚠️ Template name is required');
+                showToast('Please enter a template name', 'error');
+                return;
+            }
+            
+            if (!messageBody) {
+                console.warn('⚠️ Template message is empty');
+                showToast('Template message cannot be empty', 'error');
+                return;
+            }
+            
+            // Extract variables from template
+            const variablePattern = /\{[^}]+\}/g;
+            const availableVariables = messageBody.match(variablePattern) || [];
+            
+            try {
+                showLoading();
+                
+                // This function should be implemented in database-functions.js
+                if (typeof saveWhatsAppTemplate === 'function') {
+                    const newTemplate = await saveWhatsAppTemplate({
+                        template_name: name,
+                        template_category: category,
+                        message_body: messageBody,
+                        available_variables: [...new Set(availableVariables)],
+                        is_active: true
+                    });
+                    
+                    templates.push(newTemplate);
+                    renderTemplateDropdown();
+                    
+                    // Select the newly saved template
+                    const templateSelect = document.getElementById('templateSelect');
+                    if (templateSelect) {
+                        templateSelect.value = newTemplate.id;
+                    }
+                } else {
+                    console.warn('⚠️ saveWhatsAppTemplate not found');
+                    showToast('Save function not available', 'error');
+                }
+                
+                closeSaveModal();
+                hideLoading();
+                showToast('Template saved successfully!', 'success');
+                console.log('✅ Template saved');
+            } catch (error) {
+                console.error('❌ Error saving template:', error);
+                hideLoading();
+                showToast('Failed to save template', 'error');
+            }
+        }
+
+        /**
+         * ============================================
+         * TOAST NOTIFICATIONS
+         * ============================================
+         */
+        
+        function showToast(message, type = 'success') {
+            console.log(`📢 Toast: [${type}] ${message}`);
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            
+            const colors = {
+                success: 'bg-green-500',
+                error: 'bg-red-500',
+                warning: 'bg-yellow-500',
+                info: 'bg-blue-500'
+            };
+            
+            const icons = {
+                success: 'fa-check-circle',
+                error: 'fa-exclamation-circle',
+                warning: 'fa-exclamation-triangle',
+                info: 'fa-info-circle'
+            };
+            
+            const toast = document.createElement('div');
+            toast.className = `toast flex items-center p-4 rounded-lg shadow-lg text-white ${colors[type] || colors.info} min-w-[300px] animate-slide-in`;
+            toast.setAttribute('role', 'alert');
+            toast.innerHTML = `
+                <i class="fas ${icons[type] || icons.info} mr-3 text-lg" aria-hidden="true"></i>
+                <span class="flex-1">${message}</span>
+                <button onclick="this.parentElement.remove()" 
+                        class="ml-3 hover:opacity-75 transition-opacity"
+                        aria-label="Close notification">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            `;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.remove();
+                }
+            }, 5000);
+        }
+
+        /**
+         * ============================================
+         * UI HELPER FUNCTIONS
+         * ============================================
+         */
+        
+        function showLoading() {
+            console.log('⏳ Showing loading overlay...');
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) {
+                overlay.classList.remove('hidden');
+                overlay.classList.add('flex');
+            }
+        }
+
+        function hideLoading() {
+            console.log('✅ Hiding loading overlay...');
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+            }
+        }
+
+        function toggleSidebar() {
+            console.log('🔄 Toggling sidebar...');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const toggleBtn = document.getElementById('sidebarToggle');
+            
+            if (!sidebar || !overlay) {
+                console.error('❌ Sidebar elements not found');
+                return;
+            }
+            
+            const isHidden = sidebar.classList.contains('-translate-x-full');
+            
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+            
+            if (toggleBtn) {
+                toggleBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+            }
+            
+            console.log(`✅ Sidebar ${isHidden ? 'opened' : 'closed'}`);
+        }
+
+        function toggleUserDropdown() {
+            console.log('🔄 Toggling user dropdown...');
+            const dropdown = document.getElementById('userDropdown');
+            const menuBtn = document.getElementById('userMenuBtn');
+            
+            if (!dropdown || !menuBtn) {
+                console.error('❌ User dropdown elements not found');
+                return;
+            }
+            
+            const isHidden = dropdown.classList.contains('hidden');
+            dropdown.classList.toggle('hidden');
+            
+            menuBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+            console.log(`✅ User dropdown ${isHidden ? 'opened' : 'closed'}`);
+        }
+
+        /**
+         * Close dropdown when clicking outside
+         */
+        document.addEventListener('click', function(event) {
+            const menuBtn = document.getElementById('userMenuBtn');
+            const dropdown = document.getElementById('userDropdown');
+            
+            if (menuBtn && dropdown) {
+                if (!menuBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                    if (!dropdown.classList.contains('hidden')) {
+                        dropdown.classList.add('hidden');
+                        menuBtn.setAttribute('aria-expanded', 'false');
+                        console.log('✅ User dropdown closed by clicking outside');
+                    }
+                }
+            }
+        });
+
+        /**
+         * ============================================
+         * KEYBOARD SHORTCUTS
+         * ============================================
+         */
+        
+        document.addEventListener('keydown', (e) => {
+            // Escape to close modal
+            if (e.key === 'Escape') {
+                closeSaveModal();
+            }
+            
+            // Ctrl+S to save template
+            if (e.ctrlKey && e.key === 's') {
+                e.preventDefault();
+                openSaveModal();
+                console.log('⌨️ Keyboard shortcut: Ctrl+S triggered');
+            }
+            
+            // Ctrl+Enter to send to selected
+            if (e.ctrlKey && e.key === 'Enter') {
+                e.preventDefault();
+                sendToSelected();
+                console.log('⌨️ Keyboard shortcut: Ctrl+Enter triggered');
+            }
+        });
+
+        /**
+         * ============================================
+         * CUSTOM STYLES FOR ANIMATIONS
+         * ============================================
+         */
+        
+        // Add animation styles dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slide-in {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            .animate-slide-in {
+                animation: slide-in 0.3s ease-out;
+            }
+            
+            .line-clamp-3 {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            
+            .line-clamp-4 {
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(style);
+
+        /**
+         * ============================================
+         * ERROR HANDLING & LOGGING
+         * ============================================
+         */
+        
+        window.addEventListener('error', function(event) {
+            console.error('❌ Global error caught:', event.error);
+        });
+
+        window.addEventListener('unhandledrejection', function(event) {
+            console.error('❌ Unhandled promise rejection:', event.reason);
+        });
+
+        console.log('✅ WhatsApp Blast JavaScript loaded successfully');
+    </script>
+
+</body>
+</html>

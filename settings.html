@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<!-- ================================================ -->
+<!-- HEAD SECTION -->
+<!-- ================================================ -->
+<head>
+    <!-- ============================================ -->
+    <!-- META TAGS -->
+    <!-- ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carabao Billiards HR Portal — System Settings. Manage account preferences, company information, and security configurations.">
+    <meta name="keywords" content="Settings, System Configuration, Account Settings, Company Settings, HR Portal, Carabao Billiards">
+    <meta name="author" content="Carabao Billiards Indonesia - HRD Internship Project">
+    <meta name="theme-color" content="#2563eb">
+    
+    <title>Carabao Billiards HR Portal — Settings</title>
+    
+    <!-- ============================================ -->
+    <!-- EXTERNAL STYLESHEETS & SCRIPTS -->
+    <!-- ============================================ -->
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ✅ ADD THIS LINE -->
+    <link rel="stylesheet" href="css/tailwind.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- ✅ PAGE ANIMATION STYLES -->
+<style>
+    /* Page Fade-in Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Staggered Animation */
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+    }
+    
+    /* Initial Hidden State */
+    .page-content {
+        opacity: 0;
+    }
+    
+    /* Delay for staggered effect */
+    .animate-delay-100 { animation-delay: 0.1s; }
+    .animate-delay-200 { animation-delay: 0.2s; }
+    .animate-delay-300 { animation-delay: 0.3s; }
+    
+    /* Smooth transitions */
+    * {
+        transition-duration: 0.15s;
+        transition-timing-function: ease-out;
+    }
+</style>
+</head>
+
+<!-- ================================================ -->
+<!-- BODY SECTION -->
+<!-- ================================================ -->
+<body class="bg-gray-50 font-['Inter'] antialiased">
+
+    <!-- ============================================ -->
+    <!-- SIDEBAR NAVIGATION -->
+    <!-- ============================================ -->
+    <aside id="sidebar" 
+           class="fixed top-0 left-0 z-40 w-64 h-screen bg-white shadow-lg transform transition-transform duration-300 lg:translate-x-0 -translate-x-full"
+           role="navigation"
+           aria-label="Main navigation">
+        
+        <!-- Logo Section -->
+        <div class="flex items-center justify-center h-16 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
+                    <i class="fas fa-building text-white text-lg" aria-hidden="true"></i>
+                </div>
+                <span class="text-xl font-bold text-white">Carabao HR Portal</span>
+            </div>
+        </div>
+        
+        <!-- Navigation Links -->
+        <nav class="mt-6 px-4 pb-20 overflow-y-auto h-[calc(100vh-140px)]" aria-label="Primary">
+            <div class="space-y-1">
+                <!-- Dashboard Link -->
+                <a href="dashboard.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to Dashboard">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-home text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                
+                <!-- Employees Link -->
+                <a href="employees.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to Employees">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-users text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Employees</span>
+                </a>
+                
+                <!-- Attendance Link -->
+                <a href="attendance.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to Attendance">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-clock text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Attendance</span>
+                </a>
+                
+                <!-- Leave Link -->
+                <a href="leave.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to Leave Management">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-calendar-alt text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Leave</span>
+                </a>
+
+                <!-- Recruitment Link -->
+                <a href="recruitment.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to Recruitment">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-user-plus text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Recruitment</span>
+                </a>
+                
+                <!-- WhatsApp Blast Link -->
+                <a href="whatsapp-blast.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors"
+                   aria-label="Go to WhatsApp Blast">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fab fa-whatsapp text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">WhatsApp Blast</span>
+                </a>
+
+                <!-- Settings Link (Active) -->
+                <a href="settings.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-white bg-primary-600 rounded-lg shadow-md"
+                   aria-current="page"
+                   aria-label="Settings (current page)">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-white/20 mr-3">
+                        <i class="fas fa-cog text-white" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Settings</span>
+                </a>
+            </div>
+        </nav>
+        
+        <!-- Sidebar Footer - Support -->
+        <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 bg-white">
+            <div class="flex items-center space-x-3 px-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold text-sm shadow-sm">
+                    <i class="fas fa-headset" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-gray-700">Need Help?</p>
+                    <p class="text-xs text-gray-500">Contact Support</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div id="sidebarOverlay" 
+         class="fixed inset-0 bg-black/50 z-30 lg:hidden hidden" 
+         onclick="toggleSidebar()"
+         aria-hidden="true"></div>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT WRAPPER -->
+    <!-- ============================================ -->
+    <div class="lg:ml-64 flex flex-col min-h-screen">
+        
+        <!-- ============================================ -->
+        <!-- TOP HEADER -->
+        <!-- ============================================ -->
+        <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-20">
+            <div class="flex items-center justify-between px-4 sm:px-6 py-4">
+                
+                <!-- Left: Mobile Menu Button & Page Title -->
+                <div class="flex items-center space-x-4">
+                    <button id="sidebarToggle" 
+                            onclick="toggleSidebar()" 
+                            class="lg:hidden text-gray-600 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg transition-colors"
+                            aria-label="Toggle sidebar"
+                            aria-expanded="false"
+                            aria-controls="sidebar">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                    </button>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-bold text-gray-800">Settings</h1>
+                        <p class="text-sm text-gray-500 hidden sm:block">
+                            Manage your preferences and configurations
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right: Notifications & User Menu -->
+                <div class="flex items-center space-x-3 sm:space-x-4">
+                    <!-- Notification Bell -->
+                    <button class="relative text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 rounded-lg transition-colors"
+                            aria-label="Notifications">
+                        <i class="fas fa-bell text-lg" aria-hidden="true"></i>
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full" 
+                              aria-label="You have new notifications"></span>
+                    </button>
+                    
+                    <!-- User Info & Dropdown -->
+                    <div class="relative">
+                        <button id="userMenuBtn" 
+                                onclick="toggleUserDropdown()" 
+                                class="flex items-center space-x-3 focus:outline-none hover:bg-gray-50 rounded-lg p-2 transition-colors"
+                                aria-label="User menu"
+                                aria-expanded="false"
+                                aria-haspopup="true">
+                            <div class="text-right hidden sm:block">
+                                <p id="userName" class="text-sm font-medium text-gray-700">Loading...</p>
+                                <p id="userRole" class="text-xs text-gray-500">Loading...</p>
+                            </div>
+                            <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold shadow-md">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-400 text-xs hidden sm:block" aria-hidden="true"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div id="userDropdown" 
+                             class="hidden absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50"
+                             role="menu"
+                             aria-label="User menu">
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <p class="text-sm font-medium text-gray-900" id="dropdownUserName">User Name</p>
+                                <p class="text-xs text-gray-500" id="dropdownUserEmail">user@example.com</p>
+                            </div>
+                            <a href="settings.html" 
+                               class="flex items-center px-4 py-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
+                               role="menuitem">
+                                <i class="fas fa-cog w-5 mr-3 text-gray-400" aria-hidden="true"></i>
+                                System Settings
+                            </a>
+                            <hr class="my-2 border-gray-100" aria-hidden="true">
+                            <button onclick="logout()" 
+                                    class="flex items-center w-full px-4 py-2.5 text-red-600 hover:bg-red-50 transition-colors"
+                                    role="menuitem">
+                                <i class="fas fa-sign-out-alt w-5 mr-3" aria-hidden="true"></i>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================ -->
+        <!-- MAIN CONTENT AREA -->
+        <!-- ============================================ -->
+        <main class="flex-1 p-4 sm:p-6 lg:p-8 page-content" role="main">
+
+
+            <!-- ============================================ -->
+            <!-- PAGE HEADER -->
+            <!-- ============================================ -->
+            <div class="mb-6 animate-fade-in">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 flex items-center gap-2">
+                    <div class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary-50">
+                        <i class="fas fa-cog text-primary-600 text-xl" aria-hidden="true"></i>
+                    </div>
+                    System Settings
+                </h2>
+                <p class="text-gray-600">Manage your account preferences, system configuration, and security settings</p>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- TAB NAVIGATION -->
+            <!-- ============================================ -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-2 mb-6 animate-fade-in animate-delay-100">
+                <div class="flex flex-wrap gap-2" role="tablist" aria-label="Settings tabs">
+                    <!-- Account Tab -->
+                    <button type="button"
+                            id="tab-account"
+                            onclick="switchSettingsTab('account')" 
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="content-account"
+                            class="settings-tab flex items-center px-4 py-2.5 text-primary-600 border-b-2 border-primary-600 font-semibold transition-colors rounded-t-lg">
+                        <i class="fas fa-user-circle mr-2" aria-hidden="true"></i>
+                        <span>Account</span>
+                    </button>
+                    
+                    <!-- Company Tab -->
+                    <button type="button"
+                            id="tab-company"
+                            onclick="switchSettingsTab('company')" 
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="content-company"
+                            class="settings-tab flex items-center px-4 py-2.5 text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:bg-gray-50 transition-colors rounded-t-lg">
+                        <i class="fas fa-building mr-2" aria-hidden="true"></i>
+                        <span>Company</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- TAB CONTENT: ACCOUNT -->
+            <!-- ============================================ -->
+            <div id="content-account" 
+                 class="tab-content animate-fade-in animate-delay-200"
+                 role="tabpanel"
+                 aria-labelledby="tab-account">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Change Password Card -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-6 flex items-center gap-2">
+                            <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-50">
+                                <i class="fas fa-key text-primary-600" aria-hidden="true"></i>
+                            </div>
+                            Change Password
+                        </h3>
+                        
+                        <form id="password-form" 
+                              class="space-y-4"
+                              aria-label="Change password form">
+                            
+                            <!-- Current Password Field -->
+                            <div>
+                                <label for="current_password" 
+                                       class="block text-sm font-medium text-gray-700 mb-2">
+                                    Current Password <span class="text-red-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <input type="password" 
+                                           id="current_password" 
+                                           name="current_password"
+                                           required
+                                           aria-required="true"
+                                           placeholder="Enter current password"
+                                           class="w-full px-4 py-2.5 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                    <button type="button" 
+                                            onclick="togglePassword('current_password')" 
+                                            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                                            aria-label="Toggle password visibility">
+                                        <i class="fas fa-eye" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- New Password Field -->
+                            <div>
+                                <label for="new_password" 
+                                       class="block text-sm font-medium text-gray-700 mb-2">
+                                    New Password <span class="text-red-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <input type="password" 
+                                           id="new_password" 
+                                           name="new_password"
+                                           required
+                                           aria-required="true"
+                                           aria-describedby="password-requirements"
+                                           placeholder="Enter new password"
+                                           class="w-full px-4 py-2.5 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                    <button type="button" 
+                                            onclick="togglePassword('new_password')" 
+                                            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                                            aria-label="Toggle password visibility">
+                                        <i class="fas fa-eye" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <p id="password-requirements" 
+                                   class="text-xs text-gray-500 mt-1.5 flex items-start gap-1.5">
+                                    <i class="fas fa-info-circle mt-0.5" aria-hidden="true"></i>
+                                    <span>Must be at least 8 characters with uppercase, lowercase, and numbers</span>
+                                </p>
+                            </div>
+                            
+                            <!-- Confirm Password Field -->
+                            <div>
+                                <label for="confirm_password" 
+                                       class="block text-sm font-medium text-gray-700 mb-2">
+                                    Confirm New Password <span class="text-red-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <input type="password" 
+                                           id="confirm_password" 
+                                           name="confirm_password"
+                                           required
+                                           aria-required="true"
+                                           placeholder="Re-enter new password"
+                                           class="w-full px-4 py-2.5 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                    <button type="button" 
+                                            onclick="togglePassword('confirm_password')" 
+                                            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                                            aria-label="Toggle password visibility">
+                                        <i class="fas fa-eye" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <button type="submit" 
+                                    class="w-full px-6 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium shadow-sm">
+                                <i class="fas fa-save mr-2" aria-hidden="true"></i>
+                                Update Password
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Account Security Info Card -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                            <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-blue-500">
+                                <i class="fas fa-shield-alt text-white" aria-hidden="true"></i>
+                            </div>
+                            Security Tips
+                        </h3>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i>
+                                <span>Use a strong, unique password for your account</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i>
+                                <span>Change your password regularly (every 90 days recommended)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i>
+                                <span>Never share your password with anyone</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i>
+                                <span>Log out from shared devices after use</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-0.5" aria-hidden="true"></i>
+                                <span>Contact support immediately if you suspect unauthorized access</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-6 p-4 bg-white rounded-lg border border-blue-200">
+                            <p class="text-xs text-gray-600 flex items-start gap-2">
+                                <i class="fas fa-info-circle text-blue-500 mt-0.5" aria-hidden="true"></i>
+                                <span>Last password change: <strong class="text-gray-800">Never changed</strong></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- TAB CONTENT: COMPANY -->
+            <!-- ============================================ -->
+            <div id="content-company" 
+                 class="tab-content hidden animate-fade-in animate-delay-200"
+                 role="tabpanel"
+                 aria-labelledby="tab-company">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <!-- ========================================== -->
+                    <!-- Company Logo Section -->
+                    <!-- ========================================== -->
+                    <div class="lg:col-span-1">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                                <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-50">
+                                    <i class="fas fa-image text-primary-600" aria-hidden="true"></i>
+                                </div>
+                                Company Logo
+                            </h3>
+                            
+                            <div class="flex flex-col items-center">
+                                <!-- Logo Preview -->
+                                <div class="relative mb-4">
+                                    <div id="logo-preview" 
+                                         class="w-32 h-32 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl flex items-center justify-center shadow-lg"
+                                         role="img"
+                                         aria-label="Company logo preview">
+                                        <i class="fas fa-building text-white text-4xl" aria-hidden="true"></i>
+                                    </div>
+                                    <label for="logo-upload-input" 
+                                           class="absolute bottom-0 right-0 w-10 h-10 bg-primary-600 text-white rounded-full hover:bg-primary-700 transition-colors shadow-lg flex items-center justify-center cursor-pointer"
+                                           aria-label="Change logo">
+                                        <i class="fas fa-camera" aria-hidden="true"></i>
+                                    </label>
+                                </div>
+                                
+                                <!-- Hidden File Input -->
+                                <input type="file" 
+                                       id="logo-upload-input" 
+                                       accept="image/png, image/jpeg, image/svg+xml" 
+                                       class="hidden"
+                                       onchange="previewLogo(event)"
+                                       aria-label="Upload company logo">
+                                <input type="hidden" id="company_logo_url" value="">
+                                
+                                <!-- Action Buttons -->
+                                <div class="w-full space-y-2">
+                                    <button type="button" 
+                                            id="btn-upload-logo" 
+                                            onclick="uploadCompanyLogo()"
+                                            class="w-full px-4 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium shadow-sm">
+                                        <i class="fas fa-upload mr-2" aria-hidden="true"></i>
+                                        Upload Logo
+                                    </button>
+                                    <button type="button" 
+                                            id="btn-remove-logo" 
+                                            onclick="removeCompanyLogo()"
+                                            class="w-full px-4 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+                                        <i class="fas fa-trash-alt mr-2" aria-hidden="true"></i>
+                                        Remove Logo
+                                    </button>
+                                </div>
+                                
+                                <!-- Requirements Text -->
+                                <p class="text-xs text-gray-500 mt-4 text-center">
+                                    <i class="fas fa-info-circle mr-1" aria-hidden="true"></i>
+                                    Allowed: PNG, JPG, SVG. Max size: 2MB. Recommended: 512x512px
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ========================================== -->
+                    <!-- Company Information Section -->
+                    <!-- ========================================== -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-6 flex items-center gap-2">
+                                <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-50">
+                                    <i class="fas fa-building text-primary-600" aria-hidden="true"></i>
+                                </div>
+                                Company Information
+                            </h3>
+                            
+                            <form id="company-form" 
+                                  class="space-y-4"
+                                  aria-label="Company information form">
+                                
+                                <!-- Company Name Field -->
+                                <div>
+                                    <label for="company_name" 
+                                           class="block text-sm font-medium text-gray-700 mb-2">
+                                        Company Name <span class="text-red-500">*</span>
+                                    </label>
+                                    <input type="text" 
+                                           id="company_name" 
+                                           name="company_name"
+                                           required
+                                           aria-required="true"
+                                           placeholder="e.g., PT. Carabao Billiards Indonesia" 
+                                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                </div>
+                                
+                                <!-- Industry & Size Fields -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <!-- Industry Field -->
+                                    <div>
+                                        <label for="company_industry" 
+                                               class="block text-sm font-medium text-gray-700 mb-2">
+                                            Industry
+                                        </label>
+                                        <select id="company_industry" 
+                                                name="company_industry" 
+                                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 bg-white transition-all">
+                                            <option value="">Select Industry</option>
+                                            <option value="Technology">Technology</option>
+                                            <option value="Finance">Finance</option>
+                                            <option value="Healthcare">Healthcare</option>
+                                            <option value="Retail">Retail</option>
+                                            <option value="Manufacturing">Manufacturing</option>
+                                            <option value="Sports & Recreation">Sports & Recreation</option>
+                                            <option value="Hospitality">Hospitality</option>
+                                            <option value="Education">Education</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Company Size Field -->
+                                    <div>
+                                        <label for="company_size" 
+                                               class="block text-sm font-medium text-gray-700 mb-2">
+                                            Company Size
+                                        </label>
+                                        <select id="company_size" 
+                                                name="company_size" 
+                                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 bg-white transition-all">
+                                            <option value="">Select Size</option>
+                                            <option value="1-10">1-10 employees</option>
+                                            <option value="11-50">11-50 employees</option>
+                                            <option value="51-200">51-200 employees</option>
+                                            <option value="201-500">201-500 employees</option>
+                                            <option value="500+">500+ employees</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <!-- Address Field -->
+                                <div>
+                                    <label for="company_address" 
+                                           class="block text-sm font-medium text-gray-700 mb-2">
+                                        Address
+                                    </label>
+                                    <textarea id="company_address" 
+                                              name="company_address" 
+                                              rows="3" 
+                                              placeholder="Enter complete company address" 
+                                              class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all resize-none"></textarea>
+                                </div>
+                                
+                                <!-- Phone & Email Fields -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <!-- Phone Number Field -->
+                                    <div>
+                                        <label for="company_phone" 
+                                               class="block text-sm font-medium text-gray-700 mb-2">
+                                            Phone Number
+                                        </label>
+                                        <input type="tel" 
+                                               id="company_phone" 
+                                               name="company_phone" 
+                                               placeholder="+62 21 1234 5678" 
+                                               class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                    </div>
+                                    
+                                    <!-- Email Field -->
+                                    <div>
+                                        <label for="company_email" 
+                                               class="block text-sm font-medium text-gray-700 mb-2">
+                                            Email
+                                        </label>
+                                        <input type="email" 
+                                               id="company_email" 
+                                               name="company_email" 
+                                               placeholder="contact@company.com" 
+                                               class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                    </div>
+                                </div>
+                                
+                                <!-- Website Field -->
+                                <div>
+                                    <label for="company_website" 
+                                           class="block text-sm font-medium text-gray-700 mb-2">
+                                        Website
+                                    </label>
+                                    <input type="url" 
+                                           id="company_website" 
+                                           name="company_website" 
+                                           placeholder="https://www.company.com" 
+                                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all">
+                                </div>
+                                
+                                <!-- Form Action Buttons -->
+                                <div class="flex flex-col sm:flex-row justify-end gap-3 pt-4">
+                                    <button type="button" 
+                                            onclick="resetCompanyForm()"
+                                            class="px-6 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium order-2 sm:order-1">
+                                        <i class="fas fa-times mr-2" aria-hidden="true"></i>
+                                        Cancel
+                                    </button>
+                                    <button type="submit" 
+                                            class="px-6 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium shadow-sm order-1 sm:order-2">
+                                        <i class="fas fa-save mr-2" aria-hidden="true"></i>
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- ========================================== -->
+        <!-- FOOTER -->
+        <!-- ========================================== -->
+        <footer class="bg-white border-t border-gray-200 px-6 py-3 mt-auto flex-shrink-0">
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+                <p>© 2026 Carabao Billiards Indonesia. All rights reserved.
+                    Developed internally by HRD Internship Project.</p>
+                <p class="mt-2 sm:mt-0">Version 1.0.0 | Powered by Supabase</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <!-- ============================================ -->
+    <div id="toastContainer" 
+         class="fixed bottom-4 right-4 z-[100] space-y-2"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true">
+        <!-- Toast notifications will be dynamically injected here by JavaScript -->
+    </div>
+
+    <!-- ============================================ -->
+    <!-- LOADING OVERLAY -->
+    <!-- ============================================ -->
+    <div id="loadingOverlay" 
+         class="fixed inset-0 bg-black/50 z-[60] hidden items-center justify-center"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Loading">
+        <div class="bg-white rounded-xl shadow-2xl p-6 flex flex-col items-center min-w-[200px]">
+            <div class="animate-spin rounded-full h-12 w-12 border-4 border-primary-200 border-t-primary-600 mb-4" 
+                 role="status"
+                 aria-label="Loading indicator"></div>
+            <p class="text-gray-700 font-medium">Processing...</p>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT SECTION -->
+    <!-- ============================================ -->
+    
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Core Application Logic -->
+    <script src="js/app.js"></script>
+    
+    <!-- API Functions -->
+    <script src="js/api.js"></script>
+    
+    <!-- Database Functions -->
+    <script src="js/database-functions.js"></script>
+    
+    <!-- Utility Functions -->
+    <script src="js/utils.js"></script>
+    
+    <!-- Authentication Logic -->
+    <script src="js/auth.js"></script>
+    
+    <!-- Page Specific JavaScript for Settings -->
+    <script src="js/settings.js"></script>
+    
+    <!-- ============================================ -->
+    <!-- INLINE JAVASCRIPT (UI INTERACTIONS) -->
+    <!-- ============================================ -->
+    <script>
+        /**
+         * ============================================
+         * SIDEBAR & NAVIGATION
+         * ============================================
+         */
+        
+        function toggleSidebar() {
+            console.log('🔄 Toggling sidebar...');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const toggleBtn = document.getElementById('sidebarToggle');
+            
+            if (!sidebar || !overlay) {
+                console.error('❌ Sidebar elements not found');
+                return;
+            }
+            
+            const isHidden = sidebar.classList.contains('-translate-x-full');
+            
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+            
+            if (toggleBtn) {
+                toggleBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+            }
+            
+            console.log(`✅ Sidebar ${isHidden ? 'opened' : 'closed'}`);
+        }
+        
+        function toggleUserDropdown() {
+            console.log('🔄 Toggling user dropdown...');
+            const dropdown = document.getElementById('userDropdown');
+            const menuBtn = document.getElementById('userMenuBtn');
+            
+            if (!dropdown || !menuBtn) {
+                console.error('❌ User dropdown elements not found');
+                return;
+            }
+            
+            const isHidden = dropdown.classList.contains('hidden');
+            dropdown.classList.toggle('hidden');
+            
+            menuBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+            console.log(`✅ User dropdown ${isHidden ? 'opened' : 'closed'}`);
+        }
+        
+        document.addEventListener('click', function(event) {
+            const menuBtn = document.getElementById('userMenuBtn');
+            const dropdown = document.getElementById('userDropdown');
+            
+            if (menuBtn && dropdown) {
+                if (!menuBtn.contains(event.target) && !dropdown.contains(event.target)) {
+                    if (!dropdown.classList.contains('hidden')) {
+                        dropdown.classList.add('hidden');
+                        menuBtn.setAttribute('aria-expanded', 'false');
+                        console.log('✅ User dropdown closed by clicking outside');
+                    }
+                }
+            }
+        });
+        
+        /**
+         * ============================================
+         * TOAST NOTIFICATIONS
+         * ============================================
+         */
+        
+        function showToast(message, type = 'info') {
+            console.log(`📢 Toast: [${type}] ${message}`);
+            const container = document.getElementById('toastContainer');
+            if (!container) {
+                console.error('❌ Toast container not found');
+                return;
+            }
+            
+            const colors = {
+                success: 'bg-green-500',
+                error: 'bg-red-500',
+                warning: 'bg-yellow-500',
+                info: 'bg-blue-500'
+            };
+            
+            const icons = {
+                success: 'fa-check-circle',
+                error: 'fa-exclamation-circle',
+                warning: 'fa-exclamation-triangle',
+                info: 'fa-info-circle'
+            };
+            
+            const toast = document.createElement('div');
+            toast.className = `toast flex items-center p-4 rounded-lg shadow-lg text-white ${colors[type] || colors.info} min-w-[300px] animate-slide-in`;
+            toast.innerHTML = `
+                <i class="fas ${icons[type] || icons.info} mr-3 text-lg" aria-hidden="true"></i>
+                <span class="flex-1">${message}</span>
+                <button onclick="this.parentElement.remove()" 
+                        class="ml-3 hover:opacity-75 transition-opacity"
+                        aria-label="Close notification">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            `;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.remove();
+                }
+            }, 5000);
+        }
+        
+        /**
+         * ============================================
+         * LOADING OVERLAY
+         * ============================================
+         */
+        
+        function showLoading() {
+            console.log('⏳ Showing loading overlay...');
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) {
+                overlay.classList.remove('hidden');
+                overlay.classList.add('flex');
+            }
+        }
+        
+        function hideLoading() {
+            console.log('✅ Hiding loading overlay...');
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+            }
+        }
+
+        /**
+         * ============================================
+         * SETTINGS TAB SWITCHING
+         * ============================================
+         */
+        
+        function switchSettingsTab(tab) {
+            console.log(`🔄 Switching to ${tab} tab...`);
+            
+            const accountTab = document.getElementById('tab-account');
+            const companyTab = document.getElementById('tab-company');
+            const accountContent = document.getElementById('content-account');
+            const companyContent = document.getElementById('content-company');
+            
+            if (!accountTab || !companyTab || !accountContent || !companyContent) {
+                console.error('❌ Tab elements not found');
+                return;
+            }
+            
+            // Reset all tabs
+            [accountTab, companyTab].forEach(t => {
+                t.classList.remove('text-primary-600', 'border-primary-600');
+                t.classList.add('text-gray-500', 'border-transparent');
+                t.setAttribute('aria-selected', 'false');
+            });
+            
+            // Hide all content
+            [accountContent, companyContent].forEach(c => {
+                c.classList.add('hidden');
+            });
+            
+            // Activate selected tab
+            if (tab === 'account') {
+                accountTab.classList.add('text-primary-600', 'border-primary-600');
+                accountTab.classList.remove('text-gray-500', 'border-transparent');
+                accountTab.setAttribute('aria-selected', 'true');
+                accountContent.classList.remove('hidden');
+                console.log('✅ Switched to Account tab');
+            } else if (tab === 'company') {
+                companyTab.classList.add('text-primary-600', 'border-primary-600');
+                companyTab.classList.remove('text-gray-500', 'border-transparent');
+                companyTab.setAttribute('aria-selected', 'true');
+                companyContent.classList.remove('hidden');
+                console.log('✅ Switched to Company tab');
+            }
+        }
+
+        /**
+         * ============================================
+         * PASSWORD VISIBILITY TOGGLE
+         * ============================================
+         */
+        
+        function togglePassword(fieldId) {
+            console.log(`👁️ Toggling password visibility for: ${fieldId}`);
+            const field = document.getElementById(fieldId);
+            
+            if (!field) {
+                console.error(`❌ Password field not found: ${fieldId}`);
+                return;
+            }
+            
+            const button = field.nextElementSibling;
+            const icon = button?.querySelector('i');
+            
+            if (field.type === 'password') {
+                field.type = 'text';
+                if (icon) {
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                }
+                console.log('✅ Password visible');
+            } else {
+                field.type = 'password';
+                if (icon) {
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+                console.log('✅ Password hidden');
+            }
+        }
+
+        /**
+         * ============================================
+         * COMPANY LOGO FUNCTIONS
+         * ============================================
+         */
+        
+        function previewLogo(event) {
+            console.log('🖼️ Previewing logo...');
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            // Validate file type
+            const validTypes = ['image/png', 'image/jpeg', 'image/svg+xml'];
+            if (!validTypes.includes(file.type)) {
+                showToast('Invalid file type. Please upload PNG, JPG, or SVG', 'error');
+                return;
+            }
+            
+            // Validate file size (2MB max)
+            if (file.size > 2 * 1024 * 1024) {
+                showToast('File too large. Maximum size is 2MB', 'error');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const preview = document.getElementById('logo-preview');
+                if (preview) {
+                    preview.innerHTML = `<img src="${e.target.result}" alt="Company logo" class="w-full h-full object-cover rounded-xl">`;
+                    console.log('✅ Logo preview updated');
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+        
+        function uploadCompanyLogo() {
+            console.log('📤 Upload company logo function called');
+            const input = document.getElementById('logo-upload-input');
+            if (input && input.files.length > 0) {
+                // This will be implemented in settings.js
+                if (typeof handleLogoUpload === 'function') {
+                    handleLogoUpload(input.files[0]);
+                } else {
+                    console.warn('⚠️ handleLogoUpload function not found');
+                    showToast('Upload functionality will be implemented in settings.js', 'info');
+                }
+            } else {
+                showToast('Please select a file first', 'warning');
+            }
+        }
+        
+        function removeCompanyLogo() {
+            console.log('🗑️ Remove company logo function called');
+            const preview = document.getElementById('logo-preview');
+            if (preview) {
+                preview.innerHTML = '<i class="fas fa-building text-white text-4xl" aria-hidden="true"></i>';
+                document.getElementById('logo-upload-input').value = '';
+                document.getElementById('company_logo_url').value = '';
+                console.log('✅ Logo removed');
+                showToast('Logo removed successfully', 'success');
+            }
+        }
+
+        /**
+         * ============================================
+         * FORM FUNCTIONS
+         * ============================================
+         */
+        
+        function resetCompanyForm() {
+            console.log('🔄 Resetting company form...');
+            const form = document.getElementById('company-form');
+            if (form) {
+                form.reset();
+                console.log('✅ Company form reset');
+                showToast('Form reset to default values', 'info');
+            }
+        }
+
+        /**
+         * ============================================
+         * FORM SUBMISSION HANDLERS
+         * ============================================
+         */
+        
+        document.getElementById('password-form')?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            console.log('🔐 Password form submitted');
+            
+            const currentPassword = document.getElementById('current_password').value;
+            const newPassword = document.getElementById('new_password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            
+            // Validate passwords match
+            if (newPassword !== confirmPassword) {
+                showToast('New passwords do not match', 'error');
+                return;
+            }
+            
+            // Validate password strength
+            if (newPassword.length < 8) {
+                showToast('Password must be at least 8 characters long', 'error');
+                return;
+            }
+            
+            try {
+                showLoading();
+                
+                // This will be implemented in settings.js
+                if (typeof updatePassword === 'function') {
+                    await updatePassword(currentPassword, newPassword);
+                } else {
+                    console.warn('⚠️ updatePassword function not found');
+                    showToast('Password update functionality will be implemented', 'info');
+                }
+                
+                hideLoading();
+            } catch (error) {
+                console.error('❌ Password update error:', error);
+                hideLoading();
+                showToast('Failed to update password', 'error');
+            }
+        });
+        
+        document.getElementById('company-form')?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            console.log('🏢 Company form submitted');
+            
+            const formData = {
+                company_name: document.getElementById('company_name').value,
+                company_industry: document.getElementById('company_industry').value,
+                company_size: document.getElementById('company_size').value,
+                company_address: document.getElementById('company_address').value,
+                company_phone: document.getElementById('company_phone').value,
+                company_email: document.getElementById('company_email').value,
+                company_website: document.getElementById('company_website').value,
+                company_logo_url: document.getElementById('company_logo_url').value
+            };
+            
+            try {
+                showLoading();
+                
+                // This will be implemented in settings.js
+                if (typeof saveCompanyInfo === 'function') {
+                    await saveCompanyInfo(formData);
+                } else {
+                    console.warn('⚠️ saveCompanyInfo function not found');
+                    showToast('Save functionality will be implemented in settings.js', 'info');
+                }
+                
+                hideLoading();
+            } catch (error) {
+                console.error('❌ Company info save error:', error);
+                hideLoading();
+                showToast('Failed to save company information', 'error');
+            }
+        });
+
+        /**
+         * ============================================
+         * INITIALIZATION - SETTINGS PAGE
+         * ============================================
+         */
+
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 Initializing settings page...');
+            
+            // ✅ Trigger smooth page animation
+            requestAnimationFrame(() => {
+                const mainContent = document.querySelector('.page-content');
+                if (mainContent) {
+                    mainContent.style.opacity = '1';
+                    mainContent.classList.add('animate-fade-in');
+                }
+            });
+            
+            // ✅ NO showLoading() here - page should load smoothly
+            
+            try {
+                // Check if settings.js is loaded
+                setTimeout(() => {
+                    const settingsFunctions = [
+                        'initSettingsPage',
+                        'loadCompanyData',
+                        'handlePasswordChange',
+                        'handleCompanyUpdate'
+                    ];
+                    
+                    const settingsLoaded = settingsFunctions.some(fn => typeof window[fn] === 'function');
+                    
+                    if (settingsLoaded) {
+                        console.log('✅ Settings.js verified and ready');
+                    } else {
+                        // Check if settings initialized by checking DOM elements
+                        const tabs = document.querySelectorAll('.settings-tab');
+                        const forms = document.querySelectorAll('#password-form, #company-form');
+                        
+                        if (tabs.length > 0 && forms.length > 0) {
+                            console.log('✅ Settings page elements ready');
+                        } else {
+                            console.warn('⚠️ Settings.js may not be fully loaded');
+                        }
+                    }
+                }, 300);
+                
+                console.log('✅ Settings page initialized successfully');
+                
+            } catch (error) {
+                console.error('❌ Error during settings page initialization:', error);
+                showToast('A critical error occurred during page initialization', 'error');
+            }
+        });
+
+        /**
+         * ============================================
+         * CUSTOM STYLES FOR ANIMATIONS
+         * ============================================
+         */
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slide-in {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            .animate-slide-in {
+                animation: slide-in 0.3s ease-out;
+            }
+        `;
+        document.head.appendChild(style);
+
+        console.log('✅ Settings page JavaScript loaded successfully');
+    </script>
+
+</body>
+</html>

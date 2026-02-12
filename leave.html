@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<!-- ================================================ -->
+<!-- HEAD SECTION -->
+<!-- ================================================ -->
+<head>
+    <!-- ============================================ -->
+    <!-- META TAGS -->
+    <!-- ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carabao HR Portal - Leave Management System">
+    <meta name="keywords" content="HR, HRIS, Leave Management, Employee Leave, Attendance">
+    <meta name="author" content="Ardiansyah Dwi S">
+    <meta name="theme-color" content="#2563eb">
+    
+    <title>Carabao Billiards HR Portal — Leave Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- ============================================ -->
+    <!-- EXTERNAL STYLESHEETS & SCRIPTS -->
+    <!-- ============================================ -->
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- ============================================ -->
+    <!-- INLINE STYLES (PAGE-SPECIFIC ANIMATIONS) -->
+    <!-- ============================================ -->
+    <style>
+        * { 
+            font-family: 'Inter', sans-serif; 
+        }
+        
+        /* Skeleton Loading Animation */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Fade In Animation */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Calendar Day Hover */
+        .calendar-day:hover {
+            background-color: #f3f4f6;
+        }
+        .calendar-day.has-leave {
+            cursor: pointer;
+        }
+        
+        /* Toast Slide In Animation */
+        .animate-slide-in {
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<!-- ================================================ -->
+<!-- BODY SECTION -->
+<!-- ================================================ -->
+<body class="bg-gray-100 min-h-screen font-['Inter']">
+
+    <!-- ============================================ -->
+    <!-- SIDEBAR NAVIGATION -->
+    <!-- ============================================ -->
+    <aside id="sidebar" 
+           class="fixed top-0 left-0 z-40 w-64 h-screen bg-white shadow-lg transform transition-transform duration-300 lg:translate-x-0 -translate-x-full"
+           role="navigation"
+           aria-label="Main navigation">
+        
+        <!-- Logo Section -->
+        <div class="flex items-center justify-center h-16 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur">
+                    <i class="fas fa-building text-white text-lg" aria-hidden="true"></i>
+                </div>
+                <span class="text-xl font-bold text-white">Carabao HR Portal</span>
+            </div>
+        </div>
+        
+        <!-- Navigation Links -->
+        <nav class="mt-6 px-4" aria-label="Sidebar navigation">
+            <div class="space-y-1">
+                
+                <!-- Dashboard -->
+                <a href="dashboard.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-home text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                
+                <!-- Employees -->
+                <a href="employees.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-users text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Employees</span>
+                </a>
+                
+                <!-- Attendance -->
+                <a href="attendance.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-clock text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Attendance</span>
+                </a>
+                
+                <!-- Leave Management (Active) -->
+                <a href="leave.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-white bg-primary-600 rounded-lg shadow-md"
+                   aria-current="page">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-white/20 mr-3">
+                        <i class="fas fa-calendar-alt text-white" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Leave</span>
+                </a>
+
+                <!-- Recruitment -->
+                <a href="recruitment.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-user-plus text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Recruitment</span>
+                </a>                
+                
+                <!-- WhatsApp Blast -->
+                <a href="whatsapp-blast.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fab fa-whatsapp text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">WhatsApp Blast</span>
+                </a>
+
+                <!-- Settings -->
+                <a href="settings.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-cog text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Settings</span>
+                </a>
+            </div>
+            
+            <!-- Sidebar Footer - Help Section -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
+                <div class="flex items-center space-x-3 px-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                        <i class="fas fa-headset" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-700">Need Help?</p>
+                        <p class="text-xs text-gray-500">Contact Support</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div id="sidebarOverlay" 
+         class="fixed inset-0 bg-black/50 z-30 lg:hidden hidden" 
+         onclick="toggleSidebar()"
+         aria-label="Close sidebar overlay"></div>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT WRAPPER -->
+    <!-- ============================================ -->
+    <div class="lg:ml-64 min-h-screen flex flex-col">
+        
+        <!-- ============================================ -->
+        <!-- TOP HEADER BAR -->
+        <!-- ============================================ -->
+        <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-20">
+            <div class="flex items-center justify-between px-4 sm:px-6 py-4">
+                
+                <!-- Left Section: Mobile Menu & Page Title -->
+                <div class="flex items-center space-x-4">
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="sidebarToggle" 
+                            onclick="toggleSidebar()" 
+                            class="lg:hidden text-gray-600 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg transition-colors"
+                            aria-label="Toggle sidebar"
+                            aria-controls="sidebar"
+                            aria-expanded="false">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                    </button>
+                    
+                    <!-- Page Title & Greeting -->
+                    <div>
+                        <h1 class="text-xl font-semibold text-gray-800">Leave Management</h1>
+                        <p class="text-sm text-gray-500 hidden sm:block">
+                            Manage Carabao Leave, <span id="currentUserName"></span>! 👋
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right Section: Actions & User Menu -->
+                <div class="flex items-center space-x-4">
+
+                    <!-- User Dropdown Menu -->
+                    <div class="relative">
+                        <button id="userMenuBtn" 
+                                onclick="toggleUserDropdown()" 
+                                class="flex items-center space-x-3 focus:outline-none hover:bg-gray-50 rounded-lg p-2 transition-colors"
+                                aria-label="User menu"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                            <!-- User Info (Desktop Only) -->
+                            <div class="text-right hidden sm:block">
+                                <p id="userName" class="text-sm font-medium text-gray-700">Loading...</p>
+                                <p id="userRole" class="text-xs text-gray-500">Loading...</p>
+                            </div>
+                            <!-- User Avatar -->
+                            <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold shadow-md">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <!-- Dropdown Icon -->
+                            <i class="fas fa-chevron-down text-gray-400 text-xs hidden sm:block" aria-hidden="true"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu Content -->
+                        <div id="userDropdown" 
+                             class="hidden absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50"
+                             role="menu"
+                             aria-labelledby="userMenuBtn">
+                            <!-- User Info Header -->
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <p class="text-sm font-medium text-gray-900" id="dropdownUserName">User Name</p>
+                                <p class="text-xs text-gray-500" id="dropdownUserEmail">user@example.com</p>
+                            </div>
+                            <!-- Menu Items -->
+                            <a href="settings.html" 
+                               class="flex items-center px-4 py-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
+                               role="menuitem">
+                                <i class="fas fa-cog w-5 mr-3 text-gray-400" aria-hidden="true"></i>
+                                System Settings
+                            </a>
+                            <hr class="my-2 border-gray-100" aria-hidden="true">
+                            <button onclick="logout()" 
+                                    class="flex items-center w-full px-4 py-2.5 text-red-600 hover:bg-red-50 transition-colors"
+                                    role="menuitem">
+                                <i class="fas fa-sign-out-alt w-5 mr-3" aria-hidden="true"></i>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================ -->
+        <!-- MAIN CONTENT AREA -->
+        <!-- ============================================ -->
+        <main class="flex-1 p-4 sm:p-6" role="main">
+
+            <!-- ========================================== -->
+            <!-- SECTION 1: STATISTICS CARDS (4 KPI) -->
+            <!-- ========================================== -->
+            <section aria-labelledby="stats-heading" class="mb-6">
+                <h2 id="stats-heading" class="sr-only">Leave Statistics Overview</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                    
+                    <!-- KPI Card 1: Pending Requests -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Pending Requests</p>
+                                <p id="statPending" class="text-3xl font-bold text-amber-600">
+                                    <span class="skeleton inline-block w-16 h-9 rounded"></span>
+                                </p>
+                                <p class="text-xs text-gray-400 mt-1">Awaiting approval</p>
+                            </div>
+                            <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-clock text-amber-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- KPI Card 2: Approved -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Approved</p>
+                                <p id="statApproved" class="text-3xl font-bold text-green-600">
+                                    <span class="skeleton inline-block w-16 h-9 rounded"></span>
+                                </p>
+                                <p class="text-xs text-gray-400 mt-1">This month</p>
+                            </div>
+                            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-check-circle text-green-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KPI Card 3: Declined -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Declined</p>
+                                <p id="statDeclined" class="text-3xl font-bold text-red-600">
+                                    <span class="skeleton inline-block w-16 h-9 rounded"></span>
+                                </p>
+                                <p class="text-xs text-gray-400 mt-1">This month</p>
+                            </div>
+                            <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-times-circle text-red-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- KPI Card 4: Total Requests -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Total Requests</p>
+                                <p id="statTotal" class="text-3xl font-bold text-blue-600">
+                                    <span class="skeleton inline-block w-16 h-9 rounded"></span>
+                                </p>
+                                <p class="text-xs text-gray-400 mt-1">All time</p>
+                            </div>
+                            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-file-alt text-blue-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SECTION 2: RECENT ACTIVITY + UPCOMING LEAVES -->
+            <!-- ========================================== -->
+            <section aria-labelledby="activity-heading" class="mb-6">
+                <h2 id="activity-heading" class="sr-only">Recent Activity and Upcoming Leaves</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
+                    
+                    <!-- Recent Activity (3 columns) -->
+                    <div class="lg:col-span-3 bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="p-4 border-b border-gray-100">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-history text-purple-600" aria-hidden="true"></i>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-gray-800">Recent Activity</h3>
+                                </div>
+                                <span class="text-xs text-gray-400">Last 10 requests</span>
+                            </div>
+                        </div>
+                        <div id="recentActivityList" 
+                             class="divide-y divide-gray-100 max-h-[400px] overflow-y-auto"
+                             role="list"
+                             aria-label="Recent leave requests">
+                            <!-- Loading Skeleton -->
+                            <div class="p-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="skeleton w-10 h-10 rounded-full"></div>
+                                    <div class="flex-1">
+                                        <div class="skeleton h-4 w-32 rounded mb-2"></div>
+                                        <div class="skeleton h-3 w-24 rounded"></div>
+                                    </div>
+                                    <div class="skeleton h-6 w-16 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="skeleton w-10 h-10 rounded-full"></div>
+                                    <div class="flex-1">
+                                        <div class="skeleton h-4 w-28 rounded mb-2"></div>
+                                        <div class="skeleton h-3 w-20 rounded"></div>
+                                    </div>
+                                    <div class="skeleton h-6 w-16 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="skeleton w-10 h-10 rounded-full"></div>
+                                    <div class="flex-1">
+                                        <div class="skeleton h-4 w-36 rounded mb-2"></div>
+                                        <div class="skeleton h-3 w-28 rounded"></div>
+                                    </div>
+                                    <div class="skeleton h-6 w-16 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Leaves (2 columns) -->
+                    <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="p-4 border-b border-gray-100">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-calendar-check text-orange-600" aria-hidden="true"></i>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-gray-800">Upcoming Leaves</h3>
+                                </div>
+                                <span class="text-xs text-gray-400">Approved & Pending</span>
+                            </div>
+                        </div>
+                        <div id="upcomingLeavesList" 
+                             class="divide-y divide-gray-100 max-h-[400px] overflow-y-auto"
+                             role="list"
+                             aria-label="Upcoming leave schedules">
+                            <!-- Loading Skeleton -->
+                            <div class="p-4">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <div class="skeleton w-9 h-9 rounded-full"></div>
+                                    <div class="flex-1">
+                                        <div class="skeleton h-4 w-28 rounded mb-1"></div>
+                                        <div class="skeleton h-3 w-20 rounded"></div>
+                                    </div>
+                                </div>
+                                <div class="skeleton h-3 w-32 rounded ml-12"></div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <div class="skeleton w-9 h-9 rounded-full"></div>
+                                    <div class="flex-1">
+                                        <div class="skeleton h-4 w-32 rounded mb-1"></div>
+                                        <div class="skeleton h-3 w-24 rounded"></div>
+                                    </div>
+                                </div>
+                                <div class="skeleton h-3 w-36 rounded ml-12"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SECTION 3: LEAVE CALENDAR + LEGEND -->
+            <!-- ========================================== -->
+            <section aria-labelledby="calendar-heading" class="mb-6">
+                <h2 id="calendar-heading" class="sr-only">Leave Calendar</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+                    
+                    <!-- Calendar (2 columns) -->
+                    <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="p-4 border-b border-gray-100">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-calendar text-blue-600" aria-hidden="true"></i>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-gray-800">Leave Calendar</h3>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="navigateMonth(-1)" 
+                                            class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+                                            aria-label="Previous month">
+                                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                                    </button>
+                                    <span id="currentMonthYear" 
+                                          class="text-sm font-medium text-gray-700 px-2 min-w-[120px] text-center">
+                                        Loading...
+                                    </span>
+                                    <button onclick="navigateMonth(1)" 
+                                            class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+                                            aria-label="Next month">
+                                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <!-- Calendar Header (Days of Week) -->
+                            <div class="grid grid-cols-7 gap-1 mb-2">
+                                <div class="text-center text-xs font-medium text-gray-500 py-2">Min</div>
+                                <div class="text-center text-xs font-medium text-gray-500 py-2">Sen</div>
+                                <div class="text-center text-xs font-medium text-gray-500 py-2">Sel</div>
+                                <div class="text-center text-xs font-medium text-gray-500 py-2">Rab</div>
+                                <div class="text-center text-xs font-medium text-gray-500 py-2">Kam</div>
+                                <div class="text-center text-xs font-medium text-gray-500 py-2">Jum</div>
+                                <div class="text-center text-xs font-medium text-gray-500 py-2">Sab</div>
+                            </div>
+                            
+                            <!-- Calendar Grid (Populated by JS) -->
+                            <div id="calendarGrid" 
+                                 class="grid grid-cols-7 gap-1"
+                                 role="grid"
+                                 aria-label="Calendar days">
+                                <!-- Calendar days will be rendered here by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Legend & Quick Info (1 column) -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="p-4 border-b border-gray-100">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-info-circle text-indigo-600" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-800">Legend</h3>
+                            </div>
+                        </div>
+                        <div class="p-4 space-y-4">
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-4 h-4 bg-green-500 rounded-full" aria-hidden="true"></span>
+                                    <span class="text-sm text-gray-600">Approved Leave</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-4 h-4 bg-amber-500 rounded-full" aria-hidden="true"></span>
+                                    <span class="text-sm text-gray-600">Pending Approval</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-4 h-4 bg-red-500 rounded-full" aria-hidden="true"></span>
+                                    <span class="text-sm text-gray-600">Declined</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-4 h-4 bg-primary-600 rounded-full" aria-hidden="true"></span>
+                                    <span class="text-sm text-gray-600">Today</span>
+                                </div>
+                            </div>
+                            <hr class="border-gray-100" aria-hidden="true">
+                            <div class="space-y-2">
+                                <p class="text-xs text-gray-500 font-medium uppercase tracking-wide">Quick Tips</p>
+                                <p class="text-sm text-gray-600">Hover over calendar dates to see leave details.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SECTION 4: GOOGLE SHEET EMBED (FULL WIDTH) -->
+            <!-- ========================================== -->
+            <section aria-labelledby="sheet-heading">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+                    <div class="p-4 border-b border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-table text-green-600" aria-hidden="true"></i>
+                                </div>
+                                <h2 id="sheet-heading" class="text-lg font-semibold text-gray-800">Leave Requests Data</h2>
+                            </div>
+                            <a id="openSheetLink" 
+                               href="#" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="text-sm text-primary-600 hover:text-primary-700 flex items-center space-x-1 hover:underline transition-colors">
+                                <span>Open in Google Sheets</span>
+                                <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div id="sheetEmbedContainer" 
+                             class="rounded-lg border border-gray-200 overflow-hidden" 
+                             style="height: 550px;"
+                             role="region"
+                             aria-label="Google Sheet embed">
+                            <div class="w-full h-full bg-gray-50 flex items-center justify-center">
+                                <div class="text-center text-gray-500">
+                                    <i class="fas fa-spinner fa-spin text-4xl mb-3 text-primary-500" aria-hidden="true"></i>
+                                    <p class="text-sm">Loading Google Sheet...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ============================================ -->
+        <!-- FOOTER -->
+        <!-- ============================================ -->
+        <footer class="bg-white border-t border-gray-200 px-6 py-4 mt-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+                <p>© 2026 Carabao Billiards Indonesia. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0">Version 1.0.0 | Leave Management System</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <!-- ============================================ -->
+    <div id="toastContainer" 
+         class="fixed bottom-4 right-4 z-[100] space-y-2"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true">
+        <!-- Toast notifications will be dynamically injected here by JavaScript -->
+    </div>
+
+    <!-- ============================================ -->
+    <!-- INLINE JAVASCRIPT (UI + DATA LOGIC) -->
+    <!-- ALL WORKING FUNCTIONS FROM OLD LEAVE.HTML -->
+    <!-- ============================================ -->
+    <script>
+        // ============================================
+        // CONFIGURATION (FROM OLD - PROVEN TO WORK)
+        // ============================================
+        const CONFIG = {
+            API_URL: 'https://script.google.com/macros/s/AKfycbyCrqKYonQ-MQAVL3M3pkBLWs1HpeCis9oBGiz1FvRqKzo34kCUUeauofyVR_Vd9I3x/exec',
+            SHEET_ID: '1Cj1D_l1apvHfoyuhAI001gbsALI0VNAkmkctFQMG0bY',
+            SHEET_EMBED_GID: '0'
+        };
+
+        // ============================================
+        // GLOBAL STATE (FROM OLD - PROVEN TO WORK)
+        // ============================================
+        let leaveData = [];
+        let statusCounts = { Pending: 0, Approved: 0, Declined: 0 };
+        let currentCalendarDate = new Date();
+
+        // ============================================
+        // UI INTERACTION FUNCTIONS (DASHBOARD STANDARD)
+        // ============================================
+        
+        /**
+         * Toggle Sidebar (Mobile)
+         * Shows/hides the sidebar and overlay on mobile devices
+         */
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const toggle = document.getElementById('sidebarToggle');
+            
+            if (sidebar && overlay) {
+                const isHidden = sidebar.classList.contains('-translate-x-full');
+                
+                sidebar.classList.toggle('-translate-x-full');
+                overlay.classList.toggle('hidden');
+                
+                // Update ARIA attributes
+                if (toggle) {
+                    toggle.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                }
+            }
+        }
+        
+        /**
+         * Toggle User Dropdown Menu
+         * Shows/hides the user dropdown menu
+         */
+        function toggleUserDropdown() {
+            const dropdown = document.getElementById('userDropdown');
+            const btn = document.getElementById('userMenuBtn');
+            
+            if (dropdown) {
+                const isHidden = dropdown.classList.contains('hidden');
+                dropdown.classList.toggle('hidden');
+                
+                // Update ARIA attributes
+                if (btn) {
+                    btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                }
+            }
+        }
+        
+        /**
+         * Close Dropdown When Clicking Outside
+         * Event listener to close dropdown when user clicks outside
+         */
+        document.addEventListener('click', function(event) {
+            const userMenuBtn = document.getElementById('userMenuBtn');
+            const userDropdown = document.getElementById('userDropdown');
+            
+            if (userMenuBtn && userDropdown) {
+                if (!userMenuBtn.contains(event.target) && !userDropdown.contains(event.target)) {
+                    userDropdown.classList.add('hidden');
+                    userMenuBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+        
+        /**
+         * Logout Function
+         * Logs out the user with confirmation
+         */
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                showToast('Logging out...', 'info');
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);
+            }
+        }
+
+        /**
+         * Show Toast Notification (DASHBOARD STANDARD)
+         * @param {string} message - Notification message
+         * @param {string} type - Notification type (success|error|warning|info)
+         */
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            
+            const colors = {
+                success: 'bg-green-500',
+                error: 'bg-red-500',
+                warning: 'bg-yellow-500',
+                info: 'bg-blue-500'
+            };
+            
+            const icons = {
+                success: 'fa-check-circle',
+                error: 'fa-exclamation-circle',
+                warning: 'fa-exclamation-triangle',
+                info: 'fa-info-circle'
+            };
+            
+            const toast = document.createElement('div');
+            toast.className = `toast flex items-center p-4 rounded-lg shadow-lg text-white ${colors[type] || colors.info} min-w-[300px] animate-slide-in`;
+            toast.setAttribute('role', 'alert');
+            toast.innerHTML = `
+                <i class="fas ${icons[type] || icons.info} mr-3 text-lg" aria-hidden="true"></i>
+                <span class="flex-1">${message}</span>
+                <button onclick="this.parentElement.remove()" 
+                        class="ml-3 hover:opacity-75 transition-opacity"
+                        aria-label="Close notification">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.remove();
+                }
+            }, 5000);
+        }
+
+        // ============================================
+        // HELPER FUNCTIONS (FROM OLD - PROVEN TO WORK)
+        // ============================================
+        
+        /**
+         * Normalize Status to Standard Format
+         * @param {string} status - Raw status from API
+         * @returns {string} - Normalized status (Pending|Approved|Declined)
+         */
+        function normalizeStatus(status) {
+            if (!status) return 'Pending';
+            const s = String(status).toLowerCase().trim();
+            if (s.includes('approved') || s.includes('disetujui')) return 'Approved';
+            if (s.includes('declined') || s.includes('rejected') || s.includes('ditolak')) return 'Declined';
+            if (s.includes('pending') || s.includes('menunggu') || s === '') return 'Pending';
+            return 'Pending';
+        }
+
+        /**
+         * Format Date to Indonesian Locale
+         * @param {string|Date} dateStr - Date string or Date object
+         * @returns {string} - Formatted date (e.g., "15 Jan 2026")
+         */
+        function formatDate(dateStr) {
+            if (!dateStr || dateStr === '-') return '-';
+            try {
+                const date = new Date(dateStr);
+                if (isNaN(date.getTime())) return dateStr;
+                return date.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+            } catch (e) {
+                return dateStr;
+            }
+        }
+
+        /**
+         * Get Initials from Name
+         * @param {string} name - Full name
+         * @returns {string} - Initials (max 2 characters)
+         */
+        function getInitials(name) {
+            if (!name || name === '-') return '?';
+            return name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+        }
+
+        /**
+         * Get Avatar Gradient Color Based on Name
+         * @param {string} name - Full name
+         * @returns {string} - Tailwind gradient class
+         */
+        function getAvatarColor(name) {
+            const colors = [
+                'from-blue-500 to-blue-600',
+                'from-green-500 to-green-600',
+                'from-purple-500 to-purple-600',
+                'from-pink-500 to-pink-600',
+                'from-indigo-500 to-indigo-600',
+                'from-teal-500 to-teal-600'
+            ];
+            const index = (name || '').length % colors.length;
+            return colors[index];
+        }
+
+        /**
+         * Get Status Badge HTML
+         * @param {string} status - Raw status
+         * @returns {string} - HTML badge element
+         */
+        function getStatusBadge(status) {
+            const normalized = normalizeStatus(status);
+            const badges = {
+                'Approved': 'bg-green-100 text-green-700',
+                'Pending': 'bg-amber-100 text-amber-700',
+                'Declined': 'bg-red-100 text-red-700'
+            };
+            return `<span class="px-2 py-1 text-xs font-medium rounded-full ${badges[normalized] || badges['Pending']}">${normalized}</span>`;
+        }
+
+        /**
+         * Parse Indonesian Date Format (DD/MM/YYYY)
+         * @param {string} dateStr - Date string in DD/MM/YYYY format
+         * @returns {Date|null} - Parsed Date object or null if invalid
+         */
+        function parseIndonesianDate(dateStr) {
+            if (!dateStr || dateStr === '-') return null;
+            
+            // Clean the string
+            const cleaned = dateStr.trim();
+            
+            // Match DD/MM/YYYY or D/M/YYYY
+            const match = cleaned.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+            if (!match) return null;
+            
+            const day = parseInt(match[1], 10);
+            const month = parseInt(match[2], 10) - 1; // JS months are 0-indexed
+            const year = parseInt(match[3], 10);
+            
+            const date = new Date(year, month, day);
+            
+            // Validate the date is real
+            if (date.getDate() !== day || date.getMonth() !== month || date.getFullYear() !== year) {
+                return null;
+            }
+            
+            return date;
+        }
+
+        /**
+         * Parse Leave Date Range or Single Date
+         * @param {string} tanggalCuti - Date or date range (DD/MM/YYYY or DD/MM/YYYY - DD/MM/YYYY)
+         * @returns {Array<Date>} - Array of Date objects
+         */
+        function parseLeaveDates(tanggalCuti) {
+            if (!tanggalCuti || tanggalCuti === '-') return [];
+            
+            const dates = [];
+            
+            // Check if it's a range (contains " - ")
+            if (tanggalCuti.includes(' - ')) {
+                const parts = tanggalCuti.split(' - ');
+                const startDate = parseIndonesianDate(parts[0]);
+                const endDate = parseIndonesianDate(parts[1]);
+                
+                if (startDate && endDate) {
+                    // Generate all dates in range
+                    let current = new Date(startDate);
+                    while (current <= endDate) {
+                        dates.push(new Date(current));
+                        current.setDate(current.getDate() + 1);
+                    }
+                }
+            } else {
+                // Single date
+                const date = parseIndonesianDate(tanggalCuti);
+                if (date) dates.push(date);
+            }
+            
+            return dates;
+        }
+
+        // ============================================
+        // DATA FETCHING (FROM OLD - PROVEN TO WORK)
+        // ============================================
+        
+        /**
+         * Fetch Leave Data from Google Apps Script API
+         * @returns {Promise<Array>} - Array of leave records
+         */
+        async function fetchLeaveData() {
+            console.log('🔄 Fetching leave data from:', CONFIG.API_URL);
+            
+            try {
+                const response = await fetch(CONFIG.API_URL);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                const data = await response.json();
+                console.log('📦 Raw API Response:', data);
+                
+                // Extract records
+                let records = [];
+                if (Array.isArray(data)) {
+                    records = data;
+                } else if (data.records && Array.isArray(data.records)) {
+                    records = data.records;
+                } else if (data.data && Array.isArray(data.data)) {
+                    records = data.data;
+                }
+                
+                // Extract or calculate stats
+                if (data.stats) {
+                    statusCounts = {
+                        Pending: data.stats.Pending || data.stats.pending || 0,
+                        Approved: data.stats.Approved || data.stats.approved || 0,
+                        Declined: data.stats.Declined || data.stats.declined || data.stats.Rejected || 0
+                    };
+                    console.log('📊 Using API stats:', statusCounts);
+                } else {
+                    // Calculate from records
+                    statusCounts = { Pending: 0, Approved: 0, Declined: 0 };
+                    records.forEach(r => {
+                        const status = normalizeStatus(r.status);
+                        if (statusCounts.hasOwnProperty(status)) {
+                            statusCounts[status]++;
+                        }
+                    });
+                    console.log('📊 Calculated stats:', statusCounts);
+                }
+                
+                leaveData = records;
+                console.log('✅ Successfully loaded', records.length, 'leave records');
+                return records;
+                
+            } catch (error) {
+                console.error('❌ Fetch error:', error);
+                showToast('Failed to load leave data. Please refresh the page.', 'error');
+                // Return empty data on error
+                leaveData = [];
+                statusCounts = { Pending: 0, Approved: 0, Declined: 0 };
+                return [];
+            }
+        }
+
+        // ============================================
+        // RENDER FUNCTIONS (FROM OLD - PROVEN TO WORK)
+        // ============================================
+        
+        /**
+         * Render Statistics Cards
+         * Updates the 4 KPI cards with real data
+         */
+        function renderStatistics() {
+            console.log('📊 Rendering Statistics...');
+            
+            const statPending = document.getElementById('statPending');
+            const statApproved = document.getElementById('statApproved');
+            const statDeclined = document.getElementById('statDeclined');
+            const statTotal = document.getElementById('statTotal');
+            
+            const total = leaveData.length;
+            
+            if (statPending) statPending.textContent = statusCounts.Pending || 0;
+            if (statApproved) statApproved.textContent = statusCounts.Approved || 0;
+            if (statDeclined) statDeclined.textContent = statusCounts.Declined || 0;
+            if (statTotal) statTotal.textContent = total;
+            
+            console.log('✅ Statistics rendered');
+        }
+
+        /**
+         * Render Google Sheet Embed
+         * Embeds the Google Sheet in iframe
+         */
+        function renderSheetEmbed() {
+            console.log('📊 Rendering Sheet Embed...');
+            
+            const container = document.getElementById('sheetEmbedContainer');
+            const openLink = document.getElementById('openSheetLink');
+            
+            if (!container) {
+                console.log('❌ Sheet Embed container not found');
+                return;
+            }
+            
+            const embedUrl = `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/gviz/tq?tqx=out:html&gid=${CONFIG.SHEET_EMBED_GID}`;
+            const sheetUrl = `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/edit#gid=${CONFIG.SHEET_EMBED_GID}`;
+            
+            container.innerHTML = `
+                <iframe 
+                    src="${embedUrl}" 
+                    class="w-full h-full border-0"
+                    style="min-height: 480px;"
+                    loading="lazy"
+                    title="Leave requests data from Google Sheets"
+                ></iframe>
+            `;
+            
+            if (openLink) {
+                openLink.href = sheetUrl;
+            }
+            
+            console.log('✅ Sheet Embed rendered');
+        }
+
+        /**
+         * Render Recent Activity List
+         * Displays the 10 most recent leave requests
+         */
+        function renderRecentActivity() {
+            console.log('📋 Rendering Recent Activity...');
+            
+            const container = document.getElementById('recentActivityList');
+            if (!container) {
+                console.log('❌ Recent Activity container not found');
+                return;
+            }
+            
+            // Sort by timestamp/date and take recent 10
+            const recentRecords = [...leaveData]
+                .sort((a, b) => {
+                    const dateA = new Date(a.timestamp || a.tanggalPermohonan || 0);
+                    const dateB = new Date(b.timestamp || b.tanggalPermohonan || 0);
+                    return dateB - dateA;
+                })
+                .slice(0, 10);
+            
+            if (recentRecords.length === 0) {
+                container.innerHTML = `
+                    <div class="p-8 text-center text-gray-500">
+                        <i class="fas fa-inbox text-4xl mb-3 text-gray-300" aria-hidden="true"></i>
+                        <p class="text-sm">No recent activity</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = recentRecords.map(record => `
+                <div class="p-4 hover:bg-gray-50 transition-colors fade-in" role="listitem">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br ${getAvatarColor(record.namaLengkap)} rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                            ${getInitials(record.namaLengkap)}
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-gray-900 truncate">${record.namaLengkap || 'Unknown'}</p>
+                            <p class="text-xs text-gray-500">${record.jenisCuti || 'Leave'} • ${formatDate(record.tanggalCuti || record.tanggalPermohonan)}</p>
+                        </div>
+                        ${getStatusBadge(record.status)}
+                    </div>
+                </div>
+            `).join('');
+            
+            console.log('✅ Recent Activity rendered');
+        }
+
+        /**
+         * Render Upcoming Leaves List
+         * Displays upcoming approved and pending leaves only
+         */
+        function renderUpcomingLeaves() {
+            console.log('📅 Rendering Upcoming Leaves...');
+            
+            const container = document.getElementById('upcomingLeavesList');
+            if (!container) {
+                console.log('❌ Upcoming Leaves container not found');
+                return;
+            }
+            
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            // Only Approved + Pending (Declined automatically excluded)
+            const allowedStatuses = ['Approved', 'Pending'];
+            
+            const upcomingLeaves = [];
+            
+            leaveData.forEach(record => {
+                const status = normalizeStatus(record.status);
+                
+                // Filter: only Approved & Pending
+                if (!allowedStatuses.includes(status)) return;
+                
+                // Parse dates with Indonesian format (DD/MM/YYYY)
+                const dates = parseLeaveDates(record.tanggalCuti);
+                if (dates.length === 0) return;
+                
+                // Get first & last date
+                const startDate = dates[0];
+                const endDate = dates[dates.length - 1];
+                
+                // Show if end date >= today
+                if (endDate >= today) {
+                    upcomingLeaves.push({
+                        ...record,
+                        parsedStartDate: startDate,
+                        parsedEndDate: endDate,
+                        isRange: dates.length > 1
+                    });
+                }
+            });
+            
+            // Sort: closest first
+            upcomingLeaves.sort((a, b) => a.parsedStartDate - b.parsedStartDate);
+            
+            // Take max 8
+            const displayLeaves = upcomingLeaves.slice(0, 8);
+            
+            console.log('📋 Upcoming leaves found:', displayLeaves.length);
+            
+            if (displayLeaves.length === 0) {
+                container.innerHTML = `
+                    <div class="p-8 text-center text-gray-500">
+                        <i class="fas fa-calendar-check text-4xl mb-3 text-gray-300" aria-hidden="true"></i>
+                        <p class="text-sm">No upcoming leaves</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = displayLeaves.map(record => {
+                const diffDays = Math.ceil((record.parsedStartDate - today) / (1000 * 60 * 60 * 24));
+                
+                let daysText = '';
+                if (diffDays < 0) daysText = 'Ongoing';
+                else if (diffDays === 0) daysText = 'Today';
+                else if (diffDays === 1) daysText = 'Tomorrow';
+                else daysText = `In ${diffDays} days`;
+                
+                // Format date display
+                const dateDisplay = record.isRange 
+                    ? `${formatDate(record.parsedStartDate)} - ${formatDate(record.parsedEndDate)}`
+                    : formatDate(record.parsedStartDate);
+                
+                // Status badge color
+                const status = normalizeStatus(record.status);
+                const statusBadge = status === 'Approved' 
+                    ? '<span class="px-1.5 py-0.5 text-xs font-medium rounded bg-green-100 text-green-700">Approved</span>'
+                    : '<span class="px-1.5 py-0.5 text-xs font-medium rounded bg-amber-100 text-amber-700">Pending</span>';
+                
+                return `
+                    <div class="p-4 hover:bg-gray-50 transition-colors fade-in border-b border-gray-100 last:border-0" role="listitem">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-9 h-9 bg-gradient-to-br ${getAvatarColor(record.namaLengkap)} rounded-full flex items-center justify-center text-white text-xs font-semibold">
+                                ${getInitials(record.namaLengkap)}
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-medium text-gray-900 truncate">${record.namaLengkap || 'Unknown'}</p>
+                                <div class="flex items-center gap-2 mt-0.5">
+                                    <span class="text-xs text-gray-500">${record.jenisCuti || 'Leave'}</span>
+                                    ${statusBadge}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ml-12 flex items-center text-xs text-gray-500">
+                            <i class="fas fa-calendar-day mr-1.5 text-primary-500" aria-hidden="true"></i>
+                            <span>${dateDisplay}</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-primary-600 font-medium">${daysText}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            console.log('✅ Upcoming Leaves rendered');
+        }
+
+        /**
+         * Render Leave Calendar
+         * Displays monthly calendar with leave indicators
+         */
+        function renderCalendar() {
+            console.log('🗓️ Rendering Calendar...');
+            
+            const grid = document.getElementById('calendarGrid');
+            const monthYearLabel = document.getElementById('currentMonthYear');
+            
+            if (!grid) {
+                console.log('❌ Calendar grid not found');
+                return;
+            }
+            
+            const year = currentCalendarDate.getFullYear();
+            const month = currentCalendarDate.getMonth();
+            
+            // Update month/year label
+            const monthNames = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 
+                                'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+            if (monthYearLabel) {
+                monthYearLabel.textContent = `${monthNames[month]} ${year}`;
+            }
+            
+            // Get first day and total days
+            const firstDay = new Date(year, month, 1).getDay();
+            const totalDays = new Date(year, month + 1, 0).getDate();
+            const today = new Date();
+            
+            // Build leave dates map for this month
+            const leaveDatesMap = {};
+            
+            leaveData.forEach(record => {
+                if (!record.tanggalCuti) return;
+                
+                // Use parser for Indonesian date format & ranges
+                const dates = parseLeaveDates(record.tanggalCuti);
+                
+                dates.forEach(date => {
+                    if (date.getMonth() !== month || date.getFullYear() !== year) return;
+                    
+                    const day = date.getDate();
+                    if (!leaveDatesMap[day]) leaveDatesMap[day] = [];
+                    leaveDatesMap[day].push(record);
+                });
+            });
+            
+            console.log('📅 Leave dates found for this month:', Object.keys(leaveDatesMap).length, 'days with leaves');
+            
+            // Generate calendar HTML
+            let html = '';
+            
+            // Empty cells before first day
+            for (let i = 0; i < firstDay; i++) {
+                html += `<div class="p-2 text-center text-gray-300 text-sm"></div>`;
+            }
+            
+            // Day cells
+            for (let day = 1; day <= totalDays; day++) {
+                const isToday = today.getDate() === day && 
+                                today.getMonth() === month && 
+                                today.getFullYear() === year;
+                
+                const leaves = leaveDatesMap[day] || [];
+                const hasLeave = leaves.length > 0;
+                
+                let dotColor = '';
+                if (hasLeave) {
+                    const statuses = leaves.map(l => normalizeStatus(l.status));
+                    if (statuses.includes('Pending')) dotColor = 'bg-amber-500';
+                    else if (statuses.includes('Approved')) dotColor = 'bg-green-500';
+                    else if (statuses.includes('Declined')) dotColor = 'bg-red-500';
+                    else dotColor = 'bg-blue-500';
+                }
+                
+                // Build tooltip with names
+                const tooltip = hasLeave 
+                    ? leaves.map(l => `${l.namaLengkap} (${normalizeStatus(l.status)})`).join(', ')
+                    : '';
+                
+                html += `
+                    <div class="calendar-day p-2 text-center rounded-lg relative cursor-default
+                                ${isToday ? 'bg-primary-600 text-white font-bold' : 'text-gray-700'} 
+                                ${hasLeave ? 'hover:bg-gray-100' : ''}" 
+                        ${hasLeave ? `title="${tooltip}"` : ''}>
+                        <span class="text-sm">${day}</span>
+                        ${hasLeave ? `<span class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 ${dotColor} rounded-full"></span>` : ''}
+                    </div>
+                `;
+            }
+            
+            grid.innerHTML = html;
+            console.log('✅ Calendar rendered');
+        }
+
+        /**
+         * Navigate Calendar Months
+         * @param {number} delta - Month delta (-1 for previous, +1 for next)
+         */
+        function navigateMonth(delta) {
+            currentCalendarDate.setMonth(currentCalendarDate.getMonth() + delta);
+            renderCalendar();
+        }
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        
+        /**
+         * Initialize Dashboard
+         * Main initialization function that orchestrates all data loading and rendering
+         */
+        async function initializeDashboard() {
+            console.log('🚀 Initializing Leave Management Dashboard...');
+            console.log('📋 Configuration:', CONFIG);
+            
+            try {
+                // 1. Render Sheet Embed first (doesn't need data)
+                renderSheetEmbed();
+                
+                // 2. Fetch data from Google Apps Script
+                await fetchLeaveData();
+                console.log('✅ Loaded', leaveData.length, 'leave records');
+                
+                // 3. Render all sections
+                renderStatistics();
+                renderRecentActivity();
+                renderUpcomingLeaves();
+                renderCalendar();
+                
+                console.log('🎉 Dashboard fully initialized!');
+                showToast('Leave data loaded successfully', 'success');
+                
+            } catch (error) {
+                console.error('❌ Dashboard initialization error:', error);
+                showToast('Failed to initialize dashboard', 'error');
+            }
+        }
+
+        // ============================================
+        // START APPLICATION WHEN DOM IS READY
+        // ============================================
+        document.addEventListener('DOMContentLoaded', initializeDashboard);
+        
+        /**
+         * Keyboard Accessibility for Modals
+         * Close modals with Escape key
+         */
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                // Close user dropdown if open
+                const dropdown = document.getElementById('userDropdown');
+                if (dropdown && !dropdown.classList.contains('hidden')) {
+                    dropdown.classList.add('hidden');
+                    const btn = document.getElementById('userMenuBtn');
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

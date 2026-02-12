@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ================================================ -->
+<!-- HEAD SECTION -->
+<!-- ================================================ -->
+<head>
+    <!-- ============================================ -->
+    <!-- META TAGS -->
+    <!-- ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SWAP HRIS - Comprehensive HR Management System Dashboard">
+    <meta name="keywords" content="HR, HRIS, Dashboard, Employee Management, Attendance, Leave">
+    <meta name="author" content="Ardiansyah Dwi S">
+    <meta name="theme-color" content="#2563eb">
+    
+    <title>Carabao Billiards HR Portal — Employee Management</title>
+    
+    <!-- ============================================ -->
+    <!-- EXTERNAL STYLESHEETS & SCRIPTS -->
+    <!-- ============================================ -->
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ✅ ADD THIS LINE -->
+    <link rel="stylesheet" href="css/tailwind.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- ================================================ -->
+<!-- BODY SECTION -->
+<!-- ================================================ -->
+<body class="bg-gray-100 min-h-screen font-['Inter']">
+
+    <!-- ============================================ -->
+    <!-- SIDEBAR NAVIGATION -->
+    <!-- ============================================ -->
+    <aside id="sidebar" 
+           class="fixed top-0 left-0 z-40 w-64 h-screen bg-white shadow-lg transform transition-transform duration-300 lg:translate-x-0 -translate-x-full"
+           role="navigation"
+           aria-label="Main navigation">
+        
+        <!-- Logo Section -->
+        <div class="flex items-center justify-center h-16 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur">
+                    <i class="fas fa-building text-white text-lg" aria-hidden="true"></i>
+                </div>
+                <span class="text-xl font-bold text-white">Carabao HR Portal</span>
+            </div>
+        </div>
+        
+        <!-- Navigation Links -->
+        <nav class="mt-6 px-4" aria-label="Sidebar navigation">
+            <div class="space-y-1">
+                
+                <!-- Dashboard -->
+                <a href="dashboard.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-home text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                
+                <!-- Employees (Active) -->
+                <a href="employees.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-white bg-primary-600 rounded-lg shadow-md"
+                   aria-current="page">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-white/20 mr-3">
+                        <i class="fas fa-users text-white" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Employees</span>
+                </a>
+                
+                <!-- Attendance -->
+                <a href="attendance.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-clock text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Attendance</span>
+                </a>
+                
+                <!-- Leave Management -->
+                <a href="leave.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-calendar-alt text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Leave</span>
+                </a>
+
+                <!-- Recruitment -->
+                <a href="recruitment.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-user-plus text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Recruitment</span>
+                </a>                
+                
+                <!-- WhatsApp Blast -->
+                <a href="whatsapp-blast.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fab fa-whatsapp text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">WhatsApp Blast</span>
+                </a>
+
+                <!-- Settings -->
+                <a href="settings.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-cog text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Settings</span>
+                </a>
+            </div>
+            
+            <!-- Sidebar Footer - Help Section -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
+                <div class="flex items-center space-x-3 px-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                        <i class="fas fa-headset" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-700">Need Help?</p>
+                        <p class="text-xs text-gray-500">Contact Support</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div id="sidebarOverlay" 
+         class="fixed inset-0 bg-black/50 z-30 lg:hidden hidden" 
+         onclick="toggleSidebar()"
+         aria-label="Close sidebar overlay"></div>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT WRAPPER -->
+    <!-- ============================================ -->
+    <div class="lg:ml-64 min-h-screen">
+        
+        <!-- ============================================ -->
+        <!-- TOP HEADER BAR -->
+        <!-- ============================================ -->
+        <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-20">
+            <div class="flex items-center justify-between px-4 sm:px-6 py-4">
+                
+                <!-- Left Section: Mobile Menu & Page Title -->
+                <div class="flex items-center space-x-4">
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="sidebarToggle" 
+                            onclick="toggleSidebar()" 
+                            class="lg:hidden text-gray-600 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg transition-colors"
+                            aria-label="Toggle sidebar"
+                            aria-controls="sidebar"
+                            aria-expanded="false">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                    </button>
+                    
+                    <!-- Page Title & Greeting -->
+                    <div>
+                        <h1 class="text-xl font-semibold text-gray-800">Employee Management</h1>
+                        <p class="text-sm text-gray-500 hidden sm:block">
+                            Manage Carabao Employees, <span id="currentUserName"></span>! 👋
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right Section: Actions & User Menu -->
+                <div class="flex items-center space-x-4">
+
+                    <!-- User Dropdown Menu -->
+                    <div class="relative">
+                        <button id="userMenuBtn" 
+                                onclick="toggleUserDropdown()" 
+                                class="flex items-center space-x-3 focus:outline-none hover:bg-gray-50 rounded-lg p-2 transition-colors"
+                                aria-label="User menu"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                            <!-- User Info (Desktop Only) -->
+                            <div class="text-right hidden sm:block">
+                                <p id="userName" class="text-sm font-medium text-gray-700">Loading...</p>
+                                <p id="userRole" class="text-xs text-gray-500">Loading...</p>
+                            </div>
+                            <!-- User Avatar -->
+                            <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold shadow-md">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <!-- Dropdown Icon -->
+                            <i class="fas fa-chevron-down text-gray-400 text-xs hidden sm:block" aria-hidden="true"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu Content -->
+                        <div id="userDropdown" 
+                             class="hidden absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50"
+                             role="menu"
+                             aria-labelledby="userMenuBtn">
+                            <!-- User Info Header -->
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <p class="text-sm font-medium text-gray-900" id="dropdownUserName">User Name</p>
+                                <p class="text-xs text-gray-500" id="dropdownUserEmail">user@example.com</p>
+                            </div>
+                            <!-- Menu Items -->
+                            <a href="settings.html" 
+                               class="flex items-center px-4 py-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
+                               role="menuitem">
+                                <i class="fas fa-cog w-5 mr-3 text-gray-400" aria-hidden="true"></i>
+                                System Settings
+                            </a>
+                            <hr class="my-2 border-gray-100" aria-hidden="true">
+                            <button onclick="logout()" 
+                                    class="flex items-center w-full px-4 py-2.5 text-red-600 hover:bg-red-50 transition-colors"
+                                    role="menuitem">
+                                <i class="fas fa-sign-out-alt w-5 mr-3" aria-hidden="true"></i>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================ -->
+        <!-- MAIN CONTENT AREA -->
+        <!-- ============================================ -->
+        <main class="p-4 sm:p-6">
+            
+            <!-- ============================================ -->
+            <!-- SECTION 1: STATISTICS CARDS -->
+            <!-- ============================================ -->
+            <section aria-labelledby="stats-heading" class="mb-6">
+                <h2 id="stats-heading" class="sr-only">Employee Statistics</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                    
+                    <!-- Card 1: Total Employees -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Total Employees</p>
+                                <p id="statTotalEmployees" class="text-3xl font-bold text-gray-800">0</p>
+                            </div>
+                            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-users text-blue-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-400">All registered</div>
+                    </div>
+                    
+                    <!-- Card 2: Active Employees -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Active Employees</p>
+                                <p id="statActiveEmployees" class="text-3xl font-bold text-green-600">0</p>
+                            </div>
+                            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-user-check text-green-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-400">Currently working</div>
+                    </div>
+                    
+                    <!-- Card 3: Inactive Employees -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Inactive Employees</p>
+                                <p id="statInactiveEmployees" class="text-3xl font-bold text-yellow-600">0</p>
+                            </div>
+                            <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-user-clock text-yellow-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-400">Ex Employees</div>
+                    </div>
+                    
+                    <!-- Card 4: New This Month -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">New This Month</p>
+                                <p id="statNewHires" class="text-3xl font-bold text-purple-600">0</p>
+                            </div>
+                            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-user-plus text-purple-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-400">Recent hires</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION 2: EMPLOYEE TABLE CARD -->
+            <!-- ============================================ -->
+            <section aria-labelledby="table-heading">
+                <h2 id="table-heading" class="sr-only">Employee List Table</h2>
+                
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+                    
+                    <!-- ========================================== -->
+                    <!-- TABLE HEADER / TOOLBAR -->
+                    <!-- ========================================== -->
+                    <div class="p-4 sm:p-6 border-b border-gray-200">
+                        
+                        <!-- Top Row: Title & Main Actions -->
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Employee List</h3>
+                                <p class="text-sm text-gray-500">Manage and view all employee records</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <button onclick="openModal('add')" 
+                                        class="btn-primary inline-flex items-center px-4 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors"
+                                        aria-label="Add new employee">
+                                    <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                                    Add Employee
+                                </button>
+                                <button onclick="exportEmployees()" 
+                                        class="inline-flex items-center px-4 py-2.5 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors"
+                                        aria-label="Export employee data">
+                                    <i class="fas fa-download mr-2 text-green-600" aria-hidden="true"></i>
+                                    Export
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Employee Tabs -->
+                        <div class="flex items-center gap-1 mb-4 border-b border-gray-200" role="tablist" aria-label="Employee filter tabs">
+                            <!-- Tab 1: All -->
+                            <button type="button" 
+                                    id="tabAll" 
+                                    onclick="handleTabChange('all')"
+                                    class="tab-btn px-4 py-2.5 text-sm font-medium rounded-t-lg border-b-2 transition-all border-primary-500 text-primary-600 bg-primary-50"
+                                    role="tab"
+                                    aria-selected="true"
+                                    aria-controls="employeeTableBody">
+                                All <span id="countAll" class="ml-1.5 px-2 py-0.5 text-xs rounded-full bg-gray-200 text-gray-700">0</span>
+                            </button>
+                            
+                            <!-- Tab 2: Active -->
+                            <button type="button" 
+                                    id="tabActive" 
+                                    onclick="handleTabChange('active')"
+                                    class="tab-btn px-4 py-2.5 text-sm font-medium rounded-t-lg border-b-2 transition-all border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"
+                                    role="tab"
+                                    aria-selected="false"
+                                    aria-controls="employeeTableBody">
+                                Active <span id="countActive" class="ml-1.5 px-2 py-0.5 text-xs rounded-full bg-green-100 text-green-700">0</span>
+                            </button>
+                            
+                            <!-- Tab 3: Inactive -->
+                            <button type="button" 
+                                    id="tabInactive" 
+                                    onclick="handleTabChange('inactive')"
+                                    class="tab-btn px-4 py-2.5 text-sm font-medium rounded-t-lg border-b-2 transition-all border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50"
+                                    role="tab"
+                                    aria-selected="false"
+                                    aria-controls="employeeTableBody">
+                                Inactive <span id="countInactive" class="ml-1.5 px-2 py-0.5 text-xs rounded-full bg-red-100 text-red-700">0</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Bottom Row: Search & Filters -->
+                        <div class="flex flex-col lg:flex-row lg:items-center gap-3">
+                            <!-- Search Input - ✅ BIGGER -->
+                            <div class="relative flex-1 lg:max-w-md">
+                                <input type="text" 
+                                    id="searchInput" 
+                                    placeholder="Search employees... (Ctrl+K)"
+                                    class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all"
+                                    aria-label="Search employees">
+                                <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true"></i>
+                            </div>
+                            
+                            <!-- Department Filter - ✅ MORE COMPACT -->
+                            <select id="filterDepartment" 
+                                    class="px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white w-full lg:w-auto lg:min-w-[180px] lg:max-w-[200px]"
+                                    aria-label="Filter by department">
+                                <option value="">All Departments</option>
+                                <!-- Populated by JS -->
+                            </select>
+                            
+                            <!-- Items Per Page - ✅ COMPACT -->
+                            <select id="itemsPerPage" 
+                                    class="px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white w-full lg:w-auto lg:min-w-[140px] lg:max-w-[160px]"
+                                    aria-label="Items per page">
+                                <option value="10">10 per page</option>
+                                <option value="25">25 per page</option>
+                                <option value="50">50 per page</option>
+                                <option value="100">100 per page</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- ========================================== -->
+                    <!-- TABLE -->
+                    <!-- ========================================== -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full" role="table" aria-label="Employee list">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <button onclick="sortTable('full_name')" 
+                                                class="flex items-center hover:text-primary-600 transition-colors"
+                                                aria-label="Sort by employee name">
+                                            <i class="fas fa-user mr-2" aria-hidden="true"></i>Employee
+                                            <i class="fas fa-sort ml-1 text-gray-400" aria-hidden="true"></i>
+                                        </button>
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-envelope mr-2" aria-hidden="true"></i>Contact
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <button onclick="sortTable('departments.name')" 
+                                                class="flex items-center hover:text-primary-600 transition-colors"
+                                                aria-label="Sort by department">
+                                            <i class="fas fa-building mr-2" aria-hidden="true"></i>Department
+                                            <i class="fas fa-sort ml-1 text-gray-400" aria-hidden="true"></i>
+                                        </button>
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-briefcase mr-2" aria-hidden="true"></i>Position
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <button onclick="sortTable('join_date')" 
+                                                class="flex items-center hover:text-primary-600 transition-colors"
+                                                aria-label="Sort by join date">
+                                            <i class="fas fa-calendar mr-2" aria-hidden="true"></i>Join Date
+                                            <i class="fas fa-sort ml-1 text-gray-400" aria-hidden="true"></i>
+                                        </button>
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>Status
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <button onclick="sortTable('current_contract_end')" 
+                                                class="flex items-center justify-center hover:text-primary-600 transition-colors w-full"
+                                                aria-label="Sort by contract remaining">
+                                            <i class="fas fa-clock mr-2" aria-hidden="true"></i>Sisa Kontrak
+                                            <i class="fas fa-sort ml-1 text-gray-400" aria-hidden="true"></i>
+                                        </button>
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>Status
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-cog mr-2" aria-hidden="true"></i>Actions
+                                    </th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody id="employeeTableBody" class="divide-y divide-gray-200">
+                                <!-- Table rows will be populated by JavaScript -->
+                                <tr>
+                                    <td colspan="9" class="px-6 py-12 text-center">
+                                        <div class="flex flex-col items-center">
+                                            <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-primary-600 mb-4"></div>
+                                            <p class="text-gray-500">Loading employees...</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- ========================================== -->
+                    <!-- PAGINATION -->
+                    <!-- ========================================== -->
+                    <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 rounded-b-xl">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                            <p id="paginationInfo" 
+                               class="text-sm text-gray-600"
+                               role="status"
+                               aria-live="polite">
+                                Showing 0 to 0 of 0 entries
+                            </p>
+                            <div id="paginationButtons" 
+                                 class="flex items-center space-x-1"
+                                 role="navigation"
+                                 aria-label="Table pagination">
+                                <!-- Pagination buttons will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        
+        <!-- ============================================ -->
+        <!-- FOOTER -->
+        <!-- ============================================ -->
+        <footer class="bg-white border-t border-gray-200 px-6 py-4 mt-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+                <p>© 2026 Carabao Billiards Indonesia. All rights reserved.
+                    Developed internally by HRD Internship Project.</p>
+                <p class="mt-2 sm:mt-0">Version 1.0.0 | Powered by Supabase</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- MODALS SECTION -->
+    <!-- ============================================ -->
+    
+    <!-- ========================================== -->
+    <!-- MODAL 1: ADD/EDIT EMPLOYEE -->
+    <!-- ========================================== -->
+    <div id="employeeModal" 
+        class="modal-backdrop fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle">
+        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+                <div class="flex items-center justify-between">
+                    <h3 id="modalTitle" class="text-xl font-semibold text-white">Add New Employee</h3>
+                    <button onclick="closeModal()" 
+                            class="text-white/80 hover:text-white transition-colors"
+                            aria-label="Close modal">
+                        <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+                <form id="employeeForm">
+                    <!-- Hidden ID field for editing -->
+                    <input type="hidden" id="employeeId" name="id">
+                    
+                    <!-- ========================================== -->
+                    <!-- SECTION 1: PERSONAL INFORMATION -->
+                    <!-- ========================================== -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4 flex items-center">
+                            <i class="fas fa-user-circle mr-2 text-primary-600" aria-hidden="true"></i>
+                            Personal Information
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            
+                            <!-- Employee Code -->
+                            <div>
+                                <label for="employeeCode" class="block text-sm font-medium text-gray-700 mb-1">
+                                    Employee Code <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" 
+                                    id="employeeCode" 
+                                    name="employee_code"
+                                    required
+                                    placeholder="e.g., EMP001"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                            
+                            <!-- NIK -->
+                            <div>
+                                <label for="employeeNIK" class="block text-sm font-medium text-gray-700 mb-1">
+                                    NIK (KTP) <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" 
+                                    id="employeeNIK" 
+                                    name="nik"
+                                    required
+                                    placeholder="16 digit NIK"
+                                    maxlength="16"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                            
+                            <!-- Full Name -->
+                            <div class="md:col-span-2">
+                                <label for="employeeFullName" class="block text-sm font-medium text-gray-700 mb-1">
+                                    Full Name <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" 
+                                    id="employeeFullName" 
+                                    name="full_name"
+                                    required
+                                    placeholder="Enter full name"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                            
+                            <!-- Email -->
+                            <div>
+                                <label for="employeeEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" 
+                                    id="employeeEmail" 
+                                    name="email"
+                                    placeholder="email@example.com"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div>
+                                <label for="employeePhone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" 
+                                    id="employeePhone" 
+                                    name="phone"
+                                    placeholder="+62812345678"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                            
+                            <!-- Birth Place -->
+                            <div>
+                                <label for="employeeBirthPlace" class="block text-sm font-medium text-gray-700 mb-1">Birth Place</label>
+                                <input type="text" 
+                                    id="employeeBirthPlace" 
+                                    name="birth_place"
+                                    placeholder="e.g., Jakarta"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                            
+                            <!-- Birth Date -->
+                            <div>
+                                <label for="employeeBirthDate" class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+                                <input type="date" 
+                                    id="employeeBirthDate" 
+                                    name="birth_date"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                            
+                            <!-- Gender -->
+                            <div>
+                                <label for="employeeGender" class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                                <select id="employeeGender" 
+                                        name="gender"
+                                        class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Mother Maiden Name -->
+                            <div>
+                                <label for="employeeMotherName" class="block text-sm font-medium text-gray-700 mb-1">Mother's Maiden Name</label>
+                                <input type="text" 
+                                    id="employeeMotherName" 
+                                    name="mother_maiden_name"
+                                    placeholder="Mother's maiden name"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                            
+                            <!-- KTP Address -->
+                            <div class="md:col-span-2">
+                                <label for="employeeKTPAddress" class="block text-sm font-medium text-gray-700 mb-1">KTP Address</label>
+                                <textarea id="employeeKTPAddress" 
+                                        name="ktp_address"
+                                        rows="2"
+                                        placeholder="Enter KTP address"
+                                        class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all resize-none"></textarea>
+                            </div>
+                            
+                            <!-- Current Address -->
+                            <div class="md:col-span-2">
+                                <label for="employeeCurrentAddress" class="block text-sm font-medium text-gray-700 mb-1">Current Address</label>
+                                <textarea id="employeeCurrentAddress" 
+                                        name="current_address"
+                                        rows="2"
+                                        placeholder="Enter current address (leave empty if same as KTP)"
+                                        class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all resize-none"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ========================================== -->
+                    <!-- SECTION 2: BANK INFORMATION -->
+                    <!-- ========================================== -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4 flex items-center">
+                            <i class="fas fa-university mr-2 text-primary-600" aria-hidden="true"></i>
+                            Bank Information
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            
+                            <!-- Bank Name -->
+                            <div>
+                                <label for="employeeBankName" class="block text-sm font-medium text-gray-700 mb-1">Bank Name</label>
+                                <input type="text" 
+                                    id="employeeBankName" 
+                                    name="bank_name"
+                                    placeholder="e.g., BCA, Mandiri"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                            
+                            <!-- Bank Account Number -->
+                            <div>
+                                <label for="employeeBankAccountNumber" class="block text-sm font-medium text-gray-700 mb-1">Account Number</label>
+                                <input type="text" 
+                                    id="employeeBankAccountNumber" 
+                                    name="bank_account_number"
+                                    placeholder="Account number"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                            
+                            <!-- Bank Account Name -->
+                            <div>
+                                <label for="employeeBankAccountName" class="block text-sm font-medium text-gray-700 mb-1">Account Name</label>
+                                <input type="text" 
+                                    id="employeeBankAccountName" 
+                                    name="bank_account_name"
+                                    placeholder="Account holder name"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ========================================== -->
+                    <!-- SECTION 3: EMPLOYMENT INFORMATION -->
+                    <!-- ========================================== -->
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4 flex items-center">
+                            <i class="fas fa-briefcase mr-2 text-primary-600" aria-hidden="true"></i>
+                            Employment Information
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            
+                            <!-- Department -->
+                            <div>
+                                <label for="employeeDepartment" class="block text-sm font-medium text-gray-700 mb-1">
+                                    Department <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" 
+                                    id="employeeDepartment" 
+                                    name="department"
+                                    required
+                                    placeholder="Ketik nama department"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                            </div>
+
+                            <!-- Division -->
+                            <div>
+                                <label for="employeeDivision" class="block text-sm font-medium text-gray-700 mb-1">Division</label>
+                                <input type="text"  
+                                    id="employeeDivision" 
+                                    name="division"
+                                    placeholder="Ketik nama division (optional)"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                            </div>
+                            
+                            <!-- Position (Custom Input) -->
+                            <div>
+                                <label for="employeePositionCustom" class="block text-sm font-medium text-gray-700 mb-1">
+                                    Position / Job Title <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" 
+                                    id="employeePositionCustom" 
+                                    required
+                                    placeholder="e.g. Senior Software Engineer, Marketing Manager, etc."
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                                <p class="mt-1 text-xs text-gray-500">
+                                    <i class="fas fa-info-circle mr-1" aria-hidden="true"></i>
+                                    Enter the exact job title/position name
+                                </p>
+                            </div>
+                            
+                            <!-- PTKP Category -->
+                            <div>
+                                <label for="employeePTKP" class="block text-sm font-medium text-gray-700 mb-1">
+                                    PTKP Category <span class="text-red-500">*</span>
+                                </label>
+                                <select id="employeePTKP" 
+                                        name="ptkp_id"
+                                        required
+                                        class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                    <option value="">Select PTKP</option>
+                                    <!-- Populated by JS -->
+                                </select>
+                            </div>
+                            
+                            <!-- Join Date -->
+                            <div>
+                                <label for="employeeJoinDate" class="block text-sm font-medium text-gray-700 mb-1">
+                                    Join Date <span class="text-red-500">*</span>
+                                </label>
+                                <input type="date" 
+                                    id="employeeJoinDate" 
+                                    name="join_date"
+                                    required
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                            </div>
+                            
+                            <!-- Employment Status -->
+                            <div>
+                                <label for="employeeEmploymentStatus" class="block text-sm font-medium text-gray-700 mb-1">
+                                    Employment Status <span class="text-red-500">*</span>
+                                </label>
+                                <select id="employeeEmploymentStatus" 
+                                        onchange="toggleResignDateField()"
+                                        required 
+                                        class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                    <option value="">Select Status</option>
+                                    <option value="Permanent">Permanent</option>
+                                    <option value="Contract">Contract</option>
+                                    <option value="Probation">Probation</option>
+                                    <option value="Internship">Internship</option>
+                                    <option value="Resigned">Resigned</option>
+                                </select>
+                            </div>
+
+                            <!-- Resign Date (Conditional - Only for Resigned) -->
+                            <div id="resignDateContainer" class="hidden">
+                                <label for="employeeResignDate" class="block text-sm font-medium text-gray-700 mb-1">
+                                    Resign Date
+                                </label>
+                                <input type="date" 
+                                    id="employeeResignDate"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                                <p class="mt-1 text-xs text-gray-500">
+                                    <i class="fas fa-info-circle mr-1" aria-hidden="true"></i>
+                                    Leave empty if employee is still active
+                                </p>
+                            </div>
+                            
+                            <!-- Active Status -->
+                            <div class="md:col-span-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" 
+                                        id="employeeIsActive" 
+                                        name="is_active"
+                                        value="true"
+                                        checked
+                                        class="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500">
+                                    <span class="ml-2 text-sm font-medium text-gray-700">Employee is Active</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end space-x-3">
+                <button onclick="closeModal()" 
+                        class="px-5 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 font-medium text-sm transition-colors">
+                    Cancel
+                </button>
+                <button id="btnSaveEmployee" 
+                        onclick="saveEmployee()" 
+                        class="btn-primary px-5 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 font-medium text-sm transition-colors">
+                    <i class="fas fa-save mr-2" aria-hidden="true"></i>
+                    Save Employee
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL 2: VIEW EMPLOYEE DETAILS -->
+    <!-- ========================================== -->
+    <div id="viewEmployeeModal" 
+        class="modal-backdrop fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="viewEmployeeTitle">
+        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+                <div class="flex items-center justify-between">
+                    <h3 id="viewEmployeeTitle" class="text-xl font-semibold text-white">
+                        <i class="fas fa-user-circle mr-2" aria-hidden="true"></i>
+                        Employee Details
+                    </h3>
+                    <button onclick="closeViewModal()" 
+                            class="text-white/80 hover:text-white transition-colors"
+                            aria-label="Close modal">
+                        <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div id="viewEmployeeContent" class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+                <!-- Content will be populated by JavaScript -->
+                <div class="flex items-center justify-center py-12">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end">
+                <button onclick="closeViewModal()" 
+                        class="px-5 py-2.5 bg-gray-600 text-white rounded-lg hover:bg-gray-700 font-medium text-sm transition-colors">
+                    <i class="fas fa-times mr-2" aria-hidden="true"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ========================================== -->
+    <!-- MODAL 3: DELETE CONFIRMATION -->
+    <!-- ========================================== -->
+    <div id="deleteModal" 
+        class="modal-backdrop fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="deleteModalTitle">
+        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full">
+            
+            <!-- Modal Body -->
+            <div class="p-6 text-center">
+                <!-- Warning Icon -->
+                <div class="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-exclamation-triangle text-red-600 text-3xl" aria-hidden="true"></i>
+                </div>
+                
+                <h3 id="deleteModalTitle" class="text-xl font-semibold text-gray-900 mb-2">Delete Employee</h3>
+                
+                <div id="deleteEmployeeInfo" class="text-gray-600 mb-6">
+                    <!-- Info will be populated by JavaScript -->
+                    <p>Are you sure you want to delete this employee?</p>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-center space-x-3">
+                <button onclick="closeDeleteModal()" 
+                        class="px-5 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 font-medium text-sm transition-colors min-w-[100px]">
+                    <i class="fas fa-times mr-2" aria-hidden="true"></i>
+                    Cancel
+                </button>
+                <button onclick="handleDeleteEmployee()" 
+                        class="px-5 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 font-medium text-sm transition-colors min-w-[100px]">
+                    <i class="fas fa-trash-alt mr-2" aria-hidden="true"></i>
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL 4: CONTRACT HISTORY -->
+    <!-- ========================================== -->
+    <div id="contractHistoryModal" 
+        class="modal-backdrop fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contractHistoryTitle">
+        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+                <div class="flex items-center justify-between">
+                    <h3 id="contractHistoryTitle" class="text-xl font-semibold text-white">
+                        <i class="fas fa-file-contract mr-2" aria-hidden="true"></i>
+                        Contract History - <span id="contractHistoryEmployeeName">Employee Name</span>
+                    </h3>
+                    <button onclick="closeContractHistory()" 
+                            class="text-white/80 hover:text-white transition-colors"
+                            aria-label="Close modal">
+                        <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-200px)]">
+                <!-- Add Contract Button -->
+                <div class="mb-4 flex justify-end">
+                    <button onclick="openContractForm()" 
+                            class="px-4 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 font-medium text-sm transition-colors"
+                            aria-label="Add new contract">
+                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                        Add Contract
+                    </button>
+                </div>
+                
+                <!-- Contract History Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full" role="table" aria-label="Contract history">
+                        <thead class="bg-gray-50 border-b border-gray-200">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Contract Number</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Type</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Start Date</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">End Date</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Position</th>
+                                <th scope="col" class="px-6 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contractHistoryTableBody" class="divide-y divide-gray-200">
+                            <!-- Populated by JavaScript -->
+                            <tr>
+                                <td colspan="6" class="px-6 py-8 text-center text-gray-500">
+                                    <i class="fas fa-inbox text-3xl mb-2" aria-hidden="true"></i>
+                                    <p>No contract history found</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end">
+                <button onclick="closeContractHistory()" 
+                        class="px-5 py-2.5 bg-gray-600 text-white rounded-lg hover:bg-gray-700 font-medium text-sm transition-colors">
+                    <i class="fas fa-times mr-2" aria-hidden="true"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL 5: CONTRACT FORM (ADD/EDIT) -->
+    <!-- ========================================== -->
+    <div id="contractFormModal" 
+         class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="contractFormTitle">
+        <div class="bg-white rounded-xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                <h3 id="contractFormTitle" class="text-lg font-semibold text-gray-800">
+                    <i class="fas fa-file-signature mr-2" aria-hidden="true"></i>
+                    Add New Contract
+                </h3>
+                <button onclick="closeContractForm()" 
+                        class="text-gray-400 hover:text-gray-600 transition-colors"
+                        aria-label="Close modal">
+                    <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-180px)]">
+                <form id="contractForm">
+                    <input type="hidden" id="contractId" name="id">
+                    <input type="hidden" id="contractEmployeeId" name="employee_id">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Contract Number -->
+                        <div>
+                            <label for="contractNumber" class="block text-sm font-medium text-gray-700 mb-2">
+                                Contract Number
+                            </label>
+                            <input type="text" 
+                                   id="contractNumber" 
+                                   name="contract_number"
+                                   placeholder="e.g., CNT-2024-001"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+                        
+                        <!-- Contract Type -->
+                        <div>
+                            <label for="contractType" class="block text-sm font-medium text-gray-700 mb-2">
+                                Contract Type <span class="text-red-500">*</span>
+                            </label>
+                            <select id="contractType" 
+                                    required 
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                <option value="">Select Contract Type</option>
+                                <option value="Permanent">Permanent (PKWTT)</option>
+                                <option value="Contract">Contract (PKWT)</option>
+                                <option value="Probation">Probation</option>
+                                <option value="Internship">Internship</option>
+                                <option value="Extension">Extension</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Start Date -->
+                        <div>
+                            <label for="contractStartDate" class="block text-sm font-medium text-gray-700 mb-2">
+                                Start Date <span class="text-red-500">*</span>
+                            </label>
+                            <input type="date" 
+                                   id="contractStartDate" 
+                                   name="start_date"
+                                   required
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+                        
+                        <!-- End Date -->
+                        <div>
+                            <label for="contractEndDate" class="block text-sm font-medium text-gray-700 mb-2">
+                                End Date
+                            </label>
+                            <input type="date" 
+                                   id="contractEndDate" 
+                                   name="end_date"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+                        
+                        <!-- Salary -->
+                        <div>
+                            <label for="contractSalary" class="block text-sm font-medium text-gray-700 mb-2">
+                                Salary (Optional)
+                            </label>
+                            <input type="number" 
+                                   id="contractSalary" 
+                                   name="salary"
+                                   placeholder="e.g., 5000000"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+                        
+                        <!-- Position at Time -->
+                        <div>
+                            <label for="contractPosition" class="block text-sm font-medium text-gray-700 mb-2">
+                                Position at Time
+                            </label>
+                            <input type="text" 
+                                   id="contractPosition" 
+                                   name="position_at_time"
+                                   placeholder="Position during contract"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+                        
+                        <!-- Notes -->
+                        <div class="md:col-span-2">
+                            <label for="contractNotes" class="block text-sm font-medium text-gray-700 mb-2">
+                                Notes
+                            </label>
+                            <textarea id="contractNotes" 
+                                      name="notes"
+                                      rows="3"
+                                      placeholder="Additional notes about this contract..."
+                                      class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all resize-none"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end space-x-3">
+                <button onclick="closeContractForm()" 
+                        class="px-5 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 font-medium text-sm transition-colors">
+                    Cancel
+                </button>
+                <button onclick="saveContract()" 
+                        class="px-5 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 font-medium text-sm transition-colors">
+                    <i class="fas fa-save mr-2" aria-hidden="true"></i>
+                    Save Contract
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL 6: WARNING LETTERS HISTORY -->
+    <!-- ========================================== -->
+    <div id="warningLettersModal" 
+        class="modal-backdrop fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="warningLettersTitle">
+        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+                <div class="flex items-center justify-between">
+                    <h3 id="warningLettersTitle" class="text-xl font-semibold text-white">
+                        <i class="fas fa-exclamation-triangle mr-2" aria-hidden="true"></i>
+                        Warning Letters - <span id="warningLettersEmployeeName">Employee Name</span>
+                    </h3>
+                    <button onclick="closeWarningLetters()" 
+                            class="text-white/80 hover:text-white transition-colors"
+                            aria-label="Close modal">
+                        <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-200px)]">
+                <!-- Add Warning Button -->
+                <div class="mb-4 flex justify-end">
+                    <button onclick="openWarningForm()" 
+                            class="px-4 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 font-medium text-sm transition-colors"
+                            aria-label="Add warning letter">
+                        <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                        Add Warning Letter
+                    </button>
+                </div>
+                
+                <!-- Warning Letters Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full" role="table" aria-label="Warning letters">
+                        <thead class="bg-gray-50 border-b border-gray-200">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Letter Number</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Level</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Issue Date</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Violation Type</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
+                                <th scope="col" class="px-6 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="warningLettersTableBody" class="divide-y divide-gray-200">
+                            <!-- Populated by JavaScript -->
+                            <tr>
+                                <td colspan="6" class="px-6 py-8 text-center text-gray-500">
+                                    <i class="fas fa-inbox text-3xl mb-2" aria-hidden="true"></i>
+                                    <p>No warning letters found</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end">
+                <button onclick="closeWarningLetters()" 
+                        class="px-5 py-2.5 bg-gray-600 text-white rounded-lg hover:bg-gray-700 font-medium text-sm transition-colors">
+                    <i class="fas fa-times mr-2" aria-hidden="true"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ========================================== -->
+    <!-- MODAL 7: WARNING LETTER FORM (ADD/EDIT) -->
+    <!-- ========================================== -->
+    <div id="warningFormModal" 
+        class="modal-backdrop fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="warningFormTitle">
+        <div class="modal-content bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+                <div class="flex items-center justify-between">
+                    <h3 id="warningFormTitle" class="text-xl font-semibold text-white">
+                        <i class="fas fa-exclamation-circle mr-2" aria-hidden="true"></i>
+                        Add Warning Letter
+                    </h3>
+                    <button onclick="closeWarningForm()" 
+                            class="text-white/80 hover:text-white transition-colors"
+                            aria-label="Close modal">
+                        <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+                <form id="warningForm">
+                    <input type="hidden" id="warningId" name="id">
+                    <input type="hidden" id="warningEmployeeId" name="employee_id">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Letter Number -->
+                        <div>
+                            <label for="warningLetterNumber" class="block text-sm font-medium text-gray-700 mb-1">
+                                Letter Number <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" 
+                                id="warningLetterNumber" 
+                                name="letter_number"
+                                required
+                                placeholder="e.g., SP-001/2024"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+                        
+                        <!-- Warning Level -->
+                        <div>
+                            <label for="warningLevel" class="block text-sm font-medium text-gray-700 mb-1">
+                                Warning Level <span class="text-red-500">*</span>
+                            </label>
+                            <select id="warningLevel" 
+                                    name="warning_level"
+                                    required
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                <option value="">Select Level</option>
+                                <option value="1">SP 1 (First Warning)</option>
+                                <option value="2">SP 2 (Second Warning)</option>
+                                <option value="3">SP 3 (Final Warning)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Issue Date -->
+                        <div>
+                            <label for="warningIssueDate" class="block text-sm font-medium text-gray-700 mb-1">
+                                Issue Date <span class="text-red-500">*</span>
+                            </label>
+                            <input type="date" 
+                                id="warningIssueDate" 
+                                name="issue_date"
+                                required
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+                        
+                        <!-- Violation Type -->
+                        <div>
+                            <label for="warningViolationType" class="block text-sm font-medium text-gray-700 mb-1">
+                                Violation Type <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" 
+                                id="warningViolationType" 
+                                name="violation_type"
+                                required
+                                placeholder="e.g., Late Attendance"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+                        
+                        <!-- Description -->
+                        <div class="md:col-span-2">
+                            <label for="warningDescription" class="block text-sm font-medium text-gray-700 mb-1">
+                                Description
+                            </label>
+                            <textarea id="warningDescription" 
+                                    name="description"
+                                    rows="3"
+                                    placeholder="Detailed description of the violation..."
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all resize-none"></textarea>
+                        </div>
+                        
+                        <!-- Action Taken -->
+                        <div class="md:col-span-2">
+                            <label for="warningActionTaken" class="block text-sm font-medium text-gray-700 mb-1">
+                                Action Taken
+                            </label>
+                            <textarea id="warningActionTaken" 
+                                    name="action_taken"
+                                    rows="2"
+                                    placeholder="Corrective actions or consequences..."
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all resize-none"></textarea>
+                        </div>
+                        
+                        <!-- Follow-up Date -->
+                        <div>
+                            <label for="warningFollowUpDate" class="block text-sm font-medium text-gray-700 mb-1">
+                                Follow-up Date
+                            </label>
+                            <input type="date" 
+                                id="warningFollowUpDate" 
+                                name="follow_up_date"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+                        
+                        <!-- Status -->
+                        <div>
+                            <label for="warningStatus" class="block text-sm font-medium text-gray-700 mb-1">
+                                Status <span class="text-red-500">*</span>
+                            </label>
+                            <select id="warningStatus" 
+                                    name="status"
+                                    required
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                <option value="Active">Active</option>
+                                <option value="Resolved">Resolved</option>
+                                <option value="Escalated">Escalated</option>
+                                <option value="Expired">Expired</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end space-x-3">
+                <button onclick="closeWarningForm()" 
+                        class="px-5 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 font-medium text-sm transition-colors">
+                    Cancel
+                </button>
+                <button onclick="saveWarningLetter()" 
+                        class="px-5 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 font-medium text-sm transition-colors">
+                    <i class="fas fa-save mr-2" aria-hidden="true"></i>
+                    Save Warning
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <!-- ============================================ -->
+    <div id="toastContainer" 
+         class="fixed bottom-4 right-4 z-[100] space-y-2"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true">
+        <!-- Toast notifications will be dynamically injected here by JavaScript -->
+    </div>
+
+    <!-- ============================================ -->
+    <!-- INLINE JAVASCRIPT (UI INTERACTIONS ONLY) -->
+    <!-- ============================================ -->
+    <script>
+        /**
+         * Toggle Sidebar (Mobile)
+         * Shows/hides the sidebar and overlay on mobile devices
+         */
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const toggle = document.getElementById('sidebarToggle');
+            
+            if (sidebar && overlay) {
+                const isHidden = sidebar.classList.contains('-translate-x-full');
+                
+                sidebar.classList.toggle('-translate-x-full');
+                overlay.classList.toggle('hidden');
+                
+                // Update ARIA attributes
+                if (toggle) {
+                    toggle.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                }
+            }
+        }
+        
+        /**
+         * Toggle User Dropdown Menu
+         * Shows/hides the user dropdown menu
+         */
+        function toggleUserDropdown() {
+            const dropdown = document.getElementById('userDropdown');
+            const btn = document.getElementById('userMenuBtn');
+            
+            if (dropdown) {
+                const isHidden = dropdown.classList.contains('hidden');
+                dropdown.classList.toggle('hidden');
+                
+                // Update ARIA attributes
+                if (btn) {
+                    btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                }
+            }
+        }
+        
+        /**
+         * Close Dropdown When Clicking Outside
+         * Event listener to close dropdown when user clicks outside
+         */
+        document.addEventListener('click', function(event) {
+            const userMenuBtn = document.getElementById('userMenuBtn');
+            const userDropdown = document.getElementById('userDropdown');
+            
+            if (userMenuBtn && userDropdown) {
+                if (!userMenuBtn.contains(event.target) && !userDropdown.contains(event.target)) {
+                    userDropdown.classList.add('hidden');
+                    userMenuBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+        
+        /**
+         * Show Toast Notification
+         * @param {string} message - Notification message
+         * @param {string} type - Notification type (success|error|warning|info)
+         */
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            
+            const colors = {
+                success: 'bg-green-500',
+                error: 'bg-red-500',
+                warning: 'bg-yellow-500',
+                info: 'bg-blue-500'
+            };
+            
+            const icons = {
+                success: 'fa-check-circle',
+                error: 'fa-exclamation-circle',
+                warning: 'fa-exclamation-triangle',
+                info: 'fa-info-circle'
+            };
+            
+            const toast = document.createElement('div');
+            toast.className = `toast flex items-center p-4 rounded-lg shadow-lg text-white ${colors[type] || colors.info} min-w-[300px] animate-slide-in`;
+            toast.setAttribute('role', 'alert');
+            toast.innerHTML = `
+                <i class="fas ${icons[type] || icons.info} mr-3 text-lg" aria-hidden="true"></i>
+                <span class="flex-1">${message}</span>
+                <button onclick="this.parentElement.remove()" 
+                        class="ml-3 hover:opacity-75 transition-opacity"
+                        aria-label="Close notification">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.remove();
+                }
+            }, 5000);
+        }
+
+        /**
+         * Logout Function
+         * Logs out the user with confirmation
+         */
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                showToast('Logging out...', 'info');
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);
+            }
+        }
+
+        /**
+         * Keyboard Accessibility
+         * Close modals with Escape key
+         */
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                // Close any open modals
+                const modals = [
+                    'employeeModal',
+                    'viewEmployeeModal',
+                    'deleteModal',
+                    'contractHistoryModal',
+                    'contractFormModal',
+                    'warningLettersModal',
+                    'warningFormModal'
+                ];
+                
+                modals.forEach(modalId => {
+                    const modal = document.getElementById(modalId);
+                    if (modal && !modal.classList.contains('hidden')) {
+                        modal.classList.add('hidden');
+                    }
+                });
+                
+                // Close user dropdown
+                const userDropdown = document.getElementById('userDropdown');
+                if (userDropdown && !userDropdown.classList.contains('hidden')) {
+                    userDropdown.classList.add('hidden');
+                    const userMenuBtn = document.getElementById('userMenuBtn');
+                    if (userMenuBtn) {
+                        userMenuBtn.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            }
+        });
+    </script>
+    
+    <!-- ============================================ -->
+    <!-- EXTERNAL JAVASCRIPT DEPENDENCIES -->
+    <!-- CRITICAL: Load order must be maintained! -->
+    <!-- ============================================ -->
+    
+    <!-- 1. Supabase Client Library (MUST BE FIRST) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- 2. Core Application (Initializes Supabase) -->
+    <script src="js/app.js"></script>
+    
+    <!-- 3. API Functions (Depends on app.js) -->
+    <script src="js/api.js"></script>
+    
+    <!-- 4. Database Functions (Depends on app.js & api.js) -->
+    <script src="js/database-functions.js"></script>
+    
+    <!-- 5. Utility Functions -->
+    <script src="js/utils.js"></script>
+    
+    <!-- 6. Authentication (Depends on all above) -->
+    <script src="js/auth.js"></script>
+    
+    <!-- 7. Page-Specific: Employees Management (MUST BE LAST) -->
+    <script src="js/employees.js"></script>
+
+</body>
+</html>

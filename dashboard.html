@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ================================================ -->
+<!-- HEAD SECTION -->
+<!-- ================================================ -->
+<head>
+    <!-- ============================================ -->
+    <!-- META TAGS -->
+    <!-- ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SWAP HRIS - Comprehensive HR Management System Dashboard">
+    <meta name="keywords" content="HR, HRIS, Da shboard, Employee Management, Attendance, Leave">
+    <meta name="author" content="Ardiansyah Dwi S">
+    <meta name="theme-color" content="#2563eb">
+    
+    <title>Carabao Billiards HR Portal — Dashboard</title>
+    
+    <!-- ============================================ -->
+    <!-- EXTERNAL STYLESHEETS & SCRIPTS -->
+    <!-- ============================================ -->
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ✅ ADD THIS LINE -->
+    <link rel="stylesheet" href="css/tailwind.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- ================================================ -->
+<!-- BODY SECTION -->
+<!-- ================================================ -->
+<body class="bg-gray-100 min-h-screen font-['Inter']">
+
+    <!-- ============================================ -->
+    <!-- SIDEBAR NAVIGATION -->
+    <!-- ============================================ -->
+    <aside id="sidebar" 
+           class="fixed top-0 left-0 z-40 w-64 h-screen bg-white shadow-lg transform transition-transform duration-300 lg:translate-x-0 -translate-x-full"
+           role="navigation"
+           aria-label="Main navigation">
+        
+        <!-- Logo Section -->
+        <div class="flex items-center justify-center h-16 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur">
+                    <i class="fas fa-building text-white text-lg" aria-hidden="true"></i>
+                </div>
+                <span class="text-xl font-bold text-white">Carabao HR Portal</span>
+            </div>
+        </div>
+        
+        <!-- Navigation Links -->
+        <nav class="mt-6 px-4" aria-label="Sidebar navigation">
+            <div class="space-y-1">
+                
+                <!-- Dashboard (Active) -->
+                <a href="dashboard.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-white bg-primary-600 rounded-lg shadow-md"
+                   aria-current="page">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-white/20 mr-3">
+                        <i class="fas fa-home text-white" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                
+                <!-- Employees -->
+                <a href="employees.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-users text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Employees</span>
+                </a>
+                
+                <!-- Attendance -->
+                <a href="attendance.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-clock text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Attendance</span>
+                </a>
+                
+                <!-- Leave Management -->
+                <a href="leave.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-calendar-alt text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Leave</span>
+                </a>
+
+                <!-- Recruitment -->
+                <a href="recruitment.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-user-plus text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Recruitment</span>
+                </a>                
+                
+                <!-- WhatsApp Blast -->
+                <a href="whatsapp-blast.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fab fa-whatsapp text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">WhatsApp Blast</span>
+                </a>
+
+                <!-- Settings -->
+                <a href="settings.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-cog text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Settings</span>
+                </a>
+            </div>
+            
+            <!-- Sidebar Footer - Help Section -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
+                <div class="flex items-center space-x-3 px-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                        <i class="fas fa-headset" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-700">Need Help?</p>
+                        <p class="text-xs text-gray-500">Contact Support</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div id="sidebarOverlay" 
+         class="fixed inset-0 bg-black/50 z-30 lg:hidden hidden" 
+         onclick="toggleSidebar()"
+         aria-label="Close sidebar overlay"></div>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT WRAPPER -->
+    <!-- ============================================ -->
+    <div class="lg:ml-64 min-h-screen">
+        
+        <!-- ============================================ -->
+        <!-- TOP HEADER BAR -->
+        <!-- ============================================ -->
+        <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-20">
+            <div class="flex items-center justify-between px-4 sm:px-6 py-4">
+                
+                <!-- Left Section: Mobile Menu & Page Title -->
+                <div class="flex items-center space-x-4">
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="sidebarToggle" 
+                            onclick="toggleSidebar()" 
+                            class="lg:hidden text-gray-600 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg transition-colors"
+                            aria-label="Toggle sidebar"
+                            aria-controls="sidebar"
+                            aria-expanded="false">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                    </button>
+                    
+                    <!-- Page Title & Greeting -->
+                    <div>
+                        <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
+                        <p class="text-sm text-gray-500 hidden sm:block">
+                            Welcome Back, <span id="currentUserName"></span>! 👋
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right Section: Actions & User Menu -->
+                <div class="flex items-center space-x-4">
+
+                    <!-- User Dropdown Menu -->
+                    <div class="relative">
+                        <button id="userMenuBtn" 
+                                onclick="toggleUserDropdown()" 
+                                class="flex items-center space-x-3 focus:outline-none hover:bg-gray-50 rounded-lg p-2 transition-colors"
+                                aria-label="User menu"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                            <!-- User Info (Desktop Only) -->
+                            <div class="text-right hidden sm:block">
+                                <p id="userName" class="text-sm font-medium text-gray-700">Loading...</p>
+                                <p id="userRole" class="text-xs text-gray-500">Loading...</p>
+                            </div>
+                            <!-- User Avatar -->
+                            <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold shadow-md">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <!-- Dropdown Icon -->
+                            <i class="fas fa-chevron-down text-gray-400 text-xs hidden sm:block" aria-hidden="true"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu Content -->
+                        <div id="userDropdown" 
+                             class="hidden absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50"
+                             role="menu"
+                             aria-labelledby="userMenuBtn">
+                            <!-- User Info Header -->
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <p class="text-sm font-medium text-gray-900" id="dropdownUserName">User Name</p>
+                                <p class="text-xs text-gray-500" id="dropdownUserEmail">user@example.com</p>
+                            </div>
+                            <!-- Menu Items -->
+                            <a href="settings.html" 
+                               class="flex items-center px-4 py-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
+                               role="menuitem">
+                                <i class="fas fa-cog w-5 mr-3 text-gray-400" aria-hidden="true"></i>
+                                System Settings
+                            </a>
+                            <hr class="my-2 border-gray-100" aria-hidden="true">
+                            <button onclick="logout()" 
+                                    class="flex items-center w-full px-4 py-2.5 text-red-600 hover:bg-red-50 transition-colors"
+                                    role="menuitem">
+                                <i class="fas fa-sign-out-alt w-5 mr-3" aria-hidden="true"></i>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================ -->
+        <!-- MAIN CONTENT AREA -->
+        <!-- ============================================ -->
+        <main class="p-4 sm:p-6">
+
+            <!-- ============================================ -->
+            <!-- SECTION 1: CRITICAL METRICS (4 KPI CARDS) -->
+            <!-- ============================================ -->
+            <section aria-labelledby="metrics-heading">
+                <h2 id="metrics-heading" class="sr-only">Key Performance Metrics</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6">
+                    
+                    <!-- KPI Card 1: Total Employees -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Total Employees</p>
+                                <p id="stat-total-employees" class="text-3xl font-bold text-gray-800">0</p>
+                            </div>
+                            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-users text-blue-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-mars text-blue-500" aria-hidden="true"></i>
+                                <span id="stat-total-male" class="text-gray-600">0 Laki-laki</span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-venus text-pink-500" aria-hidden="true"></i>
+                                <span id="stat-total-female" class="text-gray-600">0 Perempuan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- KPI Card 2: Active Employees -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Active Employee</p>
+                                <p id="stat-active-employees" class="text-3xl font-bold text-green-600">0</p>
+                            </div>
+                            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-user-check text-green-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-mars text-blue-500" aria-hidden="true"></i>
+                                <span id="stat-active-male" class="text-gray-600">0 Laki-laki</span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-venus text-pink-500" aria-hidden="true"></i>
+                                <span id="stat-active-female" class="text-gray-600">0 Perempuan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KPI Card 3: Inactive Employees -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Inactive Employee</p>
+                                <p id="stat-inactive-employees" class="text-3xl font-bold text-gray-600">0</p>
+                            </div>
+                            <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-user-slash text-gray-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-mars text-blue-500" aria-hidden="true"></i>
+                                <span id="stat-inactive-male" class="text-gray-600">0 Laki-laki</span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-venus text-pink-500" aria-hidden="true"></i>
+                                <span id="stat-inactive-female" class="text-gray-600">0 Perempuan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- KPI Card 4: Pending Leaves -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Leave Pending</p>
+                                <p id="stat-pending-leaves" class="text-3xl font-bold text-yellow-600">0</p>
+                            </div>
+                            <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-calendar-times text-yellow-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            <span id="stat-leave-approved" class="text-green-600">0 Approved</span> • 
+                            <span id="stat-leave-rejected" class="text-red-600">0 Rejected</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION 2: CRITICAL ALERTS (AUTO-GENERATED) -->
+            <!-- ============================================ -->
+            <section aria-labelledby="alerts-heading" class="mb-6">
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl shadow-sm p-6 border-l-4 border-red-500">
+                    <h2 id="alerts-heading" class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-exclamation-triangle text-red-600 mr-2 animate-pulse" aria-hidden="true"></i>
+                        Critical Alerts & Reminders
+                    </h2>
+                    <div id="critical-alerts-container" 
+                         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+                         role="alert"
+                         aria-live="polite">
+                        <!-- Auto-generated alerts will appear here via JavaScript -->
+                        <div class="text-center py-8 col-span-full text-gray-500">
+                            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-red-600" aria-hidden="true"></div>
+                            <p class="mt-2 text-sm">Loading critical alerts...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================ -->
+            <!-- SECTION 3: MAIN GRID LAYOUT (2/3 + 1/3) -->
+            <!-- ============================================ -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                
+                <!-- ============================================ -->
+                <!-- LEFT COLUMN (2/3 Width) -->
+                <!-- ============================================ -->
+                <div class="lg:col-span-2 space-y-6">
+                    
+                    <!-- Action Items & To-Do Section -->
+                    <section aria-labelledby="tasks-heading">
+                        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                            <!-- Header -->
+                            <div class="flex items-center justify-between mb-4">
+                                <h2 id="tasks-heading" class="text-lg font-semibold text-gray-800 flex items-center">
+                                    <i class="fas fa-tasks text-primary-600 mr-2" aria-hidden="true"></i>
+                                    Action Items & To-Do
+                                </h2>
+                                <button onclick="openAddTaskModal()" 
+                                        class="text-sm bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors"
+                                        aria-label="Add new task">
+                                    <i class="fas fa-plus mr-1" aria-hidden="true"></i> Add Task
+                                </button>
+                            </div>
+                            
+                            <!-- Task Type Tabs -->
+                            <div class="flex space-x-2 mb-4 border-b border-gray-200" role="tablist" aria-label="Task types">
+                                <button onclick="switchTaskTab('auto')" 
+                                        id="tab-auto" 
+                                        class="tab-btn px-4 py-2 text-sm font-medium text-primary-600 border-b-2 border-primary-600"
+                                        role="tab"
+                                        aria-selected="true"
+                                        aria-controls="tasks-auto">
+                                    Auto-Generated (0)
+                                </button>
+                                <button onclick="switchTaskTab('manual')" 
+                                        id="tab-manual" 
+                                        class="tab-btn px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700"
+                                        role="tab"
+                                        aria-selected="false"
+                                        aria-controls="tasks-manual">
+                                    Manual Tasks (0)
+                                </button>
+                            </div>
+
+                            <!-- Auto-Generated Tasks Tab Content -->
+                            <div id="tasks-auto" 
+                                 class="space-y-2"
+                                 role="tabpanel"
+                                 aria-labelledby="tab-auto">
+                                <div class="text-center py-8 text-gray-500">
+                                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600" aria-hidden="true"></div>
+                                    <p class="mt-2 text-sm">Loading action items...</p>
+                                </div>
+                            </div>
+
+                            <!-- Manual Tasks Tab Content -->
+                            <div id="tasks-manual" 
+                                 class="space-y-2 hidden"
+                                 role="tabpanel"
+                                 aria-labelledby="tab-manual">
+                                <div class="text-center py-8 text-gray-400">
+                                    <i class="fas fa-clipboard-list text-4xl mb-2" aria-hidden="true"></i>
+                                    <p class="text-sm">No manual tasks yet. Click "Add Task" to create one.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Charts Section: Headcount & Turnover -->
+                    <section aria-labelledby="charts-heading">
+                        <h2 id="charts-heading" class="sr-only">Employee Statistics Charts</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            
+                            <!-- Headcount Trend Chart -->
+                            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                                    <i class="fas fa-chart-line text-blue-600 mr-2" aria-hidden="true"></i>
+                                    Headcount Trend
+                                </h3>
+                                <div class="h-64">
+                                    <canvas id="headcountChart" aria-label="Headcount trend chart"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Turnover Rate Chart -->
+                            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                                    <i class="fas fa-chart-pie text-red-600 mr-2" aria-hidden="true"></i>
+                                    Turnover Rate
+                                </h3>
+                                <div class="h-64">
+                                    <canvas id="turnoverChart" aria-label="Turnover rate chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Department Breakdown Section -->
+                    <section aria-labelledby="department-heading">
+                        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                            <h2 id="department-heading" class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-sitemap text-purple-600 mr-2" aria-hidden="true"></i>
+                                Department Breakdown
+                            </h2>
+                            <div id="department-breakdown" role="region" aria-live="polite">
+                                <div class="text-center py-8 text-gray-500">
+                                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600" aria-hidden="true"></div>
+                                    <p class="mt-2 text-sm">Loading department data...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- ============================================ -->
+                <!-- RIGHT COLUMN (1/3 Width) -->
+                <!-- ============================================ -->
+                <div class="space-y-6">
+
+                    <!-- Quick Actions Widget -->
+                    <section aria-labelledby="quick-actions-heading">
+                        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                            <h2 id="quick-actions-heading" class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-bolt text-yellow-500 mr-2" aria-hidden="true"></i>
+                                Quick Actions
+                            </h2>
+                            <div class="grid grid-cols-2 gap-3">
+                                
+                                <!-- Quick Action 1: Add Employee -->
+                                <button onclick="window.location.href='employees.html'" 
+                                        class="quick-action-btn flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-all group"
+                                        aria-label="Add new employee">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-2 group-hover:bg-primary-600 transition-colors">
+                                        <i class="fas fa-user-plus text-blue-600 text-xl group-hover:text-white" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-700 group-hover:text-primary-600 text-center">Add Employee</span>
+                                </button>
+                                
+                                <!-- Quick Action 2: Approve Leave -->
+                                <button onclick="window.location.href='leave.html'" 
+                                        class="quick-action-btn flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:border-yellow-500 hover:bg-yellow-50 transition-all group"
+                                        aria-label="Approve leave requests">
+                                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-2 group-hover:bg-yellow-600 transition-colors">
+                                        <i class="fas fa-calendar-check text-yellow-600 text-xl group-hover:text-white" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-700 group-hover:text-yellow-600 text-center">Approve Leave</span>
+                                </button>
+                                
+                                <!-- Quick Action 3: Send Birthday Wishes -->
+                                <button onclick="sendBirthdayWishes()" 
+                                        class="quick-action-btn flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:border-pink-500 hover:bg-pink-50 transition-all group"
+                                        aria-label="Send birthday wishes">
+                                    <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-2 group-hover:bg-pink-600 transition-colors">
+                                        <i class="fas fa-birthday-cake text-pink-600 text-xl group-hover:text-white" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-700 group-hover:text-pink-600 text-center">Send Wishes</span>
+                                </button>
+                                
+                                <!-- Quick Action 4: Recruitment -->
+                                <button onclick="window.location.href='recruitment.html'" 
+                                        class="quick-action-btn flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:border-green-500 hover:bg-green-50 transition-all group"
+                                        aria-label="Manage recruitment">
+                                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-2 group-hover:bg-green-600 transition-colors">
+                                        <i class="fas fa-user-plus text-green-600 text-xl group-hover:text-white" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-700 group-hover:text-green-600 text-center">Recruitment</span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Birthdays This Month Widget -->
+                    <section aria-labelledby="birthdays-heading">
+                        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                            <h2 id="birthdays-heading" class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-birthday-cake text-pink-500 mr-2" aria-hidden="true"></i>
+                                Birthdays This Month
+                            </h2>
+                            <div id="birthdays-list" 
+                                 class="space-y-3"
+                                 role="region"
+                                 aria-live="polite">
+                                <div class="text-center py-8 text-gray-500">
+                                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-pink-600" aria-hidden="true"></div>
+                                    <p class="mt-2 text-sm">Loading birthdays...</p>
+                                </div>
+                            </div>
+                            <button onclick="window.location.href='employees.html?filter=birthdays'" 
+                                    class="w-full mt-4 py-2 text-sm text-pink-600 hover:text-pink-700 font-medium transition-colors"
+                                    aria-label="View all birthdays">
+                                View All <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Work Anniversaries Widget -->
+                    <section aria-labelledby="anniversaries-heading">
+                        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                            <h2 id="anniversaries-heading" class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-award text-yellow-500 mr-2" aria-hidden="true"></i>
+                                Work Anniversaries
+                            </h2>
+                            <div id="anniversaries-list" 
+                                 class="space-y-3"
+                                 role="region"
+                                 aria-live="polite">
+                                <div class="text-center py-8 text-gray-500">
+                                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-600" aria-hidden="true"></div>
+                                    <p class="mt-2 text-sm">Loading anniversaries...</p>
+                                </div>
+                            </div>
+                            <button onclick="window.location.href='employees.html?filter=anniversaries'" 
+                                    class="w-full mt-4 py-2 text-sm text-yellow-600 hover:text-yellow-700 font-medium transition-colors"
+                                    aria-label="View all anniversaries">
+                                View All <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Contract Expiring Soon Widget -->
+                    <section aria-labelledby="contracts-heading">
+                        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                            <h2 id="contracts-heading" class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-file-contract text-red-500 mr-2" aria-hidden="true"></i>
+                                Contract Expiring Soon
+                            </h2>
+                            <div id="contracts-expiring" 
+                                 class="space-y-3"
+                                 role="region"
+                                 aria-live="polite">
+                                <div class="text-center py-8 text-gray-500">
+                                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-red-600" aria-hidden="true"></div>
+                                    <p class="mt-2 text-sm">Loading contracts...</p>
+                                </div>
+                            </div>
+                            <button onclick="window.location.href='employees.html?filter=contracts'" 
+                                    class="w-full mt-4 py-2 text-sm text-red-600 hover:text-red-700 font-medium transition-colors"
+                                    aria-label="View all expiring contracts">
+                                View All <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Recruitment Pipeline Widget -->
+                    <section aria-labelledby="recruitment-heading">
+                        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                            <h2 id="recruitment-heading" class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-users text-green-600 mr-2" aria-hidden="true"></i>
+                                Recruitment Pipeline
+                            </h2>
+                            <div class="space-y-3">
+                                
+                                <!-- Pipeline Stage 1: Screening -->
+                                <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-search text-blue-600 text-sm" aria-hidden="true"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-800">Screening</p>
+                                            <p id="pipeline-screening" class="text-xs text-gray-500">0 candidates</p>
+                                        </div>
+                                    </div>
+                                    <span id="badge-screening" class="text-lg font-bold text-blue-600">0</span>
+                                </div>
+
+                                <!-- Pipeline Stage 2: Interview -->
+                                <div class="flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-comments text-yellow-600 text-sm" aria-hidden="true"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-800">Interview</p>
+                                            <p id="pipeline-interview" class="text-xs text-gray-500">0 candidates</p>
+                                        </div>
+                                    </div>
+                                    <span id="badge-interview" class="text-lg font-bold text-yellow-600">0</span>
+                                </div>
+
+                                <!-- Pipeline Stage 3: Offer -->
+                                <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-handshake text-green-600 text-sm" aria-hidden="true"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-800">Offer</p>
+                                            <p id="pipeline-offer" class="text-xs text-gray-500">0 candidates</p>
+                                        </div>
+                                    </div>
+                                    <span id="badge-offer" class="text-lg font-bold text-green-600">0</span>
+                                </div>
+                            </div>
+                            <button onclick="window.location.href='recruitment.html'" 
+                                    class="w-full mt-4 py-2 text-sm text-green-600 hover:text-green-700 font-medium transition-colors"
+                                    aria-label="Manage recruitment pipeline">
+                                Manage Pipeline <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+        </main>
+
+        <!-- ============================================ -->
+        <!-- FOOTER -->
+        <!-- ============================================ -->
+        <footer class="bg-white border-t border-gray-200 px-6 py-4 mt-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+                <p>© 2026 Carabao Billiards Indonesia. All rights reserved.
+                    Developed internally by HRD Internship Project.</p>
+                <p class="mt-2 sm:mt-0">Version 1.0.0 | Powered by Supabase</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ============================================ -->
+    <!-- MODAL: ADD MANUAL TASK -->
+    <!-- ============================================ -->
+    <div id="addTaskModal" 
+         class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4"
+         role="dialog"
+         aria-labelledby="add-task-title"
+         aria-modal="true">
+        <div class="bg-white rounded-xl shadow-xl max-w-md w-full">
+            
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                <h3 id="add-task-title" class="text-lg font-semibold text-gray-800">Add Manual Task</h3>
+                <button onclick="closeAddTaskModal()" 
+                        class="text-gray-400 hover:text-gray-600 transition-colors"
+                        aria-label="Close modal">
+                    <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Form -->
+            <form id="addTaskForm" class="p-6 space-y-4">
+                
+                <!-- Task Title -->
+                <div>
+                    <label for="taskTitle" class="block text-sm font-medium text-gray-700 mb-2">
+                        Task Title <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" 
+                           id="taskTitle" 
+                           name="taskTitle"
+                           required 
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all" 
+                           placeholder="e.g., Prepare salary slips"
+                           aria-required="true">
+                </div>
+                
+                <!-- Task Description -->
+                <div>
+                    <label for="taskDescription" class="block text-sm font-medium text-gray-700 mb-2">
+                        Description (Optional)
+                    </label>
+                    <textarea id="taskDescription" 
+                              name="taskDescription"
+                              rows="3" 
+                              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all resize-none" 
+                              placeholder="Add details..."></textarea>
+                </div>
+                
+                <!-- Task Priority -->
+                <div>
+                    <label for="taskPriority" class="block text-sm font-medium text-gray-700 mb-2">
+                        Priority
+                    </label>
+                    <select id="taskPriority" 
+                            name="taskPriority"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                
+                <!-- Task Due Date -->
+                <div>
+                    <label for="taskDueDate" class="block text-sm font-medium text-gray-700 mb-2">
+                        Due Date (Optional)
+                    </label>
+                    <input type="date" 
+                           id="taskDueDate" 
+                           name="taskDueDate"
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all">
+                </div>
+                
+                <!-- Form Actions -->
+                <div class="flex space-x-3 pt-4">
+                    <button type="button" 
+                            onclick="closeAddTaskModal()" 
+                            class="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                        Cancel
+                    </button>
+                    <button type="submit" 
+                            class="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+                        <i class="fas fa-plus mr-2" aria-hidden="true"></i> Add Task
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <!-- ============================================ -->
+    <div id="toastContainer" 
+         class="fixed bottom-4 right-4 z-[100] space-y-2"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true">
+        <!-- Toast notifications will be dynamically injected here by JavaScript -->
+    </div>
+
+    <!-- ============================================ -->
+    <!-- INLINE JAVASCRIPT (UI INTERACTIONS ONLY) -->
+    <!-- ============================================ -->
+    <script>
+        /**
+         * Toggle Sidebar (Mobile)
+         * Shows/hides the sidebar and overlay on mobile devices
+         */
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const toggle = document.getElementById('sidebarToggle');
+            
+            if (sidebar && overlay) {
+                const isHidden = sidebar.classList.contains('-translate-x-full');
+                
+                sidebar.classList.toggle('-translate-x-full');
+                overlay.classList.toggle('hidden');
+                
+                // Update ARIA attributes
+                if (toggle) {
+                    toggle.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                }
+            }
+        }
+        
+        /**
+         * Toggle User Dropdown Menu
+         * Shows/hides the user dropdown menu
+         */
+        function toggleUserDropdown() {
+            const dropdown = document.getElementById('userDropdown');
+            const btn = document.getElementById('userMenuBtn');
+            
+            if (dropdown) {
+                const isHidden = dropdown.classList.contains('hidden');
+                dropdown.classList.toggle('hidden');
+                
+                // Update ARIA attributes
+                if (btn) {
+                    btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                }
+            }
+        }
+        
+        /**
+         * Close Dropdown When Clicking Outside
+         * Event listener to close dropdown when user clicks outside
+         */
+        document.addEventListener('click', function(event) {
+            const userMenuBtn = document.getElementById('userMenuBtn');
+            const userDropdown = document.getElementById('userDropdown');
+            
+            if (userMenuBtn && userDropdown) {
+                if (!userMenuBtn.contains(event.target) && !userDropdown.contains(event.target)) {
+                    userDropdown.classList.add('hidden');
+                    userMenuBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+        
+        /**
+         * Switch Task Tab (Auto/Manual)
+         * @param {string} tab - Tab identifier ('auto' or 'manual')
+         */
+        function switchTaskTab(tab) {
+            const autoTab = document.getElementById('tab-auto');
+            const manualTab = document.getElementById('tab-manual');
+            const autoTasks = document.getElementById('tasks-auto');
+            const manualTasks = document.getElementById('tasks-manual');
+            
+            if (!autoTab || !manualTab || !autoTasks || !manualTasks) return;
+            
+            if (tab === 'auto') {
+                // Activate Auto Tab
+                autoTab.classList.add('text-primary-600', 'border-b-2', 'border-primary-600');
+                autoTab.classList.remove('text-gray-500');
+                autoTab.setAttribute('aria-selected', 'true');
+                
+                // Deactivate Manual Tab
+                manualTab.classList.remove('text-primary-600', 'border-b-2', 'border-primary-600');
+                manualTab.classList.add('text-gray-500');
+                manualTab.setAttribute('aria-selected', 'false');
+                
+                // Show/Hide Content
+                autoTasks.classList.remove('hidden');
+                manualTasks.classList.add('hidden');
+            } else {
+                // Activate Manual Tab
+                manualTab.classList.add('text-primary-600', 'border-b-2', 'border-primary-600');
+                manualTab.classList.remove('text-gray-500');
+                manualTab.setAttribute('aria-selected', 'true');
+                
+                // Deactivate Auto Tab
+                autoTab.classList.remove('text-primary-600', 'border-b-2', 'border-primary-600');
+                autoTab.classList.add('text-gray-500');
+                autoTab.setAttribute('aria-selected', 'false');
+                
+                // Show/Hide Content
+                manualTasks.classList.remove('hidden');
+                autoTasks.classList.add('hidden');
+            }
+        }
+        
+        /**
+         * Open Add Task Modal
+         * Shows the modal for adding a new manual task
+         */
+        function openAddTaskModal() {
+            const modal = document.getElementById('addTaskModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                // Focus first input for accessibility
+                setTimeout(() => {
+                    const firstInput = document.getElementById('taskTitle');
+                    if (firstInput) firstInput.focus();
+                }, 100);
+            }
+        }
+        
+        /**
+         * Close Add Task Modal
+         * Hides the modal and resets the form
+         */
+        function closeAddTaskModal() {
+            const modal = document.getElementById('addTaskModal');
+            const form = document.getElementById('addTaskForm');
+            
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+            
+            if (form) {
+                form.reset();
+            }
+        }
+        
+        /**
+         * Show Toast Notification
+         * @param {string} message - Notification message
+         * @param {string} type - Notification type (success|error|warning|info)
+         */
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            
+            const colors = {
+                success: 'bg-green-500',
+                error: 'bg-red-500',
+                warning: 'bg-yellow-500',
+                info: 'bg-blue-500'
+            };
+            
+            const icons = {
+                success: 'fa-check-circle',
+                error: 'fa-exclamation-circle',
+                warning: 'fa-exclamation-triangle',
+                info: 'fa-info-circle'
+            };
+            
+            const toast = document.createElement('div');
+            toast.className = `toast flex items-center p-4 rounded-lg shadow-lg text-white ${colors[type] || colors.info} min-w-[300px] animate-slide-in`;
+            toast.setAttribute('role', 'alert');
+            toast.innerHTML = `
+                <i class="fas ${icons[type] || icons.info} mr-3 text-lg" aria-hidden="true"></i>
+                <span class="flex-1">${message}</span>
+                <button onclick="this.parentElement.remove()" 
+                        class="ml-3 hover:opacity-75 transition-opacity"
+                        aria-label="Close notification">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.remove();
+                }
+            }, 5000);
+        }
+
+        /**
+         * Refresh Dashboard
+         * Reloads the current page
+         */
+        function refreshDashboard() {
+            showToast('Refreshing dashboard...', 'info');
+            setTimeout(() => {
+                location.reload();
+            }, 500);
+        }
+
+        /**
+         * Send Birthday Wishes (Quick Action)
+         * Redirects to WhatsApp Blast with birthday template
+         */
+        function sendBirthdayWishes() {
+            window.location.href = 'whatsapp-blast.html?template=birthday';
+        }
+
+        /**
+         * Logout Function
+         * Logs out the user with confirmation
+         */
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                showToast('Logging out...', 'info');
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);
+            }
+        }
+
+        /**
+         * User Info Loading
+         * Handled by auth.js -> updateUserInfo() function
+         * Called automatically during page initialization
+         */
+        // User data fetched from session automatically
+
+        /**
+         * Keyboard Accessibility for Modal
+         * Close modal with Escape key
+         */
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modal = document.getElementById('addTaskModal');
+                if (modal && !modal.classList.contains('hidden')) {
+                    closeAddTaskModal();
+                }
+            }
+        });
+    </script>
+    
+    <!-- ============================================ -->
+    <!-- EXTERNAL JAVASCRIPT DEPENDENCIES -->
+    <!-- CRITICAL: Load order must be maintained! -->
+    <!-- ============================================ -->
+    
+    <!-- Chart.js Library Latest v4 (For Dashboard Charts) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js"></script>
+    
+    <!-- 1. Supabase Client Library (MUST BE FIRST) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- 2. Core Application (Initializes Supabase) -->
+    <script src="js/app.js"></script>
+    
+    <!-- 3. API Functions (Depends on app.js) -->
+    <script src="js/api.js"></script>
+    
+    <!-- 4. Database Functions (Depends on app.js & api.js) -->
+    <script src="js/database-functions.js"></script>
+    
+    <!-- 5. Utility Functions -->
+    <script src="js/utils.js"></script>
+    
+    <!-- 6. Authentication (Depends on all above) -->
+    <script src="js/auth.js"></script>
+    
+    <!-- 7. Page-Specific: Dashboard Logic (MUST BE LAST) -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

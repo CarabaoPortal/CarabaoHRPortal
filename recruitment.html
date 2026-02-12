@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<!-- ================================================ -->
+<!-- HEAD SECTION -->
+<!-- ================================================ -->
+<head>
+    <!-- ============================================ -->
+    <!-- META TAGS -->
+    <!-- ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SWAP HRIS - Comprehensive HR Management System Dashboard">
+    <meta name="keywords" content="HR, HRIS, Dashboard, Employee Management, Attendance, Leave">
+    <meta name="author" content="Ardiansyah Dwi S">
+    <meta name="theme-color" content="#2563eb">
+    
+    <title>Carabao Billiards HR Portal — Recruitment Management</title>
+    
+    <!-- ============================================ -->
+    <!-- EXTERNAL STYLESHEETS & SCRIPTS -->
+    <!-- ============================================ -->
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ✅ ADD THIS LINE -->
+    <link rel="stylesheet" href="css/tailwind.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- ================================================ -->
+<!-- BODY SECTION -->
+<!-- ================================================ -->
+<body class="bg-gray-100 min-h-screen font-['Inter']">
+
+    <!-- ============================================ -->
+    <!-- SIDEBAR NAVIGATION -->
+    <!-- ============================================ -->
+    <aside id="sidebar" 
+           class="fixed top-0 left-0 z-40 w-64 h-screen bg-white shadow-lg transform transition-transform duration-300 lg:translate-x-0 -translate-x-full"
+           role="navigation"
+           aria-label="Main navigation">
+        
+        <!-- Logo Section -->
+        <div class="flex items-center justify-center h-16 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur">
+                    <i class="fas fa-building text-white text-lg" aria-hidden="true"></i>
+                </div>
+                <span class="text-xl font-bold text-white">Carabao HR Portal</span>
+            </div>
+        </div>
+        
+        <!-- Navigation Links -->
+        <nav class="mt-6 px-4" aria-label="Sidebar navigation">
+            <div class="space-y-1">
+                
+                <!-- Dashboard -->
+                <a href="dashboard.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-home text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                
+                <!-- Employees -->
+                <a href="employees.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-users text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Employees</span>
+                </a>
+                
+                <!-- Attendance -->
+                <a href="attendance.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-clock text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Attendance</span>
+                </a>
+                
+                <!-- Leave -->
+                <a href="leave.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-calendar-alt text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Leave</span>
+                </a>
+
+                <!-- Recruitment (Active) -->
+                <a href="recruitment.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-white bg-primary-600 rounded-lg shadow-md"
+                   aria-current="page">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-white/20 mr-3">
+                        <i class="fas fa-user-plus text-white" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Recruitment</span>
+                </a>
+                
+                <!-- WhatsApp Blast -->
+                <a href="whatsapp-blast.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fab fa-whatsapp text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">WhatsApp Blast</span>
+                </a>
+
+                <!-- Settings -->
+                <a href="settings.html" 
+                   class="sidebar-link flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg group transition-colors">
+                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 mr-3 transition-colors">
+                        <i class="fas fa-cog text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-medium">Settings</span>
+                </a>
+            </div>
+            
+            <!-- Sidebar Footer - Help Section -->
+            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
+                <div class="flex items-center space-x-3 px-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                        <i class="fas fa-headset" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-700">Need Help?</p>
+                        <p class="text-xs text-gray-500">Contact Support</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div id="sidebarOverlay" 
+         class="fixed inset-0 bg-black/50 z-30 lg:hidden hidden" 
+         onclick="toggleSidebar()"
+         aria-label="Close sidebar overlay"></div>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT WRAPPER -->
+    <!-- ============================================ -->
+    <div class="lg:ml-64 min-h-screen flex flex-col">
+        
+        <!-- ============================================ -->
+        <!-- TOP HEADER BAR -->
+        <!-- ============================================ -->
+        <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-20">
+            <div class="flex items-center justify-between px-4 sm:px-6 py-4">
+                
+                <!-- Left Section: Mobile Menu & Page Title -->
+                <div class="flex items-center space-x-4">
+                    <!-- Mobile Menu Toggle Button -->
+                    <button id="sidebarToggle" 
+                            onclick="toggleSidebar()" 
+                            class="lg:hidden text-gray-600 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg transition-colors"
+                            aria-label="Toggle sidebar"
+                            aria-controls="sidebar"
+                            aria-expanded="false">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                    </button>
+                    
+                    <!-- Page Title & Greeting -->
+                    <div>
+                        <h1 class="text-xl font-semibold text-gray-800">Recruitment Management</h1>
+                        <p class="text-sm text-gray-500 hidden sm:block">
+                            Track Your Recruitment, <span id="currentUserName"></span>! 👋
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right Section: Actions & User Menu -->
+                <div class="flex items-center space-x-4">
+
+                    <!-- User Dropdown Menu -->
+                    <div class="relative">
+                        <button id="userMenuBtn" 
+                                onclick="toggleUserDropdown()" 
+                                class="flex items-center space-x-3 focus:outline-none hover:bg-gray-50 rounded-lg p-2 transition-colors"
+                                aria-label="User menu"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                            <!-- User Info (Desktop Only) -->
+                            <div class="text-right hidden sm:block">
+                                <p id="userName" class="text-sm font-medium text-gray-700">Loading...</p>
+                                <p id="userRole" class="text-xs text-gray-500">Loading...</p>
+                            </div>
+                            <!-- User Avatar -->
+                            <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-semibold shadow-md">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <!-- Dropdown Icon -->
+                            <i class="fas fa-chevron-down text-gray-400 text-xs hidden sm:block" aria-hidden="true"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu Content -->
+                        <div id="userDropdown" 
+                             class="hidden absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50"
+                             role="menu"
+                             aria-labelledby="userMenuBtn">
+                            <!-- User Info Header -->
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <p class="text-sm font-medium text-gray-900" id="dropdownUserName">User Name</p>
+                                <p class="text-xs text-gray-500" id="dropdownUserEmail">user@example.com</p>
+                            </div>
+                            <!-- Menu Items -->
+                            <a href="settings.html" 
+                               class="flex items-center px-4 py-2.5 text-gray-700 hover:bg-gray-50 transition-colors"
+                               role="menuitem">
+                                <i class="fas fa-cog w-5 mr-3 text-gray-400" aria-hidden="true"></i>
+                                System Settings
+                            </a>
+                            <hr class="my-2 border-gray-100" aria-hidden="true">
+                            <button onclick="logout()" 
+                                    class="flex items-center w-full px-4 py-2.5 text-red-600 hover:bg-red-50 transition-colors"
+                                    role="menuitem">
+                                <i class="fas fa-sign-out-alt w-5 mr-3" aria-hidden="true"></i>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================ -->
+        <!-- MAIN CONTENT AREA -->
+        <!-- ============================================ -->
+        <main class="flex-1 p-4 sm:p-6" role="main">
+            
+            <!-- ========================================== -->
+            <!-- SECTION 1: STATISTICS CARDS -->
+            <!-- ========================================== -->
+            <section aria-labelledby="stats-heading" class="mb-6">
+                <h2 id="stats-heading" class="sr-only">Recruitment Statistics</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                    
+                    <!-- Card 1: Total Positions Needed -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Total Positions</p>
+                                <p id="statTotalPositions" class="text-3xl font-bold text-gray-800">0</p>
+                                <p class="text-xs text-gray-400 mt-1">Planned positions</p>
+                            </div>
+                            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-users text-blue-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2: Active Candidates -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Active Candidates</p>
+                                <p id="statActiveCandidates" class="text-3xl font-bold text-green-600">0</p>
+                                <p class="text-xs text-gray-400 mt-1">In process</p>
+                            </div>
+                            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-user-check text-green-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3: Pending Approval -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Pending Approval</p>
+                                <p id="statPendingApproval" class="text-3xl font-bold text-yellow-600">0</p>
+                                <p class="text-xs text-gray-400 mt-1">Awaiting review</p>
+                            </div>
+                            <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-clock text-yellow-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4: Hired This Month -->
+                    <div class="stat-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500 mb-1">Hired This Month</p>
+                                <p id="statHiredMonth" class="text-3xl font-bold text-purple-600">0</p>
+                                <p class="text-xs text-gray-400 mt-1">New hires</p>
+                            </div>
+                            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-user-plus text-purple-600 text-2xl" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- SECTION 2: RECRUITMENT WORKFLOW TABS -->
+            <!-- ========================================== -->
+            <section aria-labelledby="workflow-heading" class="bg-white rounded-xl shadow-sm border border-gray-100">
+                <h2 id="workflow-heading" class="sr-only">Recruitment Workflow</h2>
+                
+                <!-- Tab Navigation -->
+                <div class="p-4 sm:p-6 border-b border-gray-200">
+                    <div class="flex items-center gap-1 overflow-x-auto" role="tablist" aria-label="Recruitment workflow tabs">
+                        <!-- Tab 1: Manpower Planning -->
+                        <button type="button" 
+                                id="tabMPP" 
+                                onclick="handleWorkflowTabChange('mpp')"
+                                role="tab"
+                                aria-selected="true"
+                                aria-controls="contentMPP"
+                                class="workflow-tab-btn px-4 py-2.5 text-sm font-medium rounded-t-lg border-b-2 transition-all whitespace-nowrap
+                                    border-primary-500 text-primary-600 bg-primary-50">
+                            <i class="fas fa-clipboard-list mr-2" aria-hidden="true"></i>Manpower Planning
+                        </button>
+                        
+                        <!-- Tab 2: Recruitment Tracker -->
+                        <button type="button" 
+                                id="tabTracker" 
+                                onclick="handleWorkflowTabChange('tracker')"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="contentTracker"
+                                class="workflow-tab-btn px-4 py-2.5 text-sm font-medium rounded-t-lg border-b-2 transition-all whitespace-nowrap
+                                    border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50">
+                            <i class="fas fa-tasks mr-2" aria-hidden="true"></i>Recruitment Tracker
+                        </button>
+                        
+                        <!-- Tab 3: Interview Form -->
+                        <button type="button" 
+                                id="tabInterview" 
+                                onclick="handleWorkflowTabChange('interview')"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="contentInterview"
+                                class="workflow-tab-btn px-4 py-2.5 text-sm font-medium rounded-t-lg border-b-2 transition-all whitespace-nowrap
+                                    border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50">
+                            <i class="fas fa-file-alt mr-2" aria-hidden="true"></i>Interview Form
+                        </button>
+                        
+                        <!-- Tab 4: Contract Generator -->
+                        <button type="button" 
+                                id="tabContract" 
+                                onclick="handleWorkflowTabChange('contract')"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="contentContract"
+                                class="workflow-tab-btn px-4 py-2.5 text-sm font-medium rounded-t-lg border-b-2 transition-all whitespace-nowrap
+                                    border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50">
+                            <i class="fas fa-file-contract mr-2" aria-hidden="true"></i>Contract Generator
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- TAB 1: MANPOWER PLANNING (MPP) -->
+                <!-- ========================================== -->
+                <div id="contentMPP" 
+                     class="workflow-content"
+                     role="tabpanel"
+                     aria-labelledby="tabMPP">
+                    
+                    <!-- Toolbar -->
+                    <div class="p-4 sm:p-6 border-b border-gray-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                            <div>
+                                <h2 class="text-lg font-semibold text-gray-800">Manpower Planning (MPP)</h2>
+                                <p class="text-sm text-gray-500">Planning dan analisa kebutuhan SDM</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <button onclick="openMPPModal('add')" 
+                                        class="btn-primary inline-flex items-center px-4 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors"
+                                        aria-label="Add new manpower planning">
+                                    <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                                    Add MPP
+                                </button>
+                                <button onclick="exportMPP()" 
+                                        class="inline-flex items-center px-4 py-2.5 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors"
+                                        aria-label="Export manpower planning data">
+                                    <i class="fas fa-download mr-2 text-green-600" aria-hidden="true"></i>
+                                    Export
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Filters Section -->
+                        <div class="flex flex-col lg:flex-row lg:items-center gap-3 mt-4">
+                            <!-- Search Input (BIGGER) -->
+                            <div class="relative flex-1 lg:flex-[2]">
+                                <input type="text" 
+                                    id="searchMPP" 
+                                    placeholder="Search MPP..."
+                                    aria-label="Search manpower planning"
+                                    class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                                <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true"></i>
+                            </div>
+                            
+                            <!-- Year Filter (COMPACT) -->
+                            <select id="filterYear" 
+                                    class="w-full lg:w-auto lg:min-w-[140px] px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white"
+                                    aria-label="Filter by year">
+                                <option value="">All Years</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                            </select>
+                            
+                            <!-- Quarter Filter (COMPACT) -->
+                            <select id="filterQuarter" 
+                                    class="w-full lg:w-auto lg:min-w-[140px] px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white"
+                                    aria-label="Filter by quarter">
+                                <option value="">All Quarters</option>
+                                <option value="Q1">Q1</option>
+                                <option value="Q2">Q2</option>
+                                <option value="Q3">Q3</option>
+                                <option value="Q4">Q4</option>
+                            </select>
+                            
+                            <!-- Status Filter (COMPACT) -->
+                            <select id="filterStatus" 
+                                    class="w-full lg:w-auto lg:min-w-[140px] px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white"
+                                    aria-label="Filter by status">
+                                <option value="">All Status</option>
+                                <option value="draft">Draft</option>
+                                <option value="pending">Pending</option>
+                                <option value="approved">Approved</option>
+                                <option value="rejected">Rejected</option>
+                            </select>
+                        </div>
+                    </div> 
+                    <!-- MPP Data Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-building mr-2" aria-hidden="true"></i>Department
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-briefcase mr-2" aria-hidden="true"></i>Position
+                                    </th>
+                                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-users mr-2" aria-hidden="true"></i>Current
+                                    </th>
+                                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>Planned
+                                    </th>
+                                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-minus mr-2" aria-hidden="true"></i>Gap
+                                    </th>
+                                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-calendar mr-2" aria-hidden="true"></i>Timeline
+                                    </th>
+                                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-flag mr-2" aria-hidden="true"></i>Priority
+                                    </th>
+                                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>Status
+                                    </th>
+                                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-cog mr-2" aria-hidden="true"></i>Actions
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="mppTableBody" class="divide-y divide-gray-200">
+                                <!-- Loading State -->
+                                <tr>
+                                    <td colspan="9" class="px-6 py-12 text-center">
+                                        <div class="flex flex-col items-center">
+                                            <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-primary-600 mb-4" aria-hidden="true"></div>
+                                            <p class="text-gray-500">Loading MPP data...</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="px-6 py-4 border-t border-gray-200 bg-gray-50">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                            <p id="mppPaginationInfo" class="text-sm text-gray-600" aria-live="polite">
+                                Showing 0 to 0 of 0 entries
+                            </p>
+                            <div id="mppPaginationButtons" 
+                                 class="flex items-center space-x-1"
+                                 role="navigation"
+                                 aria-label="MPP pagination">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- TAB 2: RECRUITMENT TRACKER -->
+                <!-- ========================================== -->
+                <div id="contentTracker" 
+                     class="workflow-content hidden"
+                     role="tabpanel"
+                     aria-labelledby="tabTracker">
+                    
+                    <div class="p-4 sm:p-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+                            <div>
+                                <h2 class="text-lg font-semibold text-gray-800">Recruitment Tracker</h2>
+                                <p class="text-sm text-gray-500">Track proses dan stage recruitment kandidat</p>
+                            </div>
+                            <button onclick="openTrackerModal('add')" 
+                                    class="btn-primary inline-flex items-center px-4 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors"
+                                    aria-label="Add new candidate">
+                                <i class="fas fa-plus mr-2" aria-hidden="true"></i>
+                                Add Candidate
+                            </button>
+                        </div>
+
+                        <!-- Tracker Table -->
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-user mr-2" aria-hidden="true"></i>Candidate Name
+                                        </th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-briefcase mr-2" aria-hidden="true"></i>Position
+                                        </th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-building mr-2" aria-hidden="true"></i>Department
+                                        </th>
+                                        <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-tasks mr-2" aria-hidden="true"></i>Current Stage
+                                        </th>
+                                        <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-calendar mr-2" aria-hidden="true"></i>Apply Date
+                                        </th>
+                                        <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>Status
+                                        </th>
+                                        <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-cog mr-2" aria-hidden="true"></i>Actions
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="trackerTableBody" class="divide-y divide-gray-200">
+                                    <!-- Empty State -->
+                                    <tr>
+                                        <td colspan="7" class="px-6 py-12 text-center">
+                                            <div class="flex flex-col items-center">
+                                                <i class="fas fa-inbox text-gray-300 text-5xl mb-4" aria-hidden="true"></i>
+                                                <p class="text-gray-500">No candidates found</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- TAB 3: INTERVIEW FORM -->
+                <!-- ========================================== -->
+                <div id="contentInterview" 
+                     class="workflow-content hidden"
+                     role="tabpanel"
+                     aria-labelledby="tabInterview">
+                    
+                    <div class="p-3 sm:p-4 h-full">
+                        <!-- Compact Header -->
+                        <div class="mb-3">
+                            <h2 class="text-base font-semibold text-gray-800">Form Hasil Interview</h2>
+                            <p class="text-xs text-gray-500">Embed Google Forms untuk hasil interview kandidat</p>
+                        </div>
+                        
+                        <!-- Sub-Tab Navigation -->
+                        <div class="flex items-center gap-2 mb-3 border-b border-gray-200 pb-2"
+                             role="tablist"
+                             aria-label="Interview form tabs">
+                            
+                            <!-- Edit Form Tab -->
+                            <button type="button" 
+                                    id="tabInterviewEdit" 
+                                    onclick="switchInterviewTab('edit')"
+                                    role="tab"
+                                    aria-selected="true"
+                                    aria-controls="interviewEditContainer"
+                                    class="interview-sub-tab px-3 py-1.5 text-xs font-medium rounded-lg border-2 transition-all
+                                        border-primary-500 text-primary-600 bg-primary-50">
+                                <i class="fas fa-edit mr-1" aria-hidden="true"></i>Edit Form
+                            </button>
+                            
+                            <!-- Submit Form Tab -->
+                            <button type="button" 
+                                    id="tabInterviewSubmit" 
+                                    onclick="switchInterviewTab('submit')"
+                                    role="tab"
+                                    aria-selected="false"
+                                    aria-controls="interviewSubmitContainer"
+                                    class="interview-sub-tab px-3 py-1.5 text-xs font-medium rounded-lg border-2 transition-all
+                                        border-gray-300 text-gray-600 hover:bg-gray-50">
+                                <i class="fas fa-file-alt mr-1" aria-hidden="true"></i>Submit Form
+                            </button>
+                            
+                            <!-- Spreadsheet Tab -->
+                            <button type="button" 
+                                    id="tabInterviewSheet" 
+                                    onclick="switchInterviewTab('sheet')"
+                                    role="tab"
+                                    aria-selected="false"
+                                    aria-controls="interviewSheetContainer"
+                                    class="interview-sub-tab px-3 py-1.5 text-xs font-medium rounded-lg border-2 transition-all
+                                        border-gray-300 text-gray-600 hover:bg-gray-50">
+                                <i class="fas fa-table mr-1" aria-hidden="true"></i>Spreadsheet
+                            </button>
+                        </div>
+
+                        <!-- Edit Form Container -->
+                        <div id="interviewEditContainer" 
+                             class="interview-container"
+                             role="tabpanel"
+                             aria-labelledby="tabInterviewEdit">
+                            <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden h-full">
+                                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
+                                    <div>
+                                        <h3 class="text-sm font-semibold text-gray-800">Edit Interview Form</h3>
+                                        <p class="text-xs text-gray-600">Kelola dan ubah form interview</p>
+                                    </div>
+                                    <a href="https://docs.google.com/forms/d/1QIlL_Z-ehv1VCSj37wYZGBnzMg15s_eXZlnuFOLnKSM/edit" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-blue-600 bg-white hover:bg-blue-50 rounded-md border border-blue-200 transition-colors"
+                                       aria-label="Open form in new tab">
+                                        <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i>Open
+                                    </a>
+                                </div>
+                                <div class="relative w-full" style="height: calc(100vh - 250px); min-height: 700px;">
+                                    <iframe 
+                                        src="https://docs.google.com/forms/d/1QIlL_Z-ehv1VCSj37wYZGBnzMg15s_eXZlnuFOLnKSM/edit" 
+                                        class="absolute inset-0 w-full h-full"
+                                        frameborder="0"
+                                        title="Edit Interview Form">
+                                        Loading…
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Form Container -->
+                        <div id="interviewSubmitContainer" 
+                             class="interview-container hidden"
+                             role="tabpanel"
+                             aria-labelledby="tabInterviewSubmit">
+                            <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden h-full">
+                                <div class="bg-gradient-to-r from-green-50 to-emerald-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
+                                    <div>
+                                        <h3 class="text-sm font-semibold text-gray-800">Submit Interview Result</h3>
+                                        <p class="text-xs text-gray-600">Isi hasil interview kandidat</p>
+                                    </div>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScwFJ2IkKWy3JEVSVdy0cltoaEtlcBUVORxoBqpBmWbiDogJA/viewform?usp=sharing&ouid=102733830738301252568" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-green-600 bg-white hover:bg-green-50 rounded-md border border-green-200 transition-colors"
+                                       aria-label="Open form in new tab">
+                                        <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i>Open
+                                    </a>
+                                </div>
+                                <div class="relative w-full" style="height: calc(100vh - 250px); min-height: 700px;">
+                                    <iframe 
+                                        src="https://docs.google.com/forms/d/e/1FAIpQLScwFJ2IkKWy3JEVSVdy0cltoaEtlcBUVORxoBqpBmWbiDogJA/viewform?usp=sharing&ouid=102733830738301252568" 
+                                        class="absolute inset-0 w-full h-full"
+                                        frameborder="0" 
+                                        marginheight="0" 
+                                        marginwidth="0"
+                                        title="Submit Interview Form">
+                                        Loading…
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Spreadsheet Container -->
+                        <div id="interviewSheetContainer" 
+                             class="interview-container hidden"
+                             role="tabpanel"
+                             aria-labelledby="tabInterviewSheet">
+                            <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden h-full">
+                                <div class="bg-gradient-to-r from-purple-50 to-pink-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
+                                    <div>
+                                        <h3 class="text-sm font-semibold text-gray-800">Interview Results Database</h3>
+                                        <p class="text-xs text-gray-600">Data hasil interview seluruh kandidat</p>
+                                    </div>
+                                    <a href="https://docs.google.com/spreadsheets/d/18IxCvvu35XQLBNt2qkldaC8fRHjEVpJZZSX1FSDZFVI/edit?usp=sharing" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-purple-600 bg-white hover:bg-purple-50 rounded-md border border-purple-200 transition-colors"
+                                       aria-label="Open spreadsheet in new tab">
+                                        <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i>Open
+                                    </a>
+                                </div>
+                                <div class="relative w-full" style="height: calc(100vh - 250px); min-height: 700px;">
+                                    <iframe 
+                                        src="https://docs.google.com/spreadsheets/d/18IxCvvu35XQLBNt2qkldaC8fRHjEVpJZZSX1FSDZFVI/edit?usp=sharing" 
+                                        class="absolute inset-0 w-full h-full"
+                                        frameborder="0"
+                                        title="Interview Results Spreadsheet">
+                                        Loading…
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- TAB 4: CONTRACT GENERATOR -->
+                <!-- ========================================== -->
+                <div id="contentContract" 
+                     class="workflow-content hidden"
+                     role="tabpanel"
+                     aria-labelledby="tabContract">
+                    
+                    <div class="p-3 sm:p-4 h-full">
+                        <!-- Compact Header -->
+                        <div class="mb-3">
+                            <h2 class="text-base font-semibold text-gray-800">Contract Generator</h2>
+                            <p class="text-xs text-gray-500">Generate kontrak untuk Office dan Bistro</p>
+                        </div>
+                        
+                        <!-- Main Contract Type Tabs -->
+                        <div class="flex items-center gap-2 mb-3 border-b border-gray-200 pb-2"
+                             role="tablist"
+                             aria-label="Contract type tabs">
+                            
+                            <!-- Office Tab -->
+                            <button type="button" 
+                                    id="tabOffice" 
+                                    onclick="switchContractType('office')"
+                                    role="tab"
+                                    aria-selected="true"
+                                    aria-controls="officeContractContainer"
+                                    class="contract-type-tab px-4 py-2 text-xs font-semibold rounded-lg border-2 transition-all
+                                        border-primary-500 text-primary-600 bg-primary-50">
+                                <i class="fas fa-building mr-1.5" aria-hidden="true"></i>Office
+                            </button>
+                            
+                            <!-- Bistro Tab -->
+                            <button type="button" 
+                                    id="tabBistro" 
+                                    onclick="switchContractType('bistro')"
+                                    role="tab"
+                                    aria-selected="false"
+                                    aria-controls="bistroContractContainer"
+                                    class="contract-type-tab px-4 py-2 text-xs font-semibold rounded-lg border-2 transition-all
+                                        border-gray-300 text-gray-600 hover:bg-gray-50">
+                                <i class="fas fa-utensils mr-1.5" aria-hidden="true"></i>Bistro
+                            </button>
+                        </div>
+
+                        <!-- ===== OFFICE CONTRACT ===== -->
+                        <div id="officeContractContainer" 
+                             class="contract-container"
+                             role="tabpanel"
+                             aria-labelledby="tabOffice">
+                            
+                            <!-- Sub-tabs for Office -->
+                            <div class="flex items-center gap-2 mb-3"
+                                 role="tablist"
+                                 aria-label="Office contract tabs">
+                                
+                                <!-- Office Edit Tab -->
+                                <button type="button" 
+                                        id="tabOfficeEdit" 
+                                        onclick="switchOfficeTab('edit')"
+                                        role="tab"
+                                        aria-selected="true"
+                                        aria-controls="officeEditContainer"
+                                        class="office-sub-tab px-3 py-1.5 text-xs font-medium rounded-lg border-2 transition-all
+                                            border-blue-500 text-blue-600 bg-blue-50">
+                                    <i class="fas fa-edit mr-1" aria-hidden="true"></i>Edit Form
+                                </button>
+                                
+                                <!-- Office Submit Tab -->
+                                <button type="button" 
+                                        id="tabOfficeSubmit" 
+                                        onclick="switchOfficeTab('submit')"
+                                        role="tab"
+                                        aria-selected="false"
+                                        aria-controls="officeSubmitContainer"
+                                        class="office-sub-tab px-3 py-1.5 text-xs font-medium rounded-lg border-2 transition-all
+                                            border-gray-300 text-gray-600 hover:bg-gray-50">
+                                    <i class="fas fa-file-alt mr-1" aria-hidden="true"></i>Submit Form
+                                </button>
+                                
+                                <!-- Office Sheet Tab -->
+                                <button type="button" 
+                                        id="tabOfficeSheet" 
+                                        onclick="switchOfficeTab('sheet')"
+                                        role="tab"
+                                        aria-selected="false"
+                                        aria-controls="officeSheetContainer"
+                                        class="office-sub-tab px-3 py-1.5 text-xs font-medium rounded-lg border-2 transition-all
+                                            border-gray-300 text-gray-600 hover:bg-gray-50">
+                                    <i class="fas fa-table mr-1" aria-hidden="true"></i>Spreadsheet
+                                </button>
+                            </div>
+
+                            <!-- Office Edit Form -->
+                            <div id="officeEditContainer" 
+                                 class="office-container"
+                                 role="tabpanel"
+                                 aria-labelledby="tabOfficeEdit">
+                                <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden h-full">
+                                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm font-semibold text-gray-800">Edit Office Contract Form</h3>
+                                            <p class="text-xs text-gray-600">Kelola template kontrak office</p>
+                                        </div>
+                                        <a href="https://docs.google.com/forms/d/1ENaX3TxbPrng8FfJrnw05YhtN8RJacJS-VCP3v1RYqU/edit" 
+                                           target="_blank" 
+                                           rel="noopener noreferrer"
+                                           class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-blue-600 bg-white hover:bg-blue-50 rounded-md border border-blue-200 transition-colors"
+                                           aria-label="Open office form in new tab">
+                                            <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i>Open
+                                        </a>
+                                    </div>
+                                    <div class="relative w-full" style="height: calc(100vh - 280px); min-height: 700px;">
+                                        <iframe 
+                                            src="https://docs.google.com/forms/d/1ENaX3TxbPrng8FfJrnw05YhtN8RJacJS-VCP3v1RYqU/edit" 
+                                            class="absolute inset-0 w-full h-full"
+                                            frameborder="0"
+                                            title="Edit Office Contract Form">
+                                            Loading…
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Office Submit Form -->
+                            <div id="officeSubmitContainer" 
+                                 class="office-container hidden"
+                                 role="tabpanel"
+                                 aria-labelledby="tabOfficeSubmit">
+                                <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden h-full">
+                                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm font-semibold text-gray-800">Submit Office Contract</h3>
+                                            <p class="text-xs text-gray-600">Generate kontrak office baru</p>
+                                        </div>
+                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-SN_F8aZiTx8q0ADbRqx5oAONI7WjPZ6Zt9Sfl_jYZpM77g/viewform?usp=sharing&ouid=102733830738301252568" 
+                                           target="_blank" 
+                                           rel="noopener noreferrer"
+                                           class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-green-600 bg-white hover:bg-green-50 rounded-md border border-green-200 transition-colors"
+                                           aria-label="Open office form in new tab">
+                                            <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i>Open
+                                        </a>
+                                    </div>
+                                    <div class="relative w-full" style="height: calc(100vh - 280px); min-height: 700px;">
+                                        <iframe 
+                                            src="https://docs.google.com/forms/d/e/1FAIpQLSe-SN_F8aZiTx8q0ADbRqx5oAONI7WjPZ6Zt9Sfl_jYZpM77g/viewform?usp=sharing&ouid=102733830738301252568" 
+                                            class="absolute inset-0 w-full h-full"
+                                            frameborder="0" 
+                                            marginheight="0" 
+                                            marginwidth="0"
+                                            title="Submit Office Contract Form">
+                                            Loading…
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Office Spreadsheet -->
+                            <div id="officeSheetContainer" 
+                                 class="office-container hidden"
+                                 role="tabpanel"
+                                 aria-labelledby="tabOfficeSheet">
+                                <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden h-full">
+                                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm font-semibold text-gray-800">Office Contracts Database</h3>
+                                            <p class="text-xs text-gray-600">Data seluruh kontrak office</p>
+                                        </div>
+                                        <a href="https://docs.google.com/spreadsheets/d/1QePV3mlR739aHjKphey-60a603NWRiI6CJdS_dnadug/edit?usp=sharing" 
+                                           target="_blank" 
+                                           rel="noopener noreferrer"
+                                           class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-purple-600 bg-white hover:bg-purple-50 rounded-md border border-purple-200 transition-colors"
+                                           aria-label="Open office spreadsheet in new tab">
+                                            <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i>Open
+                                        </a>
+                                    </div>
+                                    <div class="relative w-full" style="height: calc(100vh - 280px); min-height: 700px;">
+                                        <iframe 
+                                            src="https://docs.google.com/spreadsheets/d/1QePV3mlR739aHjKphey-60a603NWRiI6CJdS_dnadug/edit?usp=sharing" 
+                                            class="absolute inset-0 w-full h-full"
+                                            frameborder="0"
+                                            title="Office Contracts Spreadsheet">
+                                            Loading…
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== BISTRO CONTRACT ===== -->
+                        <div id="bistroContractContainer" 
+                             class="contract-container hidden"
+                             role="tabpanel"
+                             aria-labelledby="tabBistro">
+                            
+                            <!-- Sub-tabs for Bistro -->
+                            <div class="flex items-center gap-2 mb-3"
+                                 role="tablist"
+                                 aria-label="Bistro contract tabs">
+                                
+                                <!-- Bistro Edit Tab -->
+                                <button type="button" 
+                                        id="tabBistroEdit" 
+                                        onclick="switchBistroTab('edit')"
+                                        role="tab"
+                                        aria-selected="true"
+                                        aria-controls="bistroEditContainer"
+                                        class="bistro-sub-tab px-3 py-1.5 text-xs font-medium rounded-lg border-2 transition-all
+                                            border-orange-500 text-orange-600 bg-orange-50">
+                                    <i class="fas fa-edit mr-1" aria-hidden="true"></i>Edit Form
+                                </button>
+                                
+                                <!-- Bistro Submit Tab -->
+                                <button type="button" 
+                                        id="tabBistroSubmit" 
+                                        onclick="switchBistroTab('submit')"
+                                        role="tab"
+                                        aria-selected="false"
+                                        aria-controls="bistroSubmitContainer"
+                                        class="bistro-sub-tab px-3 py-1.5 text-xs font-medium rounded-lg border-2 transition-all
+                                            border-gray-300 text-gray-600 hover:bg-gray-50">
+                                    <i class="fas fa-file-alt mr-1" aria-hidden="true"></i>Submit Form
+                                </button>
+                                
+                                <!-- Bistro Sheet Tab -->
+                                <button type="button" 
+                                        id="tabBistroSheet" 
+                                        onclick="switchBistroTab('sheet')"
+                                        role="tab"
+                                        aria-selected="false"
+                                        aria-controls="bistroSheetContainer"
+                                        class="bistro-sub-tab px-3 py-1.5 text-xs font-medium rounded-lg border-2 transition-all
+                                            border-gray-300 text-gray-600 hover:bg-gray-50">
+                                    <i class="fas fa-table mr-1" aria-hidden="true"></i>Spreadsheet
+                                </button>
+                            </div>
+
+                            <!-- Bistro Edit Form -->
+                            <div id="bistroEditContainer" 
+                                 class="bistro-container"
+                                 role="tabpanel"
+                                 aria-labelledby="tabBistroEdit">
+                                <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden h-full">
+                                    <div class="bg-gradient-to-r from-orange-50 to-yellow-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm font-semibold text-gray-800">Edit Bistro Contract Form</h3>
+                                            <p class="text-xs text-gray-600">Kelola template kontrak bistro</p>
+                                        </div>
+                                        <a href="https://docs.google.com/forms/d/1vzru3CwK3Tf7uhx2apjKmL1mBrpTBVYaJZSscpwcrfA/edit" 
+                                           target="_blank" 
+                                           rel="noopener noreferrer"
+                                           class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-orange-600 bg-white hover:bg-orange-50 rounded-md border border-orange-200 transition-colors"
+                                           aria-label="Open bistro form in new tab">
+                                            <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i>Open
+                                        </a>
+                                    </div>
+                                    <div class="relative w-full" style="height: calc(100vh - 280px); min-height: 700px;">
+                                        <iframe 
+                                            src="https://docs.google.com/forms/d/1vzru3CwK3Tf7uhx2apjKmL1mBrpTBVYaJZSscpwcrfA/edit" 
+                                            class="absolute inset-0 w-full h-full"
+                                            frameborder="0"
+                                            title="Edit Bistro Contract Form">
+                                            Loading…
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bistro Submit Form -->
+                            <div id="bistroSubmitContainer" 
+                                 class="bistro-container hidden"
+                                 role="tabpanel"
+                                 aria-labelledby="tabBistroSubmit">
+                                <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden h-full">
+                                    <div class="bg-gradient-to-r from-green-50 to-teal-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm font-semibold text-gray-800">Submit Bistro Contract</h3>
+                                            <p class="text-xs text-gray-600">Generate kontrak bistro baru</p>
+                                        </div>
+                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSetDdHYMmbnjs9nGT17ThxDcjO1aaYdHApO4lgi6ijrO6aMTw/viewform?usp=sharing&ouid=102733830738301252568" 
+                                           target="_blank" 
+                                           rel="noopener noreferrer"
+                                           class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-teal-600 bg-white hover:bg-teal-50 rounded-md border border-teal-200 transition-colors"
+                                           aria-label="Open bistro form in new tab">
+                                            <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i>Open
+                                        </a>
+                                    </div>
+                                    <div class="relative w-full" style="height: calc(100vh - 280px); min-height: 700px;">
+                                        <iframe 
+                                            src="https://docs.google.com/forms/d/e/1FAIpQLSetDdHYMmbnjs9nGT17ThxDcjO1aaYdHApO4lgi6ijrO6aMTw/viewform?usp=sharing&ouid=102733830738301252568" 
+                                            class="absolute inset-0 w-full h-full"
+                                            frameborder="0" 
+                                            marginheight="0" 
+                                            marginwidth="0"
+                                            title="Submit Bistro Contract Form">
+                                            Loading…
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bistro Spreadsheet -->
+                            <div id="bistroSheetContainer" 
+                                 class="bistro-container hidden"
+                                 role="tabpanel"
+                                 aria-labelledby="tabBistroSheet">
+                                <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden h-full">
+                                    <div class="bg-gradient-to-r from-purple-50 to-indigo-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between">
+                                        <div>
+                                            <h3 class="text-sm font-semibold text-gray-800">Bistro Contracts Database</h3>
+                                            <p class="text-xs text-gray-600">Data seluruh kontrak bistro</p>
+                                        </div>
+                                        <a href="https://docs.google.com/spreadsheets/d/1QePV3mlR739aHjKphey-60a603NWRiI6CJdS_dnadug/edit?usp=sharing" 
+                                           target="_blank" 
+                                           rel="noopener noreferrer"
+                                           class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-indigo-600 bg-white hover:bg-indigo-50 rounded-md border border-indigo-200 transition-colors"
+                                           aria-label="Open bistro spreadsheet in new tab">
+                                            <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i>Open
+                                        </a>
+                                    </div>
+                                    <div class="relative w-full" style="height: calc(100vh - 280px); min-height: 700px;">
+                                        <iframe 
+                                            src="https://docs.google.com/spreadsheets/d/1QePV3mlR739aHjKphey-60a603NWRiI6CJdS_dnadug/edit?usp=sharing" 
+                                            class="absolute inset-0 w-full h-full"
+                                            frameborder="0"
+                                            title="Bistro Contracts Spreadsheet">
+                                            Loading…
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- ========================================== -->
+        <!-- FOOTER -->
+        <!-- ========================================== -->
+        <footer class="bg-white border-t border-gray-200 px-6 py-2 mt-auto flex-shrink-0">
+            <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+                <p>© 2026 Carabao Billiards Indonesia. All rights reserved.
+                    Developed internally by HRD Internship Project.</p>
+                <p class="mt-2 sm:mt-0">Version 1.0.0 | Powered by Supabase</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <!-- ========================================== -->
+    <div id="toastContainer" 
+         class="fixed bottom-4 right-4 z-[100] space-y-2"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true">
+        <!-- Toast notifications will be dynamically injected here by JavaScript -->
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODALS SECTION -->
+    <!-- ========================================== -->
+    
+    <!-- MPP MODAL -->
+    <div id="mppModal" 
+         class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="mppModalTitle">
+        <div class="modal-content bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+                <div class="flex items-center justify-between">
+                    <h3 id="mppModalTitle" class="text-xl font-semibold text-white">Add Manpower Planning</h3>
+                    <button onclick="closeMPPModal()" 
+                            class="text-white/80 hover:text-white transition-colors"
+                            aria-label="Close modal">
+                        <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+                <form id="mppForm">
+                    <input type="hidden" id="mppId" name="id">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Department Field -->
+                        <div>
+                            <label for="mppDepartment" class="block text-sm font-medium text-gray-700 mb-1">
+                                Department <span class="text-red-500">*</span>
+                            </label>
+                            <select id="mppDepartment" 
+                                    name="department_id"
+                                    required
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                <option value="">Select Department</option>
+                                <!-- Populated by JS from database -->
+                            </select>
+                        </div>
+
+                        <!-- Position Field -->
+                        <div>
+                            <label for="mppPosition" class="block text-sm font-medium text-gray-700 mb-1">
+                                Position <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" 
+                                   id="mppPosition" 
+                                   name="position_id"
+                                   required
+                                   placeholder="e.g., Software Engineer"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+
+                        <!-- Current Count Field -->
+                        <div>
+                            <label for="mppCurrentCount" class="block text-sm font-medium text-gray-700 mb-1">
+                                Current Count <span class="text-red-500">*</span>
+                            </label>
+                            <input type="number" 
+                                   id="mppCurrentCount" 
+                                   name="current_count"
+                                   required
+                                   min="0"
+                                   placeholder="0"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+
+                        <!-- Planned Count Field -->
+                        <div>
+                            <label for="mppPlannedCount" class="block text-sm font-medium text-gray-700 mb-1">
+                                Planned Count <span class="text-red-500">*</span>
+                            </label>
+                            <input type="number" 
+                                   id="mppPlannedCount" 
+                                   name="planned_count"
+                                   required
+                                   min="0"
+                                   placeholder="0"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+
+                        <!-- Year Field -->
+                        <div>
+                            <label for="mppYear" class="block text-sm font-medium text-gray-700 mb-1">
+                                Year <span class="text-red-500">*</span>
+                            </label>
+                            <select id="mppYear" 
+                                    name="year"
+                                    required
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026" selected>2026</option>
+                                <option value="2027">2027</option>
+                            </select>
+                        </div>
+
+                        <!-- Quarter Field -->
+                        <div>
+                            <label for="mppQuarter" class="block text-sm font-medium text-gray-700 mb-1">
+                                Quarter
+                            </label>
+                            <select id="mppQuarter" 
+                                    name="quarter"
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                <option value="">Select Quarter</option>
+                                <option value="Q1">Q1</option>
+                                <option value="Q2">Q2</option>
+                                <option value="Q3">Q3</option>
+                                <option value="Q4">Q4</option>
+                            </select>
+                        </div>
+
+                        <!-- Timeline Start Field -->
+                        <div>
+                            <label for="mppTimelineStart" class="block text-sm font-medium text-gray-700 mb-1">
+                                Timeline Start
+                            </label>
+                            <input type="date" 
+                                   id="mppTimelineStart" 
+                                   name="timeline_start"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+
+                        <!-- Timeline End Field -->
+                        <div>
+                            <label for="mppTimelineEnd" class="block text-sm font-medium text-gray-700 mb-1">
+                                Timeline End
+                            </label>
+                            <input type="date" 
+                                   id="mppTimelineEnd" 
+                                   name="timeline_end"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+
+                        <!-- Priority Field -->
+                        <div>
+                            <label for="mppPriority" class="block text-sm font-medium text-gray-700 mb-1">
+                                Priority <span class="text-red-500">*</span>
+                            </label>
+                            <select id="mppPriority" 
+                                    name="priority"
+                                    required
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                                <option value="critical">Critical</option>
+                            </select>
+                        </div>
+
+                        <!-- Status Field -->
+                        <div>
+                            <label for="mppStatus" class="block text-sm font-medium text-gray-700 mb-1">
+                                Status <span class="text-red-500">*</span>
+                            </label>
+                            <select id="mppStatus" 
+                                    name="status"
+                                    required
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                <option value="draft" selected>Draft</option>
+                                <option value="pending">Pending</option>
+                                <option value="approved">Approved</option>
+                                <option value="rejected">Rejected</option>
+                            </select>
+                        </div>
+
+                        <!-- Notes Field -->
+                        <div class="md:col-span-2">
+                            <label for="mppNotes" class="block text-sm font-medium text-gray-700 mb-1">
+                                Notes
+                            </label>
+                            <textarea id="mppNotes" 
+                                      name="notes"
+                                      rows="3"
+                                      placeholder="Additional notes..."
+                                      class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all resize-none"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end space-x-3">
+                <button onclick="closeMPPModal()" 
+                        class="px-5 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 font-medium text-sm transition-colors">
+                    Cancel
+                </button>
+                <button id="btnSaveMPP" 
+                        onclick="saveMPP()" 
+                        class="btn-primary px-5 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 font-medium text-sm transition-colors">
+                    <i class="fas fa-save mr-2" aria-hidden="true"></i>
+                    Save MPP
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TRACKER MODAL (ADD/EDIT CANDIDATE) -->
+    <!-- ========================================== -->
+    <div id="trackerModal" 
+         class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="trackerModalTitle">
+        <div class="modal-content bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+                <div class="flex items-center justify-between">
+                    <h3 id="trackerModalTitle" class="text-xl font-semibold text-white">Add Candidate</h3>
+                    <button onclick="closeTrackerModal()" 
+                            class="text-white/80 hover:text-white transition-colors"
+                            aria-label="Close modal">
+                        <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+                <form id="trackerForm">
+                    <input type="hidden" id="trackerId" name="id">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Candidate Name Field -->
+                        <div class="md:col-span-2">
+                            <label for="candidateName" class="block text-sm font-medium text-gray-700 mb-1">
+                                Candidate Name <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" 
+                                   id="candidateName" 
+                                   name="candidate_name"
+                                   required
+                                   placeholder="Full name"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+
+                        <!-- Email Field -->
+                        <div>
+                            <label for="candidateEmail" class="block text-sm font-medium text-gray-700 mb-1">
+                                Email <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" 
+                                   id="candidateEmail" 
+                                   name="email"
+                                   required
+                                   placeholder="email@example.com"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+
+                        <!-- Phone Field -->
+                        <div>
+                            <label for="candidatePhone" class="block text-sm font-medium text-gray-700 mb-1">
+                                Phone <span class="text-red-500">*</span>
+                            </label>
+                            <input type="tel" 
+                                   id="candidatePhone" 
+                                   name="phone"
+                                   required
+                                   placeholder="+62812345678"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+
+                        <!-- Position Applied Field -->
+                        <div>
+                            <label for="positionApplied" class="block text-sm font-medium text-gray-700 mb-1">
+                                Position Applied <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" 
+                                   id="positionApplied" 
+                                   name="position_applied"
+                                   required
+                                   placeholder="e.g., Software Engineer"
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+
+                        <!-- Department Field -->
+                        <div>
+                            <label for="candidateDepartment" class="block text-sm font-medium text-gray-700 mb-1">
+                                Department <span class="text-red-500">*</span>
+                            </label>
+                            <select id="candidateDepartment" 
+                                    name="department_id"
+                                    required
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                <option value="">Select Department</option>
+                                <!-- Dynamic options loaded from database -->
+                            </select>
+                        </div>
+
+                        <!-- Apply Date Field -->
+                        <div>
+                            <label for="applyDate" class="block text-sm font-medium text-gray-700 mb-1">
+                                Apply Date <span class="text-red-500">*</span>
+                            </label>
+                            <input type="date" 
+                                   id="applyDate" 
+                                   name="apply_date"
+                                   required
+                                   class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+
+                        <!-- Current Stage Field -->
+                        <div>
+                            <label for="currentStage" class="block text-sm font-medium text-gray-700 mb-1">
+                                Current Stage <span class="text-red-500">*</span>
+                            </label>
+                            <select id="currentStage" 
+                                    name="current_stage"
+                                    required
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                <option value="">Select Stage</option>
+                                <option value="Applied">Applied</option>
+                                <option value="Screening">Screening</option>
+                                <option value="HR Interview">HR Interview</option>
+                                <option value="User Interview">User Interview</option>
+                                <option value="Offering">Offering</option>
+                                <option value="Hired">Hired</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                        </div>
+
+                        <!-- Status Field -->
+                        <div>
+                            <label for="candidateStatus" class="block text-sm font-medium text-gray-700 mb-1">
+                                Status <span class="text-red-500">*</span>
+                            </label>
+                            <select id="candidateStatus" 
+                                    name="status"
+                                    required
+                                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white transition-all">
+                                <option value="Active" selected>Active</option>
+                                <option value="On Hold">On Hold</option>
+                                <option value="Passed">Passed</option>
+                                <option value="Failed">Failed</option>
+                            </select>
+                        </div>
+
+                        <!-- Notes Field -->
+                        <div class="md:col-span-2">
+                            <label for="candidateNotes" class="block text-sm font-medium text-gray-700 mb-1">
+                                Notes
+                            </label>
+                            <textarea id="candidateNotes" 
+                                      name="notes"
+                                      rows="3"
+                                      placeholder="Additional notes about the candidate..."
+                                      class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all resize-none"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end space-x-3">
+                <button onclick="closeTrackerModal()" 
+                        class="px-5 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 font-medium text-sm transition-colors">
+                    Cancel
+                </button>
+                <button id="btnSaveCandidate" 
+                        onclick="saveCandidate()" 
+                        class="btn-primary px-5 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 font-medium text-sm transition-colors">
+                    <i class="fas fa-save mr-2" aria-hidden="true"></i>
+                    Save Candidate
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- VIEW CANDIDATE MODAL (READ-ONLY) -->
+    <!-- ========================================== -->
+    <div id="viewCandidateModal" 
+         class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="viewCandidateModalTitle">
+        <div class="modal-content bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-green-600 to-green-700">
+                <div class="flex items-center justify-between">
+                    <h3 id="viewCandidateModalTitle" class="text-xl font-semibold text-white">
+                        <i class="fas fa-eye mr-2" aria-hidden="true"></i>Candidate Details
+                    </h3>
+                    <button onclick="closeViewCandidateModal()" 
+                            class="text-white/80 hover:text-white transition-colors"
+                            aria-label="Close modal">
+                        <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Candidate Name -->
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-medium text-gray-500 uppercase mb-1">
+                            <i class="fas fa-user mr-1" aria-hidden="true"></i>Candidate Name
+                        </label>
+                        <p id="viewCandidateName" class="text-base font-semibold text-gray-900">-</p>
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 uppercase mb-1">
+                            <i class="fas fa-envelope mr-1" aria-hidden="true"></i>Email
+                        </label>
+                        <p id="viewCandidateEmail" class="text-sm text-gray-900">-</p>
+                    </div>
+
+                    <!-- Phone with WhatsApp -->
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 uppercase mb-1">
+                            <i class="fab fa-whatsapp mr-1 text-green-600" aria-hidden="true"></i>Phone Number
+                        </label>
+                        <div id="viewCandidatePhoneContainer" class="flex items-center gap-2">
+                            <p id="viewCandidatePhone" class="text-sm text-gray-900">-</p>
+                            <a id="viewCandidateWhatsApp" 
+                               href="#" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="hidden text-green-600 hover:text-green-700">
+                                <i class="fab fa-whatsapp text-xl" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Position -->
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 uppercase mb-1">
+                            <i class="fas fa-briefcase mr-1" aria-hidden="true"></i>Position Applied
+                        </label>
+                        <p id="viewCandidatePosition" class="text-sm text-gray-900">-</p>
+                    </div>
+
+                    <!-- Department -->
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 uppercase mb-1">
+                            <i class="fas fa-building mr-1" aria-hidden="true"></i>Department
+                        </label>
+                        <p id="viewCandidateDepartment" class="text-sm text-gray-900">-</p>
+                    </div>
+
+                    <!-- Apply Date -->
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 uppercase mb-1">
+                            <i class="fas fa-calendar mr-1" aria-hidden="true"></i>Apply Date
+                        </label>
+                        <p id="viewCandidateApplyDate" class="text-sm text-gray-900">-</p>
+                    </div>
+
+                    <!-- Current Stage -->
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 uppercase mb-1">
+                            <i class="fas fa-tasks mr-1" aria-hidden="true"></i>Current Stage
+                        </label>
+                        <div id="viewCandidateStage"></div>
+                    </div>
+
+                    <!-- Status -->
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 uppercase mb-1">
+                            <i class="fas fa-info-circle mr-1" aria-hidden="true"></i>Status
+                        </label>
+                        <div id="viewCandidateStatus"></div>
+                    </div>
+                </div>
+
+                <!-- Notes Section -->
+                <div class="mt-6">
+                    <label class="block text-xs font-medium text-gray-500 uppercase mb-1">
+                        <i class="fas fa-sticky-note mr-1" aria-hidden="true"></i>Notes
+                    </label>
+                    <p id="viewCandidateNotes" class="text-sm text-gray-700 bg-gray-50 p-4 rounded-lg min-h-[60px]">-</p>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end space-x-3">
+                <button onclick="closeViewCandidateModal()" 
+                        class="px-5 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 font-medium text-sm transition-colors">
+                    <i class="fas fa-times mr-2" aria-hidden="true"></i>Close
+                </button>
+                <button id="btnEditFromView" 
+                        onclick="editCandidateFromView()" 
+                        class="btn-primary px-5 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 font-medium text-sm transition-colors">
+                    <i class="fas fa-edit mr-2" aria-hidden="true"></i>Edit Candidate
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- DELETE CONFIRMATION MODAL -->
+    <!-- ========================================== -->
+    <div id="deleteModal" 
+         class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="deleteModalTitle">
+        <div class="modal-content bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden">
+            
+            <!-- Modal Body -->
+            <div class="p-6 text-center">
+                <!-- Warning Icon -->
+                <div class="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-exclamation-triangle text-red-600 text-3xl" aria-hidden="true"></i>
+                </div>
+                
+                <h3 id="deleteModalTitle" class="text-xl font-semibold text-gray-900 mb-2">Delete Confirmation</h3>
+                
+                <div id="deleteInfo" class="text-gray-600 mb-6">
+                    <p>Are you sure you want to delete this item?</p>
+                    <p class="text-sm mt-2">This action cannot be undone.</p>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-center space-x-3">
+                <button onclick="closeDeleteModal()" 
+                        class="px-5 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 font-medium text-sm transition-colors min-w-[100px]">
+                    <i class="fas fa-times mr-2" aria-hidden="true"></i>Cancel
+                </button>
+                <button id="btnConfirmDelete" 
+                        onclick="confirmDelete()" 
+                        class="px-5 py-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 font-medium text-sm transition-colors min-w-[100px]">
+                    <i class="fas fa-trash-alt mr-2" aria-hidden="true"></i>Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- LOADING OVERLAY -->
+    <!-- ========================================== -->
+    <div id="loadingOverlay" 
+         class="fixed inset-0 bg-black/50 z-[60] hidden items-center justify-center"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Loading">
+        <div class="bg-white rounded-xl shadow-2xl p-6 flex flex-col items-center min-w-[200px]">
+            <div class="animate-spin rounded-full h-12 w-12 border-4 border-primary-200 border-t-primary-600 mb-4" 
+                 role="status"
+                 aria-label="Loading"></div>
+            <p class="text-gray-700 font-medium">Processing...</p>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- INLINE JAVASCRIPT (UI INTERACTIONS ONLY) -->
+    <!-- ========================================== -->
+    <script>
+        /**
+         * Toggle Sidebar (Mobile)
+         */
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const toggle = document.getElementById('sidebarToggle');
+            
+            if (sidebar && overlay) {
+                const isHidden = sidebar.classList.contains('-translate-x-full');
+                
+                sidebar.classList.toggle('-translate-x-full');
+                overlay.classList.toggle('hidden');
+                
+                if (toggle) {
+                    toggle.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                }
+            }
+        }
+        
+        /**
+         * Toggle User Dropdown Menu
+         */
+        function toggleUserDropdown() {
+            const dropdown = document.getElementById('userDropdown');
+            const btn = document.getElementById('userMenuBtn');
+            
+            if (dropdown) {
+                const isHidden = dropdown.classList.contains('hidden');
+                dropdown.classList.toggle('hidden');
+                
+                if (btn) {
+                    btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+                }
+            }
+        }
+        
+        /**
+         * Close Dropdown When Clicking Outside
+         */
+        document.addEventListener('click', function(event) {
+            const userMenuBtn = document.getElementById('userMenuBtn');
+            const userDropdown = document.getElementById('userDropdown');
+            
+            if (userMenuBtn && userDropdown) {
+                if (!userMenuBtn.contains(event.target) && !userDropdown.contains(event.target)) {
+                    userDropdown.classList.add('hidden');
+                    userMenuBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+        
+        /**
+         * Show Toast Notification
+         * @param {string} message - Notification message
+         * @param {string} type - Notification type (success|error|warning|info)
+         */
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            
+            const colors = {
+                success: 'bg-green-500',
+                error: 'bg-red-500',
+                warning: 'bg-yellow-500',
+                info: 'bg-blue-500'
+            };
+            
+            const icons = {
+                success: 'fa-check-circle',
+                error: 'fa-exclamation-circle',
+                warning: 'fa-exclamation-triangle',
+                info: 'fa-info-circle'
+            };
+            
+            const toast = document.createElement('div');
+            toast.className = `toast flex items-center p-4 rounded-lg shadow-lg text-white ${colors[type] || colors.info} min-w-[300px] animate-slide-in`;
+            toast.setAttribute('role', 'alert');
+            toast.innerHTML = `
+                <i class="fas ${icons[type] || icons.info} mr-3 text-lg" aria-hidden="true"></i>
+                <span class="flex-1">${message}</span>
+                <button onclick="this.parentElement.remove()" 
+                        class="ml-3 hover:opacity-75 transition-opacity"
+                        aria-label="Close notification">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            `;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.remove();
+                }
+            }, 5000);
+        }
+
+        /**
+         * Show Loading Overlay
+         */
+        function showLoading() {
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) {
+                overlay.classList.remove('hidden');
+                overlay.classList.add('flex');
+            }
+        }
+
+        /**
+         * Hide Loading Overlay
+         */
+        function hideLoading() {
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+            }
+        }
+
+        /**
+         * Logout Function
+         */
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                showToast('Logging out...', 'info');
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);
+            }
+        }
+
+        // ========================================
+        // WORKFLOW TAB SWITCHING
+        // ========================================
+        
+        /**
+         * Handles main workflow tab changes
+         * @param {string} tab - Tab identifier (mpp, tracker, interview, contract)
+         */
+        function handleWorkflowTabChange(tab) {
+            const tabs = ['tabMPP', 'tabTracker', 'tabInterview', 'tabContract'];
+            const contents = ['contentMPP', 'contentTracker', 'contentInterview', 'contentContract'];
+            
+            tabs.forEach(tabId => {
+                const tabElement = document.getElementById(tabId);
+                if (tabElement) {
+                    tabElement.classList.remove('border-primary-500', 'text-primary-600', 'bg-primary-50');
+                    tabElement.classList.add('border-transparent', 'text-gray-500');
+                    tabElement.setAttribute('aria-selected', 'false');
+                }
+            });
+            
+            contents.forEach(contentId => {
+                const contentElement = document.getElementById(contentId);
+                if (contentElement) {
+                    contentElement.classList.add('hidden');
+                }
+            });
+            
+            const activeTab = document.getElementById(`tab${tab.charAt(0).toUpperCase() + tab.slice(1)}`);
+            const activeContent = document.getElementById(`content${tab.charAt(0).toUpperCase() + tab.slice(1)}`);
+            
+            if (activeTab) {
+                activeTab.classList.add('border-primary-500', 'text-primary-600', 'bg-primary-50');
+                activeTab.classList.remove('border-transparent', 'text-gray-500');
+                activeTab.setAttribute('aria-selected', 'true');
+            }
+            
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+            }
+        }
+
+        // ========================================
+        // INTERVIEW FORM TAB SWITCHING
+        // ========================================
+        
+        /**
+         * Switches interview form sub-tabs
+         * @param {string} subTab - Sub-tab identifier (edit, submit, sheet)
+         */
+        function switchInterviewTab(subTab) {
+            const editContainer = document.getElementById('interviewEditContainer');
+            const submitContainer = document.getElementById('interviewSubmitContainer');
+            const sheetContainer = document.getElementById('interviewSheetContainer');
+            
+            const editTab = document.getElementById('tabInterviewEdit');
+            const submitTab = document.getElementById('tabInterviewSubmit');
+            const sheetTab = document.getElementById('tabInterviewSheet');
+
+            [editContainer, submitContainer, sheetContainer].forEach(c => c?.classList.add('hidden'));
+            
+            [editTab, submitTab, sheetTab].forEach(t => {
+                t?.classList.add('border-gray-300', 'text-gray-600');
+                t?.classList.remove('border-primary-500', 'text-primary-600', 'bg-primary-50');
+                t?.setAttribute('aria-selected', 'false');
+            });
+
+            switch (subTab) {
+                case 'edit':
+                    editContainer?.classList.remove('hidden');
+                    editTab?.classList.add('border-primary-500', 'text-primary-600', 'bg-primary-50');
+                    editTab?.classList.remove('border-gray-300', 'text-gray-600');
+                    editTab?.setAttribute('aria-selected', 'true');
+                    break;
+                case 'submit':
+                    submitContainer?.classList.remove('hidden');
+                    submitTab?.classList.add('border-primary-500', 'text-primary-600', 'bg-primary-50');
+                    submitTab?.classList.remove('border-gray-300', 'text-gray-600');
+                    submitTab?.setAttribute('aria-selected', 'true');
+                    break;
+                case 'sheet':
+                    sheetContainer?.classList.remove('hidden');
+                    sheetTab?.classList.add('border-primary-500', 'text-primary-600', 'bg-primary-50');
+                    sheetTab?.classList.remove('border-gray-300', 'text-gray-600');
+                    sheetTab?.setAttribute('aria-selected', 'true');
+                    break;
+            }
+        }
+
+        // ========================================
+        // CONTRACT TYPE TAB SWITCHING
+        // ========================================
+        
+        /**
+         * Switches contract type (Office/Bistro)
+         * @param {string} type - Contract type (office, bistro)
+         */
+        function switchContractType(type) {
+            const officeContainer = document.getElementById('officeContractContainer');
+            const bistroContainer = document.getElementById('bistroContractContainer');
+            const officeTab = document.getElementById('tabOffice');
+            const bistroTab = document.getElementById('tabBistro');
+            
+            [officeContainer, bistroContainer].forEach(c => c?.classList.add('hidden'));
+            [officeTab, bistroTab].forEach(t => {
+                t?.classList.add('border-gray-300', 'text-gray-600');
+                t?.classList.remove('border-primary-500', 'text-primary-600', 'bg-primary-50');
+                t?.setAttribute('aria-selected', 'false');
+            });
+
+            if (type === 'office') {
+                officeContainer?.classList.remove('hidden');
+                officeTab?.classList.add('border-primary-500', 'text-primary-600', 'bg-primary-50');
+                officeTab?.classList.remove('border-gray-300', 'text-gray-600');
+                officeTab?.setAttribute('aria-selected', 'true');
+            } else if (type === 'bistro') {
+                bistroContainer?.classList.remove('hidden');
+                bistroTab?.classList.add('border-primary-500', 'text-primary-600', 'bg-primary-50');
+                bistroTab?.classList.remove('border-gray-300', 'text-gray-600');
+                bistroTab?.setAttribute('aria-selected', 'true');
+            }
+        }
+
+        // ========================================
+        // OFFICE CONTRACT TAB SWITCHING
+        // ========================================
+        
+        /**
+         * Switches office contract sub-tabs
+         * @param {string} subTab - Sub-tab identifier (edit, submit, sheet)
+         */
+        function switchOfficeTab(subTab) {
+            const editContainer = document.getElementById('officeEditContainer');
+            const submitContainer = document.getElementById('officeSubmitContainer');
+            const sheetContainer = document.getElementById('officeSheetContainer');
+            
+            const editTab = document.getElementById('tabOfficeEdit');
+            const submitTab = document.getElementById('tabOfficeSubmit');
+            const sheetTab = document.getElementById('tabOfficeSheet');
+
+            [editContainer, submitContainer, sheetContainer].forEach(c => c?.classList.add('hidden'));
+            
+            [editTab, submitTab, sheetTab].forEach(t => {
+                t?.classList.add('border-gray-300', 'text-gray-600');
+                t?.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                t?.setAttribute('aria-selected', 'false');
+            });
+
+            switch (subTab) {
+                case 'edit':
+                    editContainer?.classList.remove('hidden');
+                    editTab?.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    editTab?.classList.remove('border-gray-300', 'text-gray-600');
+                    editTab?.setAttribute('aria-selected', 'true');
+                    break;
+                case 'submit':
+                    submitContainer?.classList.remove('hidden');
+                    submitTab?.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    submitTab?.classList.remove('border-gray-300', 'text-gray-600');
+                    submitTab?.setAttribute('aria-selected', 'true');
+                    break;
+                case 'sheet':
+                    sheetContainer?.classList.remove('hidden');
+                    sheetTab?.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                    sheetTab?.classList.remove('border-gray-300', 'text-gray-600');
+                    sheetTab?.setAttribute('aria-selected', 'true');
+                    break;
+            }
+        }
+
+        // ========================================
+        // BISTRO CONTRACT TAB SWITCHING
+        // ========================================
+        
+        /**
+         * Switches bistro contract sub-tabs
+         * @param {string} subTab - Sub-tab identifier (edit, submit, sheet)
+         */
+        function switchBistroTab(subTab) {
+            const editContainer = document.getElementById('bistroEditContainer');
+            const submitContainer = document.getElementById('bistroSubmitContainer');
+            const sheetContainer = document.getElementById('bistroSheetContainer');
+            
+            const editTab = document.getElementById('tabBistroEdit');
+            const submitTab = document.getElementById('tabBistroSubmit');
+            const sheetTab = document.getElementById('tabBistroSheet');
+
+            [editContainer, submitContainer, sheetContainer].forEach(c => c?.classList.add('hidden'));
+            
+            [editTab, submitTab, sheetTab].forEach(t => {
+                t?.classList.add('border-gray-300', 'text-gray-600');
+                t?.classList.remove('border-orange-500', 'text-orange-600', 'bg-orange-50');
+                t?.setAttribute('aria-selected', 'false');
+            });
+
+            switch (subTab) {
+                case 'edit':
+                    editContainer?.classList.remove('hidden');
+                    editTab?.classList.add('border-orange-500', 'text-orange-600', 'bg-orange-50');
+                    editTab?.classList.remove('border-gray-300', 'text-gray-600');
+                    editTab?.setAttribute('aria-selected', 'true');
+                    break;
+                case 'submit':
+                    submitContainer?.classList.remove('hidden');
+                    submitTab?.classList.add('border-orange-500', 'text-orange-600', 'bg-orange-50');
+                    submitTab?.classList.remove('border-gray-300', 'text-gray-600');
+                    submitTab?.setAttribute('aria-selected', 'true');
+                    break;
+                case 'sheet':
+                    sheetContainer?.classList.remove('hidden');
+                    sheetTab?.classList.add('border-orange-500', 'text-orange-600', 'bg-orange-50');
+                    sheetTab?.classList.remove('border-gray-300', 'text-gray-600');
+                    sheetTab?.setAttribute('aria-selected', 'true');
+                    break;
+            }
+        }
+
+        // ========================================
+        // MPP MODAL FUNCTIONS
+        // ========================================
+        
+        /**
+         * Opens the MPP modal
+         * @param {string} mode - Modal mode ('add' or 'edit')
+         * @param {object} data - Data object (for edit mode)
+         */
+        function openMPPModal(mode, data = null) {
+            const modal = document.getElementById('mppModal');
+            const title = document.getElementById('mppModalTitle');
+            const form = document.getElementById('mppForm');
+            
+            if (!modal || !title || !form) return;
+            
+            if (mode === 'add') {
+                title.textContent = 'Add Manpower Planning';
+                form.reset();
+                document.getElementById('mppId').value = '';
+            } else if (mode === 'edit' && data) {
+                title.textContent = 'Edit Manpower Planning';
+                document.getElementById('mppId').value = data.id || '';
+                document.getElementById('mppDepartment').value = data.department_id || '';
+                document.getElementById('mppPosition').value = data.position_id || '';
+                document.getElementById('mppCurrentCount').value = data.current_count || 0;
+                document.getElementById('mppPlannedCount').value = data.planned_count || 0;
+                document.getElementById('mppYear').value = data.year || new Date().getFullYear();
+                document.getElementById('mppQuarter').value = data.quarter || '';
+                document.getElementById('mppTimelineStart').value = data.timeline_start || '';
+                document.getElementById('mppTimelineEnd').value = data.timeline_end || '';
+                document.getElementById('mppPriority').value = data.priority || 'medium';
+                document.getElementById('mppStatus').value = data.status || 'draft';
+                document.getElementById('mppNotes').value = data.notes || '';
+            }
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        /**
+         * Closes the MPP modal
+         */
+        function closeMPPModal() {
+            const modal = document.getElementById('mppModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // ========================================
+        // TRACKER MODAL FUNCTIONS
+        // ========================================
+        
+        /**
+         * Opens the candidate tracker modal
+         * @param {string} mode - Modal mode ('add' or 'edit')
+         * @param {object} data - Data object (for edit mode)
+         */
+        function openTrackerModal(mode, data = null) {
+            const modal = document.getElementById('trackerModal');
+            const title = document.getElementById('trackerModalTitle');
+            const form = document.getElementById('trackerForm');
+            
+            if (!modal || !title || !form) return;
+            
+            if (mode === 'add') {
+                title.textContent = 'Add Candidate';
+                form.reset();
+                document.getElementById('trackerId').value = '';
+            } else if (mode === 'edit' && data) {
+                title.textContent = 'Edit Candidate';
+                document.getElementById('trackerId').value = data.id || '';
+                document.getElementById('candidateName').value = data.candidate_name || '';
+                document.getElementById('candidateEmail').value = data.email || '';
+                document.getElementById('candidatePhone').value = data.phone || '';
+                document.getElementById('positionApplied').value = data.position_applied || '';
+                document.getElementById('candidateDepartment').value = data.department_id || '';
+                document.getElementById('applyDate').value = data.apply_date || '';
+                document.getElementById('currentStage').value = data.current_stage || '';
+                document.getElementById('candidateStatus').value = data.status || 'Active';
+                document.getElementById('candidateNotes').value = data.notes || '';
+            }
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        /**
+         * Closes the candidate tracker modal
+         */
+        function closeTrackerModal() {
+            const modal = document.getElementById('trackerModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        /**
+         * Closes the view candidate modal
+         */
+        function closeViewCandidateModal() {
+            const modal = document.getElementById('viewCandidateModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        /**
+         * Opens edit modal from view mode
+         */
+        function editCandidateFromView() {
+            closeViewCandidateModal();
+            // This function should be implemented in recruitment.js
+            // to fetch the current candidate data and open the edit modal
+            showToast('Edit function needs implementation in recruitment.js', 'warning');
+        }
+
+        // ========================================
+        // DELETE MODAL FUNCTIONS
+        // ========================================
+        
+        /**
+         * Closes the delete confirmation modal
+         */
+        function closeDeleteModal() {
+            const modal = document.getElementById('deleteModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // ========================================
+        // PLACEHOLDER FUNCTIONS (TO BE IMPLEMENTED IN recruitment.js)
+        // ========================================
+        
+        /**
+         * Saves MPP data (to be implemented in recruitment.js)
+         */
+        function saveMPP() {
+            showToast('Save MPP function needs implementation in recruitment.js', 'warning');
+        }
+
+        /**
+         * Saves candidate data (to be implemented in recruitment.js)
+         */
+        function saveCandidate() {
+            showToast('Save Candidate function needs implementation in recruitment.js', 'warning');
+        }
+
+        /**
+         * Confirms deletion (to be implemented in recruitment.js)
+         */
+        function confirmDelete() {
+            showToast('Confirm Delete function needs implementation in recruitment.js', 'warning');
+        }
+
+        /**
+         * Exports MPP data (to be implemented in recruitment.js)
+         */
+        function exportMPP() {
+            showToast('Export MPP function needs implementation in recruitment.js', 'warning');
+        }
+
+        /**
+         * Sorts MPP table (to be implemented in recruitment.js)
+         * @param {string} column - Column name to sort by
+         */
+        function sortMPPTable(column) {
+            showToast(`Sort by ${column} needs implementation in recruitment.js`, 'info');
+        }
+
+        /**
+         * Keyboard Accessibility
+         * Close modals with Escape key
+         */
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                // Close any open modals
+                const modals = [
+                    'mppModal',
+                    'trackerModal',
+                    'viewCandidateModal',
+                    'deleteModal',
+                    'deleteInfo',
+                ];
+                
+                modals.forEach(modalId => {
+                    const modal = document.getElementById(modalId);
+                    if (modal && !modal.classList.contains('hidden')) {
+                        modal.classList.add('hidden');
+                    }
+                });
+                
+                // Close user dropdown
+                const userDropdown = document.getElementById('userDropdown');
+                if (userDropdown && !userDropdown.classList.contains('hidden')) {
+                    userDropdown.classList.add('hidden');
+                    const userMenuBtn = document.getElementById('userMenuBtn');
+                    if (userMenuBtn) {
+                        userMenuBtn.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            }
+        });
+    </script>
+    
+    <!-- ========================================== -->
+    <!-- EXTERNAL JAVASCRIPT LIBRARIES -->
+    <!-- ========================================== -->
+    <!-- IMPORTANT: Load order matters! -->
+    
+    <!-- 1. Supabase Library (Authentication & Database) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- 2. Core Application Logic -->
+    <script src="js/app.js"></script>
+    
+    <!-- 3. API Functions -->
+    <script src="js/api.js"></script>
+    
+    <!-- 4. Database Functions -->
+    <script src="js/database-functions.js"></script>
+    
+    <!-- 5. Utility Functions -->
+    <script src="js/utils.js"></script>
+    
+    <!-- 6. Authentication Logic (Must be loaded last among core scripts) -->
+    <script src="js/auth.js"></script>
+    
+    <!-- 7. Page Specific JavaScript for Recruitment -->
+    <script src="js/recruitment.js"></script>
+    
+    <!-- ========================================== -->
+    <!-- INITIALIZATION SCRIPT -->
+    <!-- ========================================== -->
+    <script>
+        /**
+         * Initializes the recruitment page
+         * Ensures all required scripts are loaded before initialization
+         */
+        (async function() {
+            console.log('🚀 Initializing recruitment page...');
+            
+            try {
+                // Check if main initialization function exists
+                if (typeof initRecruitmentPage !== 'function') {
+                    console.error('❌ initRecruitmentPage function not found');
+                    console.error('⚠️ Make sure recruitment.js is loaded correctly');
+                    showToast('Error: Recruitment page initialization failed', 'error');
+                    return;
+                }
+                
+                // Wait for DOM to be ready
+                if (document.readyState === 'loading') {
+                    console.log('⏳ Waiting for DOM to load...');
+                    document.addEventListener('DOMContentLoaded', async function() {
+                        console.log('✅ DOM loaded - Starting recruitment initialization...');
+                        await initRecruitmentPage();
+                        console.log('🎉 Recruitment page initialization complete');
+                    });
+                } else {
+                    console.log('✅ DOM already loaded - Starting recruitment initialization...');
+                    await initRecruitmentPage();
+                    console.log('🎉 Recruitment page initialization complete');
+                }
+            } catch (error) {
+                console.error('❌ Fatal error during recruitment page initialization:', error);
+                showToast('A critical error occurred during page initialization', 'error');
+            }
+        })();
+    </script>
+
+</body>
+</html>

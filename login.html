@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ================================================ -->
+<!-- HEAD SECTION -->
+<!-- ================================================ -->
+<head>
+    <!-- ============================================ -->
+    <!-- META TAGS -->
+    <!-- ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SWAP HRIS - Secure login portal for Human Resource Management System. Access employee management, attendance, payroll, and leave tracking.">
+    <meta name="keywords" content="HRIS Login, HR System, Employee Portal, Human Resource Management, Secure Login">
+    <meta name="author" content="Ardiansyah Dwi S">
+    <meta name="theme-color" content="#2563eb">
+    
+    <title>Carabao Billiards HR Portal — Login</title>
+    
+    <!-- ============================================ -->
+    <!-- EXTERNAL STYLESHEETS & SCRIPTS -->
+    <!-- ============================================ -->
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ✅ ADD THIS LINE -->
+    <link rel="stylesheet" href="css/tailwind.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- ================================================ -->
+<!-- BODY SECTION -->
+<!-- ================================================ -->
+<body class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-100">
+
+    <!-- ============================================ -->
+    <!-- ANIMATED BACKGROUND PATTERN -->
+    <!-- ============================================ -->
+    <div class="fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+        <!-- Blob Animation 1 -->
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+        
+        <!-- Blob Animation 2 -->
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+        
+        <!-- Blob Animation 3 -->
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTAINER (TWO-COLUMN LAYOUT) -->
+    <!-- ============================================ -->
+    <div class="flex min-h-screen">
+        
+        <!-- ============================================ -->
+        <!-- LEFT SIDE: BRANDING & FEATURES (Desktop Only) -->
+        <!-- ============================================ -->
+        <aside class="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-600 to-primary-800 p-12 flex-col justify-between relative overflow-hidden"
+               role="complementary"
+               aria-label="Branding and features">
+            
+            <!-- Decorative Background Elements -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32" aria-hidden="true"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full -ml-48 -mb-48" aria-hidden="true"></div>
+            
+            <!-- Logo & Title Section -->
+            <div class="relative z-10">
+                <div class="flex items-center space-x-4 mb-8">
+                    <!-- Logo Icon -->
+                    <div class="w-14 h-14 bg-white/20 rounded-xl backdrop-blur-lg flex items-center justify-center">
+                        <i class="fas fa-building text-white text-2xl" aria-hidden="true"></i>
+                    </div>
+                    <!-- Brand Name -->
+                    <div>
+                        <h1 class="text-3xl font-bold text-white">Carabao Billiards HR Portal</h1>
+                        <p class="text-primary-100 text-sm">Human Resource Information System</p>
+                    </div>
+                </div>
+                
+                <!-- Hero Text -->
+                <div class="mt-16">
+                    <h2 class="text-4xl font-bold text-white mb-4 leading-tight">
+                        Centralize HR Management<br>
+                        <span class="text-primary-200">Accurate, Secure, and Efficient</span>
+                    </h2>
+                    <p class="text-primary-100 text-lg leading-relaxed">
+                        Streamline HR operations at Carabao Billiards Indonesia with a centralized management system. 
+                        Track attendance, manage payroll, and maintain employee records — all in one place.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Features Checklist -->
+            <nav class="relative z-10 space-y-4" aria-label="System features">
+                <!-- Feature 1: Employee Management -->
+                <div class="flex items-center space-x-3 text-white">
+                    <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur">
+                        <i class="fas fa-check text-sm" aria-hidden="true"></i>
+                    </div>
+                    <span class="text-primary-50">Employee Management</span>
+                </div>
+                
+                <!-- Feature 2: Attendance Tracking -->
+                <div class="flex items-center space-x-3 text-white">
+                    <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur">
+                        <i class="fas fa-check text-sm" aria-hidden="true"></i>
+                    </div>
+                    <span class="text-primary-50">Attendance Tracking</span>
+                </div>
+                
+                <!-- Feature 3: Recruitment Tracking -->
+                <div class="flex items-center space-x-3 text-white">
+                    <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur">
+                        <i class="fas fa-check text-sm" aria-hidden="true"></i>
+                    </div>
+                    <span class="text-primary-50">Recruitment Tracking  </span>
+                </div>
+                
+                <!-- Feature 4: Leave Management -->
+                <div class="flex items-center space-x-3 text-white">
+                    <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur">
+                        <i class="fas fa-check text-sm" aria-hidden="true"></i>
+                    </div>
+                    <span class="text-primary-50">Leave Management</span>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- ============================================ -->
+        <!-- RIGHT SIDE: LOGIN FORM -->
+        <!-- ============================================ -->
+        <main class="flex-1 flex items-center justify-center p-6 lg:p-12" role="main">
+            <div class="w-full max-w-md">
+                
+                <!-- Mobile Logo (Visible on Mobile Only) -->
+                <header class="lg:hidden text-center mb-8">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl shadow-lg mb-4">
+                        <i class="fas fa-building text-white text-2xl" aria-hidden="true"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800">HR System</h1>
+                    <p class="text-gray-500 text-sm">Human Resource Management</p>
+                </header>
+
+                <!-- ============================================ -->
+                <!-- LOGIN CARD -->
+                <!-- ============================================ -->
+                <div class="login-card bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                    
+                    <!-- Card Header -->
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">Welcome Back!</h2>
+                        <p class="text-gray-500 text-sm">Please login to your account</p>
+                    </div>
+
+                    <!-- Alert Container (Error/Success Messages) -->
+                    <div id="alertContainer" 
+                         class="hidden mb-6"
+                         role="alert"
+                         aria-live="polite">
+                        <!-- Alerts will be inserted here by JavaScript -->
+                    </div>
+
+                    <!-- ============================================ -->
+                    <!-- LOGIN FORM -->
+                    <!-- ============================================ -->
+                    <form id="login-form" 
+                          class="space-y-5" 
+                          novalidate
+                          aria-label="Login form">
+                        
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-envelope text-gray-400 mr-2" aria-hidden="true"></i>
+                                Email Address
+                            </label>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email"
+                                   required
+                                   placeholder="your.email@company.com"
+                                   autocomplete="email"
+                                   aria-required="true"
+                                   aria-describedby="emailHelp"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all">
+                        </div>
+
+                        <!-- Password Field -->
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-lock text-gray-400 mr-2" aria-hidden="true"></i>
+                                Password
+                            </label>
+                            <div class="relative">
+                                <input type="password" 
+                                       id="password" 
+                                       name="password"
+                                       required
+                                       placeholder="Enter your password"
+                                       autocomplete="current-password"
+                                       aria-required="true"
+                                       aria-describedby="passwordHelp"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm transition-all pr-12">
+                                
+                                <!-- Toggle Password Visibility Button -->
+                                <button type="button" 
+                                        onclick="togglePassword()" 
+                                        class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                                        aria-label="Toggle password visibility">
+                                    <i id="togglePasswordIcon" class="fas fa-eye" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Remember Me & Forgot Password Row -->
+                        <div class="flex items-center justify-between">
+                            <!-- Remember Me Checkbox -->
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" 
+                                       id="rememberMe" 
+                                       name="rememberMe"
+                                       class="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-2 focus:ring-primary-500 transition-colors">
+                                <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                            </label>
+                            
+                            <!-- Forgot Password Link -->
+                            <a href="#" 
+                               onclick="showForgotPassword(event)" 
+                               class="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors">
+                                Forgot Password?
+                            </a>
+                        </div>
+
+                        <!-- Login Button -->
+                        <button type="submit" 
+                                id="btnLogin"
+                                class="btn-login w-full py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 transition-all flex items-center justify-center space-x-2"
+                                aria-label="Sign in to your account">
+                            <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                            <span>Sign In</span>
+                        </button>
+
+                    <!-- Register/Contact Admin Link -->
+                    <div class="mt-6 text-center">
+                        <p class="text-sm text-gray-600">
+                            Don't have an account? 
+                            <a href="#" 
+                               onclick="showRegister(event)" 
+                               class="text-primary-600 hover:text-primary-700 font-medium transition-colors">
+                                Contact your administrator
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Footer Info -->
+                <footer class="mt-8 text-center">
+                    <p class="text-xs text-gray-500">
+                        © 2026 Carabao Billiards Indonesia. All rights reserved.
+                        Developed internally by HRD Internship Project.
+                    </p>
+                    <p class="text-xs text-gray-400 mt-1">
+                        Version 1.0.0
+                    </p>
+                </footer>
+
+            </div>
+        </main>
+
+    </div>
+
+    <!-- ============================================ -->
+    <!-- LOADING OVERLAY -->
+    <!-- ============================================ -->
+    <div id="loadingOverlay" 
+         class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Loading">
+        <div class="bg-white rounded-2xl p-8 flex flex-col items-center space-y-4 shadow-2xl">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600" aria-hidden="true"></div>
+            <p class="text-gray-700 font-medium">Signing you in...</p>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <!-- ============================================ -->
+    <div id="toastContainer" 
+         class="fixed bottom-4 right-4 z-[100] space-y-2"
+         role="region"
+         aria-label="Notifications"
+         aria-live="polite">
+        <!-- Toast notifications will be added here by JavaScript -->
+    </div>
+
+    <!-- ============================================ -->
+    <!-- INLINE JAVASCRIPT (UI INTERACTIONS) -->
+    <!-- ============================================ -->
+    <script>
+        console.log('🚀 ========================================');
+        console.log('🚀 Login Page Initialization');
+        console.log('🚀 ========================================');
+        console.log('📄 Page: login.html');
+        console.log('⏰ Timestamp:', new Date().toISOString());
+        
+        // ============================================
+        // PASSWORD VISIBILITY TOGGLE
+        // ============================================
+        
+        /**
+         * Toggle Password Visibility
+         * Switches password input between text and password type
+         * Updates the eye icon accordingly
+         */
+        function togglePassword() {
+            console.log('👁️ Toggling password visibility...');
+            
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('togglePasswordIcon');
+            
+            if (!passwordInput || !toggleIcon) {
+                console.error('❌ Password elements not found');
+                return;
+            }
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+                console.log('✅ Password visible');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+                console.log('✅ Password hidden');
+            }
+        }
+
+        // ============================================
+        // ALERT FUNCTIONS
+        // ============================================
+        
+        /**
+         * Show Alert Message
+         * Displays an alert message in the alert container
+         * @param {string} message - The message to display
+         * @param {string} type - Type of alert (error, success, warning, info)
+         */
+        function showAlert(message, type = 'error') {
+            console.log(`🔔 Showing ${type} alert: ${message}`);
+            
+            const container = document.getElementById('alertContainer');
+            if (!container) {
+                console.error('❌ Alert container not found');
+                return;
+            }
+            
+            const colors = {
+                error: 'bg-red-50 border-red-200 text-red-800',
+                success: 'bg-green-50 border-green-200 text-green-800',
+                warning: 'bg-yellow-50 border-yellow-200 text-yellow-800',
+                info: 'bg-blue-50 border-blue-200 text-blue-800'
+            };
+            
+            const icons = {
+                error: 'fa-exclamation-circle text-red-500',
+                success: 'fa-check-circle text-green-500',
+                warning: 'fa-exclamation-triangle text-yellow-500',
+                info: 'fa-info-circle text-blue-500'
+            };
+            
+            container.innerHTML = `
+                <div class="flex items-start p-4 rounded-lg border ${colors[type] || colors.error}">
+                    <i class="fas ${icons[type] || icons.error} mt-0.5 mr-3" aria-hidden="true"></i>
+                    <div class="flex-1">
+                        <p class="text-sm font-medium">${message}</p>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.classList.add('hidden')" 
+                            class="ml-3 text-gray-400 hover:text-gray-600"
+                            aria-label="Close alert">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+            `;
+            container.classList.remove('hidden');
+            
+            console.log('✅ Alert displayed');
+        }
+
+        /**
+         * Show Toast Notification
+         * Displays a temporary toast notification
+         * @param {string} message - The message to display
+         * @param {string} type - Type of toast (success, error, warning, info)
+         */
+        function showToast(message, type = 'info') {
+            console.log(`📢 Showing ${type} toast: ${message}`);
+            
+            const container = document.getElementById('toastContainer');
+            if (!container) {
+                console.error('❌ Toast container not found');
+                return;
+            }
+            
+            const colors = {
+                success: 'bg-green-500',
+                error: 'bg-red-500',
+                warning: 'bg-yellow-500',
+                info: 'bg-blue-500'
+            };
+            
+            const icons = {
+                success: 'fa-check-circle',
+                error: 'fa-exclamation-circle',
+                warning: 'fa-exclamation-triangle',
+                info: 'fa-info-circle'
+            };
+            
+            const toast = document.createElement('div');
+            toast.className = `toast flex items-center p-4 rounded-lg shadow-lg text-white ${colors[type] || colors.info} min-w-[300px] animate-slide-in-right`;
+            toast.setAttribute('role', 'alert');
+            toast.innerHTML = `
+                <i class="fas ${icons[type] || icons.info} mr-3 text-lg" aria-hidden="true"></i>
+                <span class="flex-1">${message}</span>
+                <button onclick="this.parentElement.remove()" 
+                        class="ml-3 hover:opacity-75"
+                        aria-label="Close notification">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            `;
+            
+            container.appendChild(toast);
+            console.log('✅ Toast displayed');
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.remove();
+                    console.log('🗑️ Toast auto-removed');
+                }
+            }, 5000);
+        }
+
+        // ============================================
+        // LOADING OVERLAY
+        // ============================================
+        
+        /**
+         * Show/Hide Loading Overlay
+         * Displays or hides the loading spinner
+         * @param {boolean} show - True to show, false to hide
+         */
+        function showLoading(show = true) {
+            console.log(`⏳ ${show ? 'Showing' : 'Hiding'} loading overlay...`);
+            
+            const overlay = document.getElementById('loadingOverlay');
+            if (!overlay) {
+                console.error('❌ Loading overlay not found');
+                return;
+            }
+            
+            if (show) {
+                overlay.classList.remove('hidden');
+                overlay.classList.add('flex');
+                console.log('✅ Loading overlay visible');
+            } else {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+                console.log('✅ Loading overlay hidden');
+            }
+        }
+
+        // ============================================
+        // HELPER FUNCTIONS
+        // ============================================
+        
+        /**
+         * Forgot Password Handler
+         * Displays information about password reset process
+         * @param {Event} event - The click event
+         */
+        function showForgotPassword(event) {
+            event.preventDefault();
+            console.log('🔑 Forgot password clicked');
+            showAlert('Please contact your system administrator to reset your password.', 'info');
+        }
+
+        /**
+         * Register Handler
+         * Displays information about account creation
+         * @param {Event} event - The click event
+         */
+        function showRegister(event) {
+            event.preventDefault();
+            console.log('📝 Register/Contact admin clicked');
+            showAlert('Please contact your HR administrator to create a new account.', 'info');
+        }
+
+        // ============================================
+        // KEYBOARD SHORTCUTS
+        // ============================================
+        
+        /**
+         * Keyboard Event Handler
+         * Handles keyboard shortcuts for better UX
+         */
+        document.addEventListener('keypress', function(e) {
+            // Enter key to submit (when not focused on button)
+            if (e.key === 'Enter' && document.activeElement.tagName !== 'BUTTON') {
+                console.log('⌨️ Keyboard shortcut: Enter to submit');
+                document.getElementById('login-form').dispatchEvent(new Event('submit'));
+            }
+        });
+
+        /**
+         * ESC Key Handler
+         * Close alerts and overlays with ESC key
+         */
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close alert
+                const alertContainer = document.getElementById('alertContainer');
+                if (alertContainer && !alertContainer.classList.contains('hidden')) {
+                    alertContainer.classList.add('hidden');
+                    console.log('⌨️ Keyboard shortcut: Close alert (ESC)');
+                }
+                
+                // Close loading overlay
+                const loadingOverlay = document.getElementById('loadingOverlay');
+                if (loadingOverlay && !loadingOverlay.classList.contains('hidden')) {
+                    showLoading(false);
+                    console.log('⌨️ Keyboard shortcut: Cancel loading (ESC)');
+                }
+            }
+        });
+
+        // ============================================
+        // AUTO-FOCUS EMAIL ON PAGE LOAD
+        // ============================================
+        
+        /**
+         * Page Load Handler
+         * Auto-focuses email input for better UX
+         */
+        window.addEventListener('load', function() {
+            console.log('✅ Page loaded successfully');
+            
+            const emailInput = document.getElementById('email');
+            if (emailInput) {
+                emailInput.focus();
+                console.log('🎯 Auto-focused email input');
+            }
+            
+            console.log('🎉 ========================================');
+            console.log('🎉 Login Page Ready!');
+            console.log('🎉 ========================================');
+        });
+
+        // ============================================
+        // INPUT VALIDATION (REAL-TIME)
+        // ============================================
+        
+        /**
+         * Real-time Email Validation
+         * Provides visual feedback for email input
+         */
+        document.getElementById('email').addEventListener('blur', function() {
+            const email = this.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email && !emailRegex.test(email)) {
+                this.classList.add('border-red-500');
+                this.classList.remove('border-gray-300');
+                console.log('⚠️ Invalid email format detected');
+            } else {
+                this.classList.remove('border-red-500');
+                this.classList.add('border-gray-300');
+            }
+        });
+
+        /**
+         * Clear Error Styling on Input
+         * Removes error styling when user starts typing
+         */
+        document.getElementById('email').addEventListener('input', function() {
+            this.classList.remove('border-red-500');
+            this.classList.add('border-gray-300');
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            this.classList.remove('border-red-500');
+            this.classList.add('border-gray-300');
+        });
+    </script>
+
+    <!-- ============================================ -->
+    <!-- EXTERNAL JAVASCRIPT LIBRARIES -->
+    <!-- ============================================ -->
+    
+    <!-- IMPORTANT: Load order matters! -->
+    
+    <!-- 1. Supabase Library (Authentication & Database) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- 2. Core Application -->
+    <script src="js/app.js"></script>
+    
+    <!-- 3. API Functions -->
+    <script src="js/api.js"></script>
+    
+    <!-- 4. Database Functions -->
+    <script src="js/database-functions.js"></script>
+    
+    <!-- 5. Utilities -->
+    <script src="js/utils.js"></script>
+    
+    <!-- 6. Authentication (Must be loaded last) -->
+    <script src="js/auth.js"></script>
+
+    <script>
+        // ================================================
+        // LOGIN PAGE - FINAL INITIALIZATION
+        // ================================================
+        
+        console.log('🔧 ========================================');
+        console.log('🔧 External Scripts Loaded');
+        console.log('🔧 ========================================');
+        console.log('✅ Supabase, App, API, Database, Utils, Auth loaded');
+        console.log('🔧 ========================================');
+        
+        // Verify auth.js loaded correctly
+        // Check for functions we KNOW auth.js exposes
+        setTimeout(() => {
+            const authFunctions = [
+                'initLoginPage',      // Common auth.js function
+                'handleLogin',        // Alternative name
+                'checkSession',       // Session check function
+                'initProtectedPage'   // Protected page init
+            ];
+            
+            const authLoaded = authFunctions.some(fn => typeof window[fn] === 'function');
+            
+            if (authLoaded) {
+                console.log('✅ Auth.js verified and ready');
+            } else {
+                // Auth.js loaded but functions not exposed - check if inline handler exists
+                const loginForm = document.getElementById('login-form');
+                if (loginForm && loginForm.onsubmit) {
+                    console.log('✅ Auth.js login handler attached successfully');
+                } else {
+                    console.error('❌ CRITICAL: Auth.js failed to initialize properly');
+                }
+            }
+        }, 200); // Increased delay to 200ms
+    </script>
+
+</body>
+</html>
