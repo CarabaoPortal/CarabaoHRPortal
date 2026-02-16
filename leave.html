@@ -901,36 +901,84 @@
         }
 
         /**
-         * Parse Leave Date Range or Single Date
-         * @param {string} tanggalCuti - Date or date range (DD/MM/YYYY or DD/MM/YYYY - DD/MM/YYYY)
-         * @returns {Array<Date>} - Array of Date objects
+         * Parse Leave Dates
+         * Support:
+         * - "17/01/2026"
+         * - "23/01/2026 - 24/01/2026"
+         * - "18/03/2026, 23/03/2026 - 28/03/2026"
          */
-        function parseLeaveDates(tanggalCuti) {
-            if (!tanggalCuti || tanggalCuti === '-') return [];
-            
-            const dates = [];
-            
-            // Check if it's a range (contains " - ")
-            if (tanggalCuti.includes(' - ')) {
-                const parts = tanggalCuti.split(' - ');
-                const startDate = parseIndonesianDate(parts[0]);
-                const endDate = parseIndonesianDate(parts[1]);
-                
-                if (startDate && endDate) {
-                    // Generate all dates in range
-                    let current = new Date(startDate);
-                    while (current <= endDate) {
-                        dates.push(new Date(current));
+        function parseLeaveDates(value) {
+            if (!value) return [];
+        
+            // Jika sudah array (jaga-jaga kalau dari backend sudah diparse)
+            if (Array.isArray(value)) {
+                return value.map(d => new Date(d));
+            }
+        
+            const str = String(value).trim();
+        
+            // 🔥 Split berdasarkan koma dulu (support multiple segment)
+            const segments = str.split(',').map(s => s.trim());
+        
+            const allDates = [];
+        
+            segments.forEach(segment => {
+        
+                // Jika format range
+                if (segment.includes('-')) {
+                    const parts = segment.split('-').map(s => s.trim());
+                    if (parts.length !== 2) return;
+        
+                    const start = parseSingleDate(parts[0]);
+                    const end = parseSingleDate(parts[1]);
+        
+                    if (!start || !end) return;
+        
+                    let current = new Date(start);
+                    while (current <= end) {
+                        allDates.push(new Date(current));
                         current.setDate(current.getDate() + 1);
                     }
                 }
-            } else {
-                // Single date
-                const date = parseIndonesianDate(tanggalCuti);
-                if (date) dates.push(date);
+                // Jika single date
+                else {
+                    const single = parseSingleDate(segment);
+                    if (single) {
+                        allDates.push(single);
+                    }
+                }
+            });
+        
+            return allDates;
+        }
+        
+        /**
+         * Parse single date format DD/MM/YYYY
+         */
+        function parseSingleDate(str) {
+            if (!str) return null;
+        
+            const parts = str.split('/');
+            if (parts.length !== 3) return null;
+        
+            const day = parseInt(parts[0], 10);
+            const month = parseInt(parts[1], 10) - 1;
+            const year = parseInt(parts[2], 10);
+        
+            if (isNaN(day) || isNaN(month) || isNaN(year)) return null;
+        
+            const date = new Date(year, month, day);
+        
+            // Validasi agar tidak auto-correct (contoh: 32/01/2026)
+            if (
+                date.getFullYear() !== year ||
+                date.getMonth() !== month ||
+                date.getDate() !== day
+            ) {
+                return null;
             }
-            
-            return dates;
+        
+            return date;
         }
 
         // ============================================
@@ -1381,3 +1429,4 @@
 
 </body>
 </html>
+
