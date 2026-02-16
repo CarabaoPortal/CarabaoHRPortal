@@ -899,7 +899,7 @@
             
             return date;
         }
-
+        
         /**
          * Parse Leave Dates
          * Support:
@@ -910,21 +910,20 @@
         function parseLeaveDates(value) {
             if (!value) return [];
         
-            // Jika sudah array (jaga-jaga kalau dari backend sudah diparse)
+            // Jika sudah array (dari backend yang sudah diparse)
             if (Array.isArray(value)) {
                 return value.map(d => new Date(d));
             }
         
             const str = String(value).trim();
+            if (str === '' || str === '-') return [];
         
-            // 🔥 Split berdasarkan koma dulu (support multiple segment)
+            // Split berdasarkan koma untuk multiple segments
             const segments = str.split(',').map(s => s.trim());
-        
             const allDates = [];
         
             segments.forEach(segment => {
-        
-                // Jika format range
+                // Jika format range (ada tanda -)
                 if (segment.includes('-')) {
                     const parts = segment.split('-').map(s => s.trim());
                     if (parts.length !== 2) return;
@@ -934,12 +933,13 @@
         
                     if (!start || !end) return;
         
+                    // Generate semua tanggal dalam range
                     let current = new Date(start);
                     while (current <= end) {
                         allDates.push(new Date(current));
                         current.setDate(current.getDate() + 1);
                     }
-                }
+                } 
                 // Jika single date
                 else {
                     const single = parseSingleDate(segment);
@@ -962,14 +962,14 @@
             if (parts.length !== 3) return null;
         
             const day = parseInt(parts[0], 10);
-            const month = parseInt(parts[1], 10) - 1;
+            const month = parseInt(parts[1], 10) - 1; // JS month 0-indexed
             const year = parseInt(parts[2], 10);
         
             if (isNaN(day) || isNaN(month) || isNaN(year)) return null;
         
             const date = new Date(year, month, day);
         
-            // Validasi agar tidak auto-correct (contoh: 32/01/2026)
+            // Validasi tanggal valid (tidak auto-correct seperti 32/01/2026)
             if (
                 date.getFullYear() !== year ||
                 date.getMonth() !== month ||
@@ -1429,4 +1429,5 @@
 
 </body>
 </html>
+
 
